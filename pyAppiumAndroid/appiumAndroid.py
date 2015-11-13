@@ -8,7 +8,7 @@ from screenshot import *
 import tag_message_wxy
 from tokenLeftTwo import *
 import tag_message_cloudcardlist
-
+import sys
 #def screenshot(path):
 #    driver.get_screenshot_as_file(path)
 
