@@ -1,0 +1,155 @@
+option java_package = "com.tuxing.rpc.card";
+
+//刷卡机升级请求
+//url:/card_machine_upgrade
+/*
+message MachineUpgradeRequest {
+    required string version = 1; //版本
+    optional string deviceId = 2; //设备id
+}
+//升级响应
+message UpgradeResponse {
+    optional Upgrade upgrade = 1; //升级信息
+}
+
+//升级信息
+message Upgrade {
+    optional bool showAtMain = 1; //是否显示在首屏
+    optional bool mustUpdate = 2; //是否强制升级
+    required bool isUpdate = 3; //是否升级
+    optional string updateMsg = 4; //升级标题
+    optional string showMsg = 5; //升级内容
+    optional string versionCode = 6; //最新版本号
+    optional string updateUrl = 7; //下载地址
+}
+
+//刷卡机日志
+//url:/machine_log
+message MachineLogRequest {
+    required int64 gardenId =1;
+    required string content = 2;
+}
+
+message MachineLogResponse {
+}
+
+//上报刷卡数据,给刷卡机使用
+//URL:/checkin
+message CheckinRequest {
+    required string machineId = 1;
+    repeated Checkin checkin = 2;
+}
+
+message CheckinResponse {
+
+}
+
+//注册刷卡机
+//URL:/register_checkin_machine
+message RegisterCheckinMachineRequest {
+    optional int64 oaId = 1;
+    optional int64 gardenId = 2;
+    required string machineId = 3;
+}
+
+message RegisterCheckinMachineResponse {
+    required int64 gardenId = 1;
+    required string gardenName = 2;
+}
+
+//验证刷卡机
+//URL:/check_permission
+message CheckPermissionRequest {
+    required string password = 1;
+    optional int64 gardenId = 2;
+}
+
+message CheckPermissionResponse {
+}
+
+//URL:/get_checkin_upload_token
+message GetCheckinUploadTokenRequest {
+}
+
+message GetCheckinUploadTokenResponse {
+    required string token = 1;
+}
+
+//同步卡号列表
+//URL:/fetch_card
+message FetchCardRequest {
+    required int64 gardenId = 1; //园ID
+    required int64 lastModifiedSince = 2; //同步时间
+}
+
+message FetchCardResponse {
+    repeated UserCard card = 1; //卡号列表
+    required int64 fetchTime = 2; //同步时间
+    required bool hasMore = 3;
+}
+
+//URL:/fetch_voice
+message FetchVoiceRequest {
+    required int64 gardenId = 1;
+}
+
+message FetchVoiceResponse {
+    required int32 voiceClass = 1;
+    optional string voicePrefix = 2;
+    optional string voiceSuffix = 3;
+}
+
+message UserCard {
+    required int64 id = 1;
+    required int64 userId = 2; //小孩或老师ID
+    optional int64 parentUserId = 3; //家长ID, 老师不需要设置
+    required string cardCode = 4; //卡号
+    optional string userName = 5; //小孩或老师的姓名
+    optional string parentName = 6; //家长的nickname,  老师不需要设置
+    optional ActionType actionType = 7; //add OR update,delete
+    optional UserType usertype = 8;
+    optional string positionName = 9;
+    optional string departmentName = 10;
+}
+
+message Checkin {
+    optional int64 id = 1;
+    required string cardCode = 2;
+    required Attach attach = 3;
+    optional int64 userId = 4;
+    required int64 checkinTime = 5;
+
+    optional int64 gardenId = 6;
+    optional string userName = 7;
+    optional string parentName = 8;
+    optional string className = 9;
+}
+
+//操作类型
+enum ActionType {
+    ADD = 1; //添加
+    UPDATE = 2; //修改
+    ADD_OR_UPDATE = 3; //添加或修改，由客户端自己判断
+    DELETE = 4;
+}
+
+//附件类型
+enum AttachType {
+    PIC = 1; //图片
+    AUDIO = 2; //语音
+    VEDIO = 3; //视频
+    OTHERATTACHTYPE = 4; //其它
+}
+
+message Attach {
+    required string fileurl = 1;
+    required AttachType attachType = 2;
+}
+
+//用户类型
+enum UserType {
+    CHILD = 1;
+    PARENT = 2;
+    TEACHER = 3;
+    PARTNER = 4;
+}*/

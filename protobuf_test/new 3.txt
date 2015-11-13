@@ -1,0 +1,25 @@
+final CheckinRequest.Builder requestBuilder = new CheckinRequest.Builder();
+                requestBuilder.machineId("ef228c4c8f1d593");
+                requestBuilder.checkin(new ArrayList<Checkin>());
+                requestBuilder.checkin.add(
+                        new Checkin.Builder()
+                                .cardCode(txtCardNo.getText().toString())
+                                .userId(Long.valueOf(txtUserId.getText().toString()))
+                                .gardenId(Long.valueOf(txtGardenId.getText().toString()))
+                                .checkinTime(System.currentTimeMillis())
+                                .attach(new Attach.Builder()
+                                        .fileurl("")
+                                        .attachType(AttachType.PIC).build())
+                                .build()
+                );
+
+                CheckinRequest checkinRequest = requestBuilder.build();
+
+                com.tuxing.rpc.proto.Request request = new com.tuxing.rpc.proto.Request.Builder()
+                        .url("/checkin")
+                        .token("")
+                        .version("machine")
+                        .body(ByteString.of(checkinRequest.toByteArray()))
+                        .build();
+
+                sendRequest(request);

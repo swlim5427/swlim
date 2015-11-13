@@ -1,0 +1,20 @@
+'''
+testinfo = test2_pb2.testinfo()
+testinfo.devtype1 = 100
+testinfo.devidtest2 = 200
+testinfo.unitid3 = 300
+testinfo.chlid4 = 400
+testinfo.testid5 = 500
+testinfo.stepdata_test6 = b'abc'
+print "----------"
+print testinfo.devtype1
+print "----------"
+out = testinfo.SerializeToString()
+print out
+print "----------"
+decode = test2_pb2.testinfo()
+print decode
+print "----------"
+decode.ParseFromString(out)
+messageCode = test2_pb2.testinfo()
+print decode'''

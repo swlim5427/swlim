@@ -1,0 +1,11 @@
+message testinfo 
+ {     
+    required int32 devtype1 = 1;
+    required int32 devidtest2 = 2;
+    required int32 unitid3 = 3;
+    required int32 chlid4 = 4;    
+    
+    optional int32 testid5 = 5 [default = 0];
+    
+    required bytes stepdata_test6 = 6;
+ }
