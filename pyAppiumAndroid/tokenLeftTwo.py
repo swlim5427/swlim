@@ -13,7 +13,7 @@ def tokenLeftTwo(driver,picFlile):
         time.sleep(2)
         logging.info(u"进入家园选项卡成功")
     except:
-        logging.error(u"进入家园选项卡失败")
+        logging.error(u"进入家园选项卡111失败")
     ###----------------（微家园-家园-进入公告列表）-------------------
     try:
         driver.find_element_by_name("公告").click()
