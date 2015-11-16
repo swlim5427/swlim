@@ -32,7 +32,6 @@ def tagHomeActivity(driver,picFlile):
         time.sleep(2)
     except:
         logging.error(u"家园-活动详情返回失败")
-    ###----------------（微家园-家园-查看公告详情-返回）-------------------
     try:
         wxyDetailsBack = driver.find_element_by_name("返 回")
         wxyDetailsBack.click()
