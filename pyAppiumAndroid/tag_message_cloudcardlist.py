@@ -8,6 +8,7 @@ def messageCloudCardList(driver,picFlile):
         ###----------------（消息-云卫士刷卡-进入列表）-------------------
     try:
         driver.find_element_by_name('云卫士刷卡').click()
+        time.sleep(1)
         path = picFlile+"weixueyuan_ywslist.png"
         screenshot(driver,path)
         logging.info(u"进入云卫士刷卡列表")

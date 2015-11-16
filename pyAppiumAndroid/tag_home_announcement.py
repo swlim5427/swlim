@@ -26,7 +26,7 @@ def tagHomeAnnouncement(driver,picFlile):
     ###----------------（微家园-家园-查看公告详情）-------------------
     try:
         announcemenList = driver.find_elements_by_class_name("android.widget.LinearLayout")
-        print announcemenList
+#        print announcemenList
         announcemenList[5].click()
         screenshot(driver,picFlile+"jiayuan_announcement_details.png")
         time.sleep(2)
