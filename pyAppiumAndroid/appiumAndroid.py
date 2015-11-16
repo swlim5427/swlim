@@ -6,15 +6,16 @@ from appium import webdriver
 import time
 from screenshot import *
 import tag_message_wxy
-from tokenLeftTwo import *
+import tag_home_announcement
 import tag_message_cloudcardlist
+import tag_home_activity
 import sys
 import threading
 #def screenshot(path):
 #    driver.get_screenshot_as_file(path)
 
 
-actionTypeList = [1,1001,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+actionTypeList = [1,1001,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
@@ -80,8 +81,10 @@ for times in range(1,2):
                 tag_message_wxy.weixueyuan(driver,picFlile)
             elif actionTye == 1001:
                 tag_message_cloudcardlist.messageCloudCardList(driver,picFlile)
-            elif actionTye == 2:
-                tokenLeftTwo(driver,picFlile)
+            elif actionTye == 2001:
+                tag_home_announcement.tagHomeAnnouncement(driver,picFlile)
+            elif actionTye == 2002:
+                tag_home_activity.tagHomeActivity(driver,picFlile)
 
     except :
         print traceback.print_exc()

@@ -3,7 +3,7 @@ import time
 import logging
 from screenshot import *
 
-def tokenLeftTwo(driver,picFlile):
+def tagHomeAnnouncement(driver,picFlile):
     ###----------------（微家园-家园）-------------------
     try:
         wxy_jiayuan = driver.find_element_by_name("家园")
