@@ -14,7 +14,7 @@ import threading
 #    driver.get_screenshot_as_file(path)
 
 
-actionTypeList = [1,1001,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+actionTypeList = [1,1001,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
