@@ -24,6 +24,8 @@ desired_caps['platformVersion'] = '4.4.2'
 desired_caps['deviceName'] = 'Xiaomi 2014501'
 desired_caps['appPackage'] = 'com.tuxing.app.teacher'
 desired_caps['appActivity'] = 'com.tuxing.app.SplashActivity'
+desired_caps['unicodeKeyboard'] = True
+desired_caps['resetKeyboard'] = True
 #desired_caps['automationName']='Selendroid'
 
 resultPath = r"D:/android_result_pic/"
@@ -91,5 +93,5 @@ for times in range(1,2):
         logging.error(u"打开教师版失败")
 
     driver.quit()
-    time.sleep(40)
+    time.sleep(5)
 
