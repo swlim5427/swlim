@@ -4,16 +4,12 @@ import logging
 import traceback
 from appium import webdriver
 import time
-from screenshot import *
-import tag_message_wxy
-import tag_home_announcement
-import tag_message_cloudcardlist
-import tag_home_activity
-import sys
-import threading
+
+from action.screenshot import *
+from action import *
+
 #def screenshot(path):
 #    driver.get_screenshot_as_file(path)
-
 
 actionTypeList = [1,1001,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
@@ -77,8 +73,8 @@ for times in range(1,2):
                 print traceback.print_exc()
                 logging.error(u"登录失败")
 
-        ###----------------（消息-微学园-列表）-------------------
         for actionTye in actionTypeList:
+
             if actionTye == 1:
                 tag_message_wxy.weixueyuan(driver,picFlile)
             elif actionTye == 1001:
@@ -87,6 +83,8 @@ for times in range(1,2):
                 tag_home_announcement.tagHomeAnnouncement(driver,picFlile)
             elif actionTye == 2002:
                 tag_home_activity.tagHomeActivity(driver,picFlile)
+            elif actionTye == 2003:
+                print("")
 
     except :
         print traceback.print_exc()
