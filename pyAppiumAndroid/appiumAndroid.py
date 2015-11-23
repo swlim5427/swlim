@@ -11,7 +11,8 @@ from action import *
 #def screenshot(path):
 #    driver.get_screenshot_as_file(path)
 
-actionTypeList = [1,1001,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
+#actionTypeList = [1,1001,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
+actionTypeList = [2003]
 
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
@@ -84,7 +85,7 @@ for times in range(1,2):
             elif actionTye == 2002:
                 tag_home_activity.tagHomeActivity(driver,picFlile)
             elif actionTye == 2003:
-                print("")
+                tag_home_weeklydiet.tagHomeWeeklydiet(driver,picFlile)
 
     except :
         print traceback.print_exc()
