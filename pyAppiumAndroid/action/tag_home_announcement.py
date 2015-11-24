@@ -28,34 +28,15 @@ def tagHomeAnnouncement(driver,picFlile):
             except:
                 logging.error(u"查看公告详情失败")
 
-            try:
-                wxyDetailsBack = driver.find_element_by_name("返 回")
-                wxyDetailsBack.click()
-                time.sleep(2)
-                path = picFlile+"wjiayuan_announcement_details_back.png"
-                screenshot(driver,path)
-                logging.info(u"公告详情返回成功")
-                time.sleep(2)
-            except:
-                logging.error(u"公告详情返回失败")
+            picName_details_back = "wjiayuan_announcement_details_back.png"
+            backButton(driver,picFlile,picName_details_back,funcName+"详情_")
+            picName_list_back = "wjiayuan_announcement_list_back.png"
+            backButton(driver,picFlile,picName_list_back,funcName+"列表_")
 
-            try:
-                wxyDetailsBack = driver.find_element_by_name("返 回")
-                wxyDetailsBack.click()
-                time.sleep(2)
-                path = picFlile+"wjiayuan_announcement_list_back.png"
-                screenshot(driver,path)
-                logging.info(u"公告列表返回成功")
-                time.sleep(2)
-            except:
-                logging.error(u"公告列表返回失败")
         except:
             logging.error(u"进入公告失败")
 
-        picName_details_back = "wjiayuan_announcement_details_back.png"
-        backButton(driver,picFlile,picName_details_back,funcName+"详情_")
-        picName_list_back = "wjiayuan_announcement_list_back.png"
-        backButton(driver,picFlile,picName_list_back,funcName+"列表_")
+
     else:
         try:
             logging.info("进入家园返回值 = "+str(inTagHomeAtion))
