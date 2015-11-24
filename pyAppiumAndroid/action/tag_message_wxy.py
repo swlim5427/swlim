@@ -5,12 +5,12 @@ from pubaction import *
 def weixueyuan(driver,picFlile):
     funcName = "微学园_"
     if checkTag(driver) == "message":
-        inTagHomeAtion = 1
+        inTagMessageAtion = 1
     else:
         picName_in ="message_main_wxy.png"
-        inTagHomeAtion = inTagMessage(driver,picFlile,picName_in,funcName)
+        inTagMessageAtion = inTagMessage(driver,picFlile,picName_in,funcName)
 
-    if inTagHomeAtion == 1:
+    if inTagMessageAtion == 1:
         try:
             wxy = driver.find_element_by_name('微学园')
             wxy.click()

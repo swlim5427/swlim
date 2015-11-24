@@ -4,6 +4,7 @@ from appium import webdriver
 from action.pubaction import *
 from action import *
 
+appType = 1
 actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
 #actionTypeList = [2004]
 
@@ -12,7 +13,10 @@ desired_caps['platformName'] = 'Android'
 desired_caps['platformVersion'] = '4.4.2'
 
 desired_caps['deviceName'] = 'Xiaomi 2014501'
-desired_caps['appPackage'] = 'com.tuxing.app.teacher'
+if appType == 1:
+    desired_caps['appPackage'] = 'com.tuxing.app.teacher'
+elif appType == 2:
+    desired_caps['appPackage'] = 'com.tuxing.app.home'
 desired_caps['appActivity'] = 'com.tuxing.app.SplashActivity'
 desired_caps['unicodeKeyboard'] = True
 desired_caps['resetKeyboard'] = True
@@ -36,10 +40,10 @@ for times in range(1,2):
 
     LOG_FILENAME = logPath+"testLog.log"
     logging.basicConfig(level=logging.INFO,
-                    format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
-                    datefmt='%a, %d %b %Y %H:%M:%S',
-                    filename=LOG_FILENAME,
-                    filemode='w')
+                        format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                        datefmt='%a, %d %b %Y %H:%M:%S',
+                        filename=LOG_FILENAME,
+                        filemode='w')
     try:
         driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub',desired_caps)
         time.sleep(8)
@@ -81,6 +85,8 @@ for times in range(1,2):
                 tag_home_weeklydiet.tagHomeWeeklydiet(driver,picFlile)
             elif actionTye == 2004:
                 tag_home_medicine.tagHomeMedicine(driver,picFlile)
+            elif actionTye == 2005:
+                tag_home_myattendance.tagHomeMyAttendance(driver,picFlile)
 
     except :
         print traceback.print_exc()

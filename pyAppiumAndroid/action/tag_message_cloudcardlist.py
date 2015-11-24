@@ -5,12 +5,12 @@ def messageCloudCardList(driver,picFlile):
 
     funcName = "云卫士刷卡_"
     if checkTag(driver) == "message":
-        inTagHomeAtion = 1
+        inTagMessageAtion = 1
     else:
         picName_in ="message_main_yws.png"
-        inTagHomeAtion = inTagMessage(driver,picFlile,picName_in,funcName)
+        inTagMessageAtion = inTagMessage(driver,picFlile,picName_in,funcName)
 
-    if inTagHomeAtion == 1:
+    if inTagMessageAtion == 1:
         try:
             driver.find_element_by_name('云卫士刷卡').click()
             time.sleep(1)
