@@ -30,9 +30,14 @@ def messageCloudCardList(driver,picFlile):
                 time.sleep(2)
             except:
                 logging.error(u"查看刷卡照片失败")
-
-            picName_details_back = "weixueyuan_ywslist_pic_back.png"
-            backButton(driver,picFlile,picName_details_back,funcName+"照片_")
+            try:
+                driver.find_element_by_id("com.tuxing.app.teacher:id/wivPhoto").click()
+                path = picFlile+"weixueyuan_ywslist_pic_back.png"
+                screenshot(driver,path)
+                logging.info(u"刷卡照片返回成功")
+                time.sleep(2)
+            except:
+                logging.error(u"刷卡照片返回失败")
 
             picName_list_back = "weixueyuan_list_back.png"
             backButton(driver,picFlile,picName_list_back,funcName+"列表_")
