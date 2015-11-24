@@ -2,12 +2,12 @@
 import traceback
 from pubaction import *
 
-def tagHomeAnnouncement(driver,picFlile):
-    funcName = "公告_"
+def tagHomeMedicine(driver,picFlile):
+    funcName = "喂药_"
     if checkTag(driver) == "home":
         inTagHomeAtion = 1
     else:
-        picName_in ="jiayuan_main_announcement.png"
+        picName_in ="jiayuan_main_medicine.png"
         inTagHomeAtion = inTagHome(driver,picFlile,picName_in,funcName)
 
     if inTagHomeAtion == 1:

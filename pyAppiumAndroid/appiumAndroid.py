@@ -5,7 +5,7 @@ import traceback
 from appium import webdriver
 import time
 
-from action.screenshot import *
+from action.pubaction import *
 from action import *
 
 #def screenshot(path):
