@@ -20,8 +20,8 @@ def tagHomeAnnouncement(driver,picFlile):
             try:
                 announcemenList = driver.find_elements_by_class_name("android.widget.LinearLayout")
                 announcemenList[5].click()
-                screenshot(driver,picFlile+"jiayuan_announcement_details.png")
                 time.sleep(2)
+                screenshot(driver,picFlile+"jiayuan_announcement_details.png")
                 logging.info(u"查看公告详情")
                 time.sleep(2)
             except:

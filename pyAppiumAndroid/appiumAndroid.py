@@ -4,8 +4,8 @@ from appium import webdriver
 from action.pubaction import *
 from action import *
 
-#actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
-actionTypeList = [2004]
+actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
+#actionTypeList = [2004]
 
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
