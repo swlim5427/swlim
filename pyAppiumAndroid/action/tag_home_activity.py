@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import traceback
 from pubaction import *
 
 def tagHomeActivity(driver,picFlile):

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import traceback
 from pubaction import *
 
 def tagHomeMedicine(driver,picFlile):
@@ -21,8 +20,8 @@ def tagHomeMedicine(driver,picFlile):
             try:
                 announcemenList = driver.find_elements_by_class_name("android.widget.ImageView")
                 announcemenList[1].click()
-                screenshot(driver,picFlile+"jiayuan_medicine_details.png")
                 time.sleep(2)
+                screenshot(driver,picFlile+"wjiayuan_medicine_details.png")
                 logging.info(u"查看喂药详情")
                 time.sleep(2)
             except:

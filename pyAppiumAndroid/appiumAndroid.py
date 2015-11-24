@@ -1,18 +1,11 @@
 # -*- coding: utf-8 -*-
 import os
-import logging
-import traceback
 from appium import webdriver
-import time
-
 from action.pubaction import *
 from action import *
 
-#def screenshot(path):
-#    driver.get_screenshot_as_file(path)
-
-actionTypeList = [1,1001,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
-#actionTypeList = [2003]
+#actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
+actionTypeList = [2004]
 
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
@@ -76,9 +69,9 @@ for times in range(1,2):
 
         for actionTye in actionTypeList:
 
-            if actionTye == 1:
+            if actionTye == 1001:
                 tag_message_wxy.weixueyuan(driver,picFlile)
-            elif actionTye == 1001:
+            elif actionTye == 1002:
                 tag_message_cloudcardlist.messageCloudCardList(driver,picFlile)
             elif actionTye == 2001:
                 tag_home_announcement.tagHomeAnnouncement(driver,picFlile)

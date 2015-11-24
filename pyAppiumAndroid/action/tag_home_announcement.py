@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import traceback
 from pubaction import *
 
 def tagHomeAnnouncement(driver,picFlile):
@@ -35,8 +34,6 @@ def tagHomeAnnouncement(driver,picFlile):
 
         except:
             logging.error(u"进入公告失败")
-
-
     else:
         try:
             logging.info("进入家园返回值 = "+str(inTagHomeAtion))

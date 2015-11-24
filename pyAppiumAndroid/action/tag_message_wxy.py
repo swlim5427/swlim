@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from pubaction import *
-import traceback
 
 def weixueyuan(driver,picFlile):
     funcName = "微学园_"
-    if checkTag(driver) == "home":
+    if checkTag(driver) == "message":
         inTagHomeAtion = 1
     else:
         picName_in ="message_main_wxy.png"

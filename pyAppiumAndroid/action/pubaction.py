@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import time
 import logging
+import traceback
 
 def screenshot(driver,path):
     driver.get_screenshot_as_file(path)

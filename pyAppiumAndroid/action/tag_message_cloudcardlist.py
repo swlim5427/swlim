@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-import traceback
 from pubaction import *
 
 def messageCloudCardList(driver,picFlile):
 
     funcName = "云卫士刷卡_"
-    if checkTag(driver) == "home":
+    if checkTag(driver) == "message":
         inTagHomeAtion = 1
     else:
         picName_in ="message_main_yws.png"
@@ -39,7 +38,7 @@ def messageCloudCardList(driver,picFlile):
             except:
                 logging.error(u"刷卡照片返回失败")
 
-            picName_list_back = "weixueyuan_list_back.png"
+            picName_list_back = "weixueyuan_ywslist_list_back.png"
             backButton(driver,picFlile,picName_list_back,funcName+"列表_")
 
         except:
