@@ -35,6 +35,7 @@ def tagHomeMedicine(driver,picFlile):
         except:
             logging.error(u"进入喂药失败")
 
+
     else:
         try:
             logging.info("进入家园返回值 = "+str(inTagHomeAtion))
