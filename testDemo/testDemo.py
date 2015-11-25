@@ -1,12 +1,13 @@
 #coding=utf-8
 import sys
 import requests
+'''
 import Message_pb2
 import wjy_pb2
 import time
 import datetime
 import threading
-
+'''
 
 def deco(func):
     
