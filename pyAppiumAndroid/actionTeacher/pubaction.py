@@ -1,7 +1,25 @@
 # -*- coding: utf-8 -*-
 import time
 import logging
+import datetime
+
 import traceback
+
+def timeAction():
+
+    inputYear = datetime.datetime.now().year
+    inputMonth = datetime.datetime.now().month
+    inputDay = datetime.datetime.now().day
+    inputHour = datetime.datetime.now().hour
+    inputMinute = datetime.datetime.now().minute
+    inputSecond = datetime.datetime.now().second
+
+    mTime = datetime.datetime.now().microsecond
+    imputDateTime = datetime.datetime(year=int(inputYear),month=int(inputMonth),day=int(inputDay),
+                                      hour=int(inputHour),minute=int(inputMinute),second=int(inputSecond))
+    formatTime = long(round(time.mktime(imputDateTime.timetuple())))
+    nowTime =  long(str(formatTime)+str(mTime/1000))
+    return nowTime
 
 def screenshot(driver,path):
     driver.get_screenshot_as_file(path)

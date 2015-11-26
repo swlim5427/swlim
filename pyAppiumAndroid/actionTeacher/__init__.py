@@ -5,6 +5,7 @@ __all__ = ["tag_home_activity",
            "tag_home_weeklydiet",
            "tag_home_medicine",
            "tag_home_myattendance",
-           "tag_home_notice"]
+           "tag_home_notice",
+           "tag_home_headmastermail"]
 def actionType():
     return __all__
