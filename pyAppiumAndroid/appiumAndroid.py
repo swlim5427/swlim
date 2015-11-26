@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import os
 from appium import webdriver
-from action.pubaction import *
-from action import *
+from actionTeacher.pubaction import *
+from actionTeacher import *
 
 appType = 1
 #actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
@@ -56,9 +56,6 @@ for times in range(1,2):
             wxyLoin = driver.find_element_by_name("登 录")
             screenshot(driver,picFlile+"weixueyuan_login.png")
             wxyLoin_userName = driver.find_element_by_id("com.tuxing.app.teacher:id/et_username")
-
-            print wxyLoin_userName.id + "@@!#@#@!#!@"
-
             wxyLoin_userName.send_keys("14100000001")
             time.sleep(1)
             screenshot(driver,picFlile+"weixueyuan_login_username.png")
@@ -72,27 +69,29 @@ for times in range(1,2):
             try:
                 driver.find_element_by_name('微学园')
                 logging.info(u"当前为免登陆状态")
+
+                if appType == 1:
+                    for actionType in actionTypeList:
+                        while actionType == 1001:
+                            tag_message_wxy.weixueyuan(driver,picFlile)
+                        while actionType == 1002:
+                            tag_message_cloudcardlist.messageCloudCardList(driver,picFlile)
+                        while actionType == 2001:
+                            tag_home_announcement.tagHomeAnnouncement(driver,picFlile)
+                        while actionType == 2002:
+                            tag_home_activity.tagHomeActivity(driver,picFlile)
+                        while actionType == 2003:
+                            tag_home_weeklydiet.tagHomeWeeklydiet(driver,picFlile)
+                        while actionType == 2004:
+                            tag_home_medicine.tagHomeMedicine(driver,picFlile,appType)
+                        while actionType == 2005:
+                            tag_home_myattendance.tagHomeMyAttendance(driver,picFlile)
+                        while actionType == 2006:
+                            tag_home_headmastermail.tagHeadMasterMail(driver,picFlile,appType)
+
             except:
                 print traceback.print_exc()
                 logging.error(u"登录失败")
-
-        for actionTye in actionTypeList:
-
-            while actionTye == 1001:
-                tag_message_wxy.weixueyuan(driver,picFlile)
-            while actionTye == 1002:
-                tag_message_cloudcardlist.messageCloudCardList(driver,picFlile)
-            while actionTye == 2001:
-                tag_home_announcement.tagHomeAnnouncement(driver,picFlile)
-            while actionTye == 2002:
-                tag_home_activity.tagHomeActivity(driver,picFlile)
-            while actionTye == 2003:
-                tag_home_weeklydiet.tagHomeWeeklydiet(driver,picFlile)
-            while actionTye == 2004:
-                tag_home_medicine.tagHomeMedicine(driver,picFlile)
-            while actionTye == 2005:
-                tag_home_myattendance.tagHomeMyAttendance(driver,picFlile)
-
     except :
         print traceback.print_exc()
         logging.error(u"打开教师版失败")

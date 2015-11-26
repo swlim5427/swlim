@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from pubaction import *
 
-def tagHomeMedicine(driver,picFlile):
+def tagHomeMedicine(driver,picFlile,appType):
     funcName = "喂药_"
     if checkTag(driver) == "home":
         inTagHomeAtion = 1
