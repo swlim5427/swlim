@@ -10,6 +10,6 @@ def tagHomeNotice(driver,picFlile):
         inTagHomeAtion = inTagMessage(driver,picFlile,picName_in,funcName)
 
     try:
-        driver.find_element_by_name("通知")
+        name = driver.find_element_by_name("通知")
     except:
         print("")
