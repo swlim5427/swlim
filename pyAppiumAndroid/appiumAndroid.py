@@ -5,8 +5,8 @@ from action.pubaction import *
 from action import *
 
 appType = 1
-actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
-#actionTypeList = [2004]
+#actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
+actionTypeList = [2004000]
 
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
@@ -56,10 +56,15 @@ for times in range(1,2):
             wxyLoin = driver.find_element_by_name("登 录")
             screenshot(driver,picFlile+"weixueyuan_login.png")
             wxyLoin_userName = driver.find_element_by_id("com.tuxing.app.teacher:id/et_username")
+
+            print wxyLoin_userName.id + "@@!#@#@!#!@"
+
             wxyLoin_userName.send_keys("14100000001")
-            screenshot(driver,picFlile+"weixueyuan_login_username.png")
             time.sleep(1)
+            screenshot(driver,picFlile+"weixueyuan_login_username.png")
             driver.find_element_by_id("com.tuxing.app.teacher:id/et_password").send_keys("111111")
+            time.sleep(1)
+            screenshot(driver,picFlile+"weixueyuan_login_password.png")
             wxyLoin.click()
             logging.info(u"登录成功")
             time.sleep(1)
@@ -73,19 +78,19 @@ for times in range(1,2):
 
         for actionTye in actionTypeList:
 
-            if actionTye == 1001:
+            while actionTye == 1001:
                 tag_message_wxy.weixueyuan(driver,picFlile)
-            elif actionTye == 1002:
+            while actionTye == 1002:
                 tag_message_cloudcardlist.messageCloudCardList(driver,picFlile)
-            elif actionTye == 2001:
+            while actionTye == 2001:
                 tag_home_announcement.tagHomeAnnouncement(driver,picFlile)
-            elif actionTye == 2002:
+            while actionTye == 2002:
                 tag_home_activity.tagHomeActivity(driver,picFlile)
-            elif actionTye == 2003:
+            while actionTye == 2003:
                 tag_home_weeklydiet.tagHomeWeeklydiet(driver,picFlile)
-            elif actionTye == 2004:
+            while actionTye == 2004:
                 tag_home_medicine.tagHomeMedicine(driver,picFlile)
-            elif actionTye == 2005:
+            while actionTye == 2005:
                 tag_home_myattendance.tagHomeMyAttendance(driver,picFlile)
 
     except :
