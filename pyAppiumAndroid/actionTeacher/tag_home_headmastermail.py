@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from pubaction import *
+import ctypes
 
 def tagHomeHeadMasterMail(driver,picFlile,appType):
     if appType == 1:
@@ -28,14 +29,17 @@ def tagHomeHeadMasterMail(driver,picFlile,appType):
                 except:
                     logging.error(u"查看园长信箱详情失败")
 
+                intMailBack = driver.find_element_by_id("com.tuxing.app.teacher:id/mailbox_info_et")
+                timeAction()
+                intMailBack.send_keys("园长回复")
+
+
                 picName_details_back = "wjiayuan_headmashtermail_details_back.png"
                 backButton(driver,picFlile,picName_details_back,funcName+"详情_")
                 picName_list_back = "wjiayuan_headmashtermail_list_back.png"
                 backButton(driver,picFlile,picName_list_back,funcName+"列表_")
             except:
                 logging.error(u"进入园长信箱失败")
-
-
         else:
             try:
                 logging.info("进入家园返回值 = "+str(inTagHomeAtion))
