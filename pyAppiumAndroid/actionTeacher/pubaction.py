@@ -46,8 +46,8 @@ def checkTag(driver):
             return "home"
         except:
             try:
-               driver.find_element_by_id("com.tuxing.app.teacher:id/fx_tv_qzq")
-               return "descovery"
+                driver.find_element_by_id("com.tuxing.app.teacher:id/fx_tv_qzq")
+                return "descovery"
             except:
                 try:
                    driver.find_element_by_id("com.tuxing.app.teacher:id/my_help_icon")

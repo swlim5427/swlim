@@ -33,13 +33,16 @@ def tagHomeHeadMasterMail(driver,picFlile,appType):
                 timeAction()
                 intMailBack.send_keys("园长回复")
 
-
                 picName_details_back = "wjiayuan_headmashtermail_details_back.png"
                 backButton(driver,picFlile,picName_details_back,funcName+"详情_")
                 picName_list_back = "wjiayuan_headmashtermail_list_back.png"
                 backButton(driver,picFlile,picName_list_back,funcName+"列表_")
             except:
-                logging.error(u"进入园长信箱失败")
+                try:
+                    driver.find_element_by_name("我的考勤")
+                    logging.info(u"当前用户为普通教师，无园长信箱功能")
+                except:
+                    logging.error(u"进入园长信箱失败")
         else:
             try:
                 logging.info("进入家园返回值 = "+str(inTagHomeAtion))
