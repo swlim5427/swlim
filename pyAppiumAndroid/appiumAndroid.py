@@ -5,8 +5,8 @@ from actionTeacher.pubaction import *
 from actionTeacher import *
 
 appType = 1
-#actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
-actionTypeList = [2004000]
+actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
+#actionTypeList = [2004000]
 
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
@@ -74,9 +74,9 @@ for times in range(1,2):
                     logging.info(u"当前为免登陆状态")
 
                     for actionType in actionTypeList:
-                        while actionType == 1001:
+                        if actionType == 1001:
                             tag_message_wxy.weixueyuan(driver,picFlile)
-                        while actionType == 1002:
+                        elif actionType == 1002:
                             tag_message_cloudcardlist.messageCloudCardList(driver,picFlile)
                         while actionType == 2001:
                             tag_home_announcement.tagHomeAnnouncement(driver,picFlile)
