@@ -83,6 +83,12 @@ def tagHomeChlidAttendance(driver,picFlile):
                             try:
                                 driver.find_element_by_id("com.tuxing.app.teacher:id/btn_leave").click()
                                 time.sleep(2)
+                                persentNumChange = attendanceCount(driver)
+                                time.sleep(1)
+                                absenceNumChange = attendanceCount(driver)
+                                time.sleep(1)
+                                leaveNumChange = attendanceCount(driver)
+                                time.sleep(1)
 
 
                             except:
