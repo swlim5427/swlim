@@ -78,18 +78,21 @@ for times in range(1,2):
                             tag_message_wxy.weixueyuan(driver,picFlile)
                         elif actionType == 1002:
                             tag_message_cloudcardlist.messageCloudCardList(driver,picFlile)
-                        while actionType == 2001:
+                        elif actionType == 2001:
                             tag_home_announcement.tagHomeAnnouncement(driver,picFlile)
-                        while actionType == 2002:
+                        elif actionType == 2002:
                             tag_home_activity.tagHomeActivity(driver,picFlile)
-                        while actionType == 2003:
+                        elif actionType == 2003:
                             tag_home_weeklydiet.tagHomeWeeklydiet(driver,picFlile)
-                        while actionType == 2004:
+                        elif actionType == 2004:
                             tag_home_medicine.tagHomeMedicine(driver,picFlile,appType)
-                        while actionType == 2005:
+                        elif actionType == 2005:
                             tag_home_myattendance.tagHomeMyAttendance(driver,picFlile)
-                        while actionType == 2006:
+                        elif actionType == 2006:
                             tag_home_headmastermail.tagHeadMasterMail(driver,picFlile,appType)
+                        elif actionType == 2007:
+                            tag_home_childattendance
+
                 except:
                     print traceback.print_exc()
                     logging.error(u"登录失败")
@@ -106,3 +109,12 @@ for times in range(1,2):
     driver.quit()
     time.sleep(5)
 
+# 1001：消息-微学园，tag_message_wxy；
+# 1002：消息-云卫士刷卡，tag_message_cloudcardlist
+# 1003：
+# 2001：家园-公告，tag_home_announcenment
+# 2002：家园-活动，tag_home_activity
+# 2003：家园-食谱，tag_home_weklydiet
+# 2004：家园-喂药，tag_home_medicine
+# 2005：家园-我的考勤，tag_home_myattendance
+# 2006：家园-园长信箱，tag_home_headmastermail
