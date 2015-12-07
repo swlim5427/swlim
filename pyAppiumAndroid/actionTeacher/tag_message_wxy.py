@@ -78,6 +78,6 @@ def weixueyuan(driver,picFlile):
             logging.error(u"微学园列表进入失败")
     else:
         try:
-            logging.info("进入消息返回值 = "+str(inTagHomeAtion))
+            logging.info("进入消息返回值 = "+str(inTagMessageAtion))
         except:
             print traceback.print_exc()

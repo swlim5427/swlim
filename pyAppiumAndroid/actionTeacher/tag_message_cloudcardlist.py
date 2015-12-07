@@ -45,6 +45,6 @@ def messageCloudCardList(driver,picFlile):
             logging.error(u"打开云卫士刷卡记录失败")
     else:
         try:
-            logging.info("进入消息返回值 = "+str(inTagHomeAtion))
+            logging.info("进入消息返回值 = "+str(inTagMessageAtion))
         except:
             print traceback.print_exc()
