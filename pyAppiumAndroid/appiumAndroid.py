@@ -57,14 +57,14 @@ for times in range(1,2):
             time.sleep(2)
             try:
                 wxyLoin = driver.find_element_by_name("登 录")
-                screenshot(driver,picFlile+"weixueyuan_login.png")
+                screenshot(driver,picFlile+u"登录.png")
                 wxyLoin_userName = driver.find_element_by_id("com.tuxing.app.teacher:id/et_username")
                 wxyLoin_userName.send_keys("14100000001")
                 time.sleep(1)
-                screenshot(driver,picFlile+"weixueyuan_login_username.png")
+                screenshot(driver,picFlile+u"登录_用户名.png")
                 driver.find_element_by_id("com.tuxing.app.teacher:id/et_password").send_keys("111111")
                 time.sleep(1)
-                screenshot(driver,picFlile+"weixueyuan_login_password.png")
+                screenshot(driver,picFlile+u"登录_密码.png")
                 wxyLoin.click()
                 logging.info(u"登录成功")
                 time.sleep(1)
@@ -117,3 +117,4 @@ for times in range(1,2):
 # 2004：家园-喂药，tag_home_medicine
 # 2005：家园-我的考勤，tag_home_myattendance
 # 2006：家园-园长信箱，tag_home_headmastermail
+# 2007: 家园-幼儿考勤，tag_home_chlidattendance

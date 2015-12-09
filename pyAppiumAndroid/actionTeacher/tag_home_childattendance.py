@@ -58,15 +58,15 @@ def tagHomeChlidAttendance(driver,picFlile):
                             absenceList[0].click()
                             time.sleep(1)
                             screenshot(driver,picFlile+u"幼儿考勤_取消选中幼儿1.png")
-                            logging.info(u"")
+
                             for i in range(len(selectClild)):
                                 absenceList[i+i].click()
                                 time.sleep(1)
-                            screenshot(driver,picFlile+u"幼儿考勤_批量选中幼儿数量"+len(selectClild)+".png")
+                            screenshot(driver,picFlile+u"幼儿考勤_批量选中幼儿数量"+str(len(selectClild))+".png")
                             for i in range(len(selectClild)):
                                 absenceList[i+i].click()
                                 time.sleep(1)
-                            screenshot(driver,picFlile+u"幼儿考勤_批量取消选中幼儿数量"+len(selectClild)+".png")
+                            screenshot(driver,picFlile+u"幼儿考勤_批量取消选中幼儿数量"+str(len(selectClild))+".png")
                             time.sleep(1)
                             logging.info(u"幼儿考勤_选中/取消选中成功")
                             try:
@@ -146,6 +146,10 @@ def tagHomeChlidAttendance(driver,picFlile):
                 logging.error(u"幼儿考勤_已到-未到-请假标签切换成功")
                 print traceback.print_exc()
                 print e
+
+
+
+
 
             picName_details_back = u"微家园_幼儿考勤返回.png"
             backButton(driver,picFlile,picName_details_back,funcName)
