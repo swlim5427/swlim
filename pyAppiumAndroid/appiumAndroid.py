@@ -5,8 +5,8 @@ from actionTeacher.pubaction import *
 from actionTeacher import *
 
 appType = 1
-actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
-#actionTypeList = [2004000]
+#actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
+actionTypeList = [2007]
 
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
@@ -91,8 +91,7 @@ for times in range(1,2):
                         elif actionType == 2006:
                             tag_home_headmastermail.tagHeadMasterMail(driver,picFlile,appType)
                         elif actionType == 2007:
-                            tag_home_childattendance
-
+                            tag_home_childattendance.tagHomeChlidAttendance(driver,picFlile)
                 except:
                     print traceback.print_exc()
                     logging.error(u"登录失败")

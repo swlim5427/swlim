@@ -54,7 +54,7 @@ fetchAgreementRequest = wjy_pb2.FetchAgreementRequest()
 ##########Checkin
 messageCheckin = wjy_pb2.Checkin()
 messageCheckin.id = long("12313131321")
-messageCheckin.cardCode = str("10000101")
+messageCheckin.cardCode = str("10733045")
 messageCheckin.attach.fileurl= messageAttach.fileurl
 messageCheckin.attach.attachType = messageAttach.attachType
 messageCheckin.userId = long("2290876")
@@ -84,7 +84,6 @@ mainMessage.url="/checkin"
 #mainMessage.url="/fetch_postgroup"
 mainMessage.body = bodyMessageString
 #print(mainMessage)
-#mainPostMessage = mainMessage.SerializeToString()
 mainPostMessage = mainMessage.SerializeToString()
 
 postMessage = s.post(url,data=mainPostMessage)

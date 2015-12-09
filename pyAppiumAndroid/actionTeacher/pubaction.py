@@ -2,6 +2,7 @@
 import time
 import logging
 import datetime
+import re
 
 import traceback
 
@@ -80,3 +81,6 @@ def inTagHome(driver,picFlile,picName,funcName):
     except:
         logging.error(funcName+"进入家园选项卡失败")
         return 0
+def getNumber(str):
+    mode = re.compile(r'\d+')
+    return mode.findall(str)[0]
