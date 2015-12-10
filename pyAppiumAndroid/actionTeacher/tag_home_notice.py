@@ -7,7 +7,7 @@ def tagHomeNotice(driver,picFlile):
     if checkTag(driver) == "home":
         inTagHomeAtion = 1
     else:
-        picName_in ="home_main_notice.png"
+        picName_in =u"家园_主页_通知.png"
         inTagHomeAtion = inTagMessage(driver,picFlile,picName_in,funcName)
 
     if inTagHomeAtion == 1:

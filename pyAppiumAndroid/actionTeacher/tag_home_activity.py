@@ -6,14 +6,14 @@ def tagHomeActivity(driver,picFlile):
     if checkTag(driver) == "home":
         inTagHomeAtion = 1
     else:
-        picName_in ="jiayuan_main_activity.png"
+        picName_in =u"家园_主页_活动.png"
         inTagHomeAtion = inTagHome(driver,picFlile,picName_in,funcName)
 
     if inTagHomeAtion == 1:
         try:
             driver.find_element_by_name('活动').click()
             time.sleep(2)
-            path = picFlile+"wjiayuan_activity_list.png"
+            path = picFlile+u"家园_活动列表.png"
             screenshot(driver,path)
             logging.info(u"进入家园-活动成功")
             time.sleep(1)
@@ -22,17 +22,17 @@ def tagHomeActivity(driver,picFlile):
                 homeActivityList = driver.find_elements_by_class_name("android.widget.LinearLayout")
                 homeActivityList[5].click()
                 time.sleep(2)
-                path = picFlile+"wjiayuan_activity_details.png"
+                path = picFlile+u"家园_活动详情.png"
                 screenshot(driver,path)
                 time.sleep(1)
                 logging.info(u"进入家园-活动详情成功")
             except:
                 logging.info(u"进入家园-活动详情失败")
 
-            picName_details_back = "wjiayuan_activity_details_back.png"
+            picName_details_back = u"家园_活动详情_返回.png"
             backButton(driver,picFlile,picName_details_back,funcName+"详情_")
 
-            picName_list_back = "wjiayuan_activity_list_back.png"
+            picName_list_back = u"家园_活动列表_返回.png"
             backButton(driver,picFlile,picName_list_back,funcName+"列表_")
         except:
             logging.info(u"进入家园-活动失败")

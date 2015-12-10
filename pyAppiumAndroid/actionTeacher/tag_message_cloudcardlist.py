@@ -7,14 +7,14 @@ def messageCloudCardList(driver,picFlile):
     if checkTag(driver) == "message":
         inTagMessageAtion = 1
     else:
-        picName_in ="message_main_yws.png"
+        picName_in =u"消息_云卫士刷卡.png"
         inTagMessageAtion = inTagMessage(driver,picFlile,picName_in,funcName)
 
     if inTagMessageAtion == 1:
         try:
             driver.find_element_by_name('云卫士刷卡').click()
             time.sleep(1)
-            path = picFlile+"weixueyuan_ywslist.png"
+            path = picFlile+u"消息_云卫士刷卡列表.png"
             screenshot(driver,path)
             logging.info(u"进入云卫士刷卡列表")
             time.sleep(1)
@@ -23,7 +23,7 @@ def messageCloudCardList(driver,picFlile):
                 checkInList = driver.find_elements_by_id("com.tuxing.app.teacher:id/home_current_card_head")
                 checkInListPic = driver.find_elements_by_class_name("android.widget.ImageView")
                 checkInListPic[1].click()
-                path = picFlile+"weixueyuan_ywslist_pic.png"
+                path = picFlile+u"消息_云卫士刷卡列表_图片.png"
                 screenshot(driver,path)
                 logging.info(u"查看刷卡照片成功")
                 time.sleep(2)
@@ -31,14 +31,14 @@ def messageCloudCardList(driver,picFlile):
                 logging.error(u"查看刷卡照片失败")
             try:
                 driver.find_element_by_id("com.tuxing.app.teacher:id/wivPhoto").click()
-                path = picFlile+"weixueyuan_ywslist_pic_back.png"
+                path = picFlile+u"消息_云卫士刷卡列表_图片返回.png"
                 screenshot(driver,path)
                 logging.info(u"刷卡照片返回成功")
                 time.sleep(2)
             except:
                 logging.error(u"刷卡照片返回失败")
 
-            picName_list_back = "weixueyuan_ywslist_list_back.png"
+            picName_list_back = u"消息_云卫士刷卡列表返回.png"
             backButton(driver,picFlile,picName_list_back,funcName+"列表_")
 
         except:

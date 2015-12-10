@@ -7,14 +7,14 @@ def tagHomeMyAttendance(driver,picFlile):
     if checkTag(driver) == "home":
         inTagHomeAtion = 1
     else:
-        picName_in ="home_main_myAttendance.png"
+        picName_in =u"家园_主页_我的考勤.png"
         inTagHomeAtion = inTagMessage(driver,picFlile,picName_in,funcName)
 
     if inTagHomeAtion == 1:
         try:
             driver.find_element_by_name('我的考勤').click()
             time.sleep(1)
-            path = picFlile+"home_myAttendance_list.png"
+            path = picFlile+u"家园_我的考勤列表.png"
             screenshot(driver,path)
             logging.info(u"进入我的考勤刷卡列表")
             time.sleep(1)
@@ -23,7 +23,7 @@ def tagHomeMyAttendance(driver,picFlile):
                 checkInList = driver.find_elements_by_id("com.tuxing.app.teacher:id/home_current_card_head")
                 checkInListPic = driver.find_elements_by_class_name("android.widget.ImageView")
                 checkInListPic[1].click()
-                path = picFlile+"home_myAttendance_pic.png"
+                path = picFlile+u"家园_我的考勤列表_图片.png"
                 screenshot(driver,path)
                 logging.info(u"我的考勤-查看刷卡照片成功")
                 time.sleep(2)
@@ -31,14 +31,14 @@ def tagHomeMyAttendance(driver,picFlile):
                 logging.error(u"我的考勤-查看刷卡照片失败")
             try:
                 driver.find_element_by_id("com.tuxing.app.teacher:id/wivPhoto").click()
-                path = picFlile+"home_myAttendance_pic_back.png"
+                path = picFlile+u"家园_我的考勤列表_图片_返回.png"
                 screenshot(driver,path)
                 logging.info(u"我的考勤-刷卡照片返回成功")
                 time.sleep(2)
             except:
                 logging.error(u"我的考勤-刷卡照片返回失败")
 
-            picName_list_back = "home_myAttendance_list_back.png"
+            picName_list_back = u"家园_我的考勤列表_返回.png"
             backButton(driver,picFlile,picName_list_back,funcName+"列表_")
 
         except:
