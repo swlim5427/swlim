@@ -147,9 +147,85 @@ def tagHomeChlidAttendance(driver,picFlile):
                 print traceback.print_exc()
                 print e
 
+            try:
+                driver.find_element_by_id("com.tuxing.app.teacher:id/left").click()
+                time.sleep(1)
+                screenshot(driver,picFlile+u"幼儿考勤_左翻页.png")
+                logging.info(u"幼儿考勤-左翻页成功")
+                time.sleep(1)
 
+                try:
+                    driver.find_element_by_id("com.tuxing.app.teacher:id/right").click()
+                    time.sleep(1)
+                    screenshot(driver,picFlile+u"幼儿考勤_右翻页.png")
+                    logging.info(u"幼儿考勤-右翻页成功")
+                    time.sleep(1)
+                except:
+                    logging.error(u"幼儿考勤-右翻页失败")
+            except:
+                logging.error(u"幼儿考勤-翻页失败")
 
+            try:
+                classListButton = driver.find_element_by_id("com.tuxing.app.teacher:id/tv_title")
+                classListButton.click()
+                time.sleep(1)
+                try:
+                    classList = driver.find_elements_by_id("com.tuxing.app.teacher:id/title_tv")
+                    if len(classList) > 0:
+                        screenshot(driver,picFlile+u"幼儿考勤_班级列表.png")
+                        logging.info(u"幼儿考勤-打开班级列表成功")
+                        try:
+                            classList[1].click()
+                            time.sleep(1)
+                            screenshot(driver,picFlile+u"幼儿考勤_班级列表_选择班级"+str(classList[1].text)+".png")
+                            logging.info(u"幼儿考勤-班级列表-选择班级成功")
+                        except:
+                            logging.info(u"幼儿考勤_班级列表_选择班级失败")
+                    else:
+                        logging.info(u"此教师名下只有一个班级")
 
+                except Exception as e:
+                    logging.info(u"此教师名下只有一个班级")
+                    print traceback.print_exc()
+                    print e
+            except:
+                logging.error(u"幼儿考勤-打开班级列表失败")
+
+            try:
+                dateList = driver.find_elements_by_class_name("android.widget.NumberPicker")
+                dateListYear = dateList[0].find_elements_by_class_name("android.widget.Button")
+                dateListMonth = dateList[1].find_elements_by_class_name("android.widget.Button")
+                dateListDate = dateList[2].find_elements_by_class_name("android.widget.Button")
+
+                dateListYear[0].click()
+                time.sleep(1)
+                screenshot(driver,picFlile+u"幼儿考勤_选择上一年.png")
+                logging.info(u"选择上一年")
+                dateListYear[1].click()
+                time.sleep(1)
+                screenshot(driver,picFlile+u"幼儿考勤_选择下一年.png")
+                logging.info(u"选择下一年")
+
+                dateListMonth[0].click()
+                time.sleep(1)
+                screenshot(driver,picFlile+u"幼儿考勤_选择上一月.png")
+                logging.info(u"选择上一年")
+                dateListMonth[1].click()
+                time.sleep(1)
+                screenshot(driver,picFlile+u"幼儿考勤_选择下一月.png")
+                logging.info(u"选择下一年")
+
+                dateListDate[0].click()
+                time.sleep(1)
+                screenshot(driver,picFlile+u"幼儿考勤_选择上一日.png")
+                logging.info(u"选择上一年")
+                dateListDate[1].click()
+                time.sleep(1)
+                screenshot(driver,picFlile+u"幼儿考勤_选择下一日.png")
+                logging.info(u"选择下一年")
+
+            except:
+                logging.error(u"幼儿考勤-修改日期失败")
 
             picName_details_back = u"微家园_幼儿考勤返回.png"
             backButton(driver,picFlile,picName_details_back,funcName)
