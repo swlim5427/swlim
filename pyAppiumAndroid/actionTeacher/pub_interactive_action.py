@@ -51,6 +51,11 @@ class pubInteractiveAction:
             if appType == "1":
                 driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub',desired_caps)
                 try:
+                    picName_in ="jiayuan_main_childattendance_leavelist.png"
+                    funcName = "Ó×¶ù¿¼ÇÚ_²é¿´Ó×¶ùÇë¼ÙÁÐ±í"
+                    inTagHomeAtion = inTagHome(driver,picFlile,picName_in,funcName)
+
+
                     driver.find_element_by_name("Ó×¶ùÇë¼Ù").click()
                     time.sleep(1)
                     screenshot(driver,picFlile+u"Ó×¶ù¿¼ÇÚ_Ó×¶ùÇë¼Ù.png")
