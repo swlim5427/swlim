@@ -6,50 +6,39 @@ from actionTeacher import *
 
 appType = 1
 #actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
-actionTypeList = [2007]
-
-desired_caps = {}
-desired_caps['platformName'] = 'Android'
-desired_caps['platformVersion'] = '4.4.2'
-desired_caps['deviceName'] = 'Xiaomi 2014501'
-
-if appType == 1:
-    desired_caps['appPackage'] = 'com.tuxing.app.teacher'
-elif appType == 2:
-    desired_caps['appPackage'] = 'com.tuxing.app.home'
-desired_caps['appActivity'] = 'com.tuxing.app.SplashActivity'
-
-desired_caps['unicodeKeyboard'] = True
-desired_caps['resetKeyboard'] = True
-#desired_caps['automationName']='Selendroid'
-
-if appType == 1:
-    resultPath = r"D:/android_result_pic/teacher/"
-elif appType == 2:
-    resultPath = r"D:/android_result_pic/home/"
+actionTypeList = [2000007]
 
 for times in range(1,2):
-    checkLogPath = os.path.isdir(resultPath)
-    if not checkLogPath:
-        os.makedirs(resultPath)
-        logPath = resultPath
-    else:
-        logPath = resultPath
-    checkPicPath = os.path.isdir(resultPath+str(times)+"/")
-    if not checkPicPath:
-        os.makedirs(resultPath+str(times)+"/")
-        picFlile = (resultPath+str(times)+"/")
-    else:
-        picFlile = (resultPath+str(times)+"/")
 
-    LOG_FILENAME = logPath+"testLog.log"
-    logging.basicConfig(level=logging.INFO,
-                        format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
-                        datefmt='%a, %d %b %Y %H:%M:%S',
-                        filename=LOG_FILENAME,
-                        filemode='w')
+    message = {"appType":appType,"runningTimes":times}
+
     try:
-        driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub',desired_caps)
+        requestMessage = pub_interactive_action.runAppType(message)
+#        print requestMessage
+        driver = requestMessage["driver"]
+        picFlile = requestMessage["picFlile"]
+
+        def actionType():
+            for actionType in actionTypeList:
+                if actionType == 1001:
+                    tag_message_wxy.weixueyuan(driver,picFlile)
+                elif actionType == 1002:
+                    tag_message_cloudcardlist.messageCloudCardList(driver,picFlile)
+                elif actionType == 2001:
+                    tag_home_announcement.tagHomeAnnouncement(driver,picFlile)
+                elif actionType == 2002:
+                    tag_home_activity.tagHomeActivity(driver,picFlile)
+                elif actionType == 2003:
+                    tag_home_weeklydiet.tagHomeWeeklydiet(driver,picFlile)
+                elif actionType == 2004:
+                    tag_home_medicine.tagHomeMedicine(driver,picFlile,appType)
+                elif actionType == 2005:
+                    tag_home_myattendance.tagHomeMyAttendance(driver,picFlile)
+                elif actionType == 2006:
+                    tag_home_headmastermail.tagHeadMasterMail(driver,picFlile,appType)
+                elif actionType == 2007:
+                    tag_home_childattendance.tagHomeChlidAttendance(driver,picFlile)
+
         time.sleep(5)
         screenshot(driver,picFlile+"login_main_message.png")
         if appType == 1:
@@ -68,30 +57,20 @@ for times in range(1,2):
                 wxyLoin.click()
                 logging.info(u"登录成功")
                 time.sleep(1)
+                actionType()
             except:
                 try:
                     driver.find_element_by_name('微学园')
                     logging.info(u"当前为免登陆状态")
-
-                    for actionType in actionTypeList:
-                        if actionType == 1001:
-                            tag_message_wxy.weixueyuan(driver,picFlile)
-                        elif actionType == 1002:
-                            tag_message_cloudcardlist.messageCloudCardList(driver,picFlile)
-                        elif actionType == 2001:
-                            tag_home_announcement.tagHomeAnnouncement(driver,picFlile)
-                        elif actionType == 2002:
-                            tag_home_activity.tagHomeActivity(driver,picFlile)
-                        elif actionType == 2003:
-                            tag_home_weeklydiet.tagHomeWeeklydiet(driver,picFlile)
-                        elif actionType == 2004:
-                            tag_home_medicine.tagHomeMedicine(driver,picFlile,appType)
-                        elif actionType == 2005:
-                            tag_home_myattendance.tagHomeMyAttendance(driver,picFlile)
-                        elif actionType == 2006:
-                            tag_home_headmastermail.tagHeadMasterMail(driver,picFlile,appType)
-                        elif actionType == 2007:
-                            tag_home_childattendance.tagHomeChlidAttendance(driver,picFlile)
+                    time.sleep(2)
+                    '''
+                    appType2 = 2
+                    message2 = {"appType":appType2,"runningTimes":times}
+                    homeDriver = pub_interactive_action.runAppType(message2)["driver"]
+                    time.sleep(5)
+                    homeDriver.quit()
+                    '''
+                    actionType()
                 except:
                     print traceback.print_exc()
                     logging.error(u"登录失败")
@@ -105,8 +84,12 @@ for times in range(1,2):
         elif appType == 2:
             logging.error(u"打开家长版失败")
 
-    driver.quit()
+    try:
+        driver.quit()
+    except Exception as e:
+        print "driver quit is :"+ str(e)
     time.sleep(5)
+
 
 # 1001：消息-微学园，tag_message_wxy；
 # 1002：消息-云卫士刷卡，tag_message_cloudcardlist

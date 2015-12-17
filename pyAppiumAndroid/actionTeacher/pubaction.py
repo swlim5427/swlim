@@ -84,3 +84,5 @@ def inTagHome(driver,picFlile,picName,funcName):
 def getNumber(str):
     mode = re.compile(r'\d+')
     return mode.findall(str)[0]
+
+

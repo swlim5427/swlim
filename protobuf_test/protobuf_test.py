@@ -8,7 +8,9 @@ import datetime
 import threading
 import json
 
-url = "http://123.57.43.111:8080/http_invoke"
+#url = "http://123.57.43.111:8080/http_invoke"
+url = "http://123.57.150.40:8080/http_invoke"
+
 s = requests.session()
 headers ={"Content-type": "application/x-protobuf;charset=utf-8","Connection":"Keep-Alive"}
 s.headers.update(headers)
@@ -54,10 +56,10 @@ fetchAgreementRequest = wjy_pb2.FetchAgreementRequest()
 ##########Checkin
 messageCheckin = wjy_pb2.Checkin()
 messageCheckin.id = long("12313131321")
-messageCheckin.cardCode = str("10733045")
+messageCheckin.cardCode = str("10000004")
 messageCheckin.attach.fileurl= messageAttach.fileurl
 messageCheckin.attach.attachType = messageAttach.attachType
-messageCheckin.userId = long("2290876")
+messageCheckin.userId = long("2290987")
 messageCheckin.checkinTime = long(nowTime)
 messageCheckin.gardenId = long("1026510")
 
