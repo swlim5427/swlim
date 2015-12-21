@@ -56,10 +56,12 @@ fetchAgreementRequest = wjy_pb2.FetchAgreementRequest()
 ##########Checkin
 messageCheckin = wjy_pb2.Checkin()
 messageCheckin.id = long("12313131321")
-messageCheckin.cardCode = str("10000004")
+messageCheckin.cardCode = str("01000011")
+#10000004
 messageCheckin.attach.fileurl= messageAttach.fileurl
 messageCheckin.attach.attachType = messageAttach.attachType
-messageCheckin.userId = long("2290987")
+messageCheckin.userId = long("2291284")
+#2290987
 messageCheckin.checkinTime = long(nowTime)
 messageCheckin.gardenId = long("1026510")
 

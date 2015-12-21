@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-import os
-from appium import webdriver
+
 from actionTeacher.pubaction import *
 from actionTeacher import *
 
