@@ -48,7 +48,7 @@ def checkTag(driver):
         except:
             try:
                 driver.find_element_by_id("com.tuxing.app.teacher:id/fx_tv_qzq")
-                return "descovery"
+                return "discovery"
             except:
                 try:
                    driver.find_element_by_id("com.tuxing.app.teacher:id/my_help_icon")
@@ -80,6 +80,18 @@ def inTagHome(driver,picFlile,picName,funcName):
         return 1
     except:
         logging.error(funcName+"进入家园选项卡失败")
+        return 0
+def inTagDiscovery(driver,picFlile,picName,funcName):
+    try:
+        wxy_jiayuan = driver.find_element_by_name("发现")
+        wxy_jiayuan.click()
+        time.sleep(2)
+        screenshot(driver,picFlile+picName)
+        time.sleep(2)
+        logging.info(funcName+"进入发现选项卡成功")
+        return 1
+    except:
+        logging.error(funcName+"进入发现选项卡失败")
         return 0
 def getNumber(str):
     mode = re.compile(r'\d+')

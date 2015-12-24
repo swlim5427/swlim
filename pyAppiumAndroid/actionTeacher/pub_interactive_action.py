@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from appium import webdriver
 import os
-import time
 from pubaction import *
 
 def runAppType(message):

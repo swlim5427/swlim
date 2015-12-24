@@ -60,7 +60,7 @@ messageCheckin.cardCode = str("01000011")
 #10000004
 messageCheckin.attach.fileurl= messageAttach.fileurl
 messageCheckin.attach.attachType = messageAttach.attachType
-messageCheckin.userId = long("2291284")
+messageCheckin.userId = long("2291366")
 #2290987
 messageCheckin.checkinTime = long(nowTime)
 messageCheckin.gardenId = long("1026510")

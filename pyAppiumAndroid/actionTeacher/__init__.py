@@ -8,6 +8,7 @@ __all__ = ["pub_interactive_action",
            "tag_home_myattendance",
            "tag_home_notice",
            "tag_home_headmastermail",
-           "tag_home_childattendance"]
+           "tag_home_childattendance",
+           "tag_discovery_qzq"]
 def actionType():
     return __all__

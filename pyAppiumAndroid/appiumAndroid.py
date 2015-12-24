@@ -13,7 +13,6 @@ for times in range(1,2):
 
     try:
         requestMessage = pub_interactive_action.runAppType(message)
-#        print requestMessage
         driver = requestMessage["driver"]
         picFlile = requestMessage["picFlile"]
 
@@ -37,6 +36,7 @@ for times in range(1,2):
                     tag_home_headmastermail.tagHeadMasterMail(driver,picFlile,appType)
                 elif actionType == 2007:
                     tag_home_childattendance.tagHomeChlidAttendance(driver,picFlile)
+
 
         time.sleep(5)
         screenshot(driver,picFlile+"login_main_message.png")
