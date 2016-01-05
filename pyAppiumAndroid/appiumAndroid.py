@@ -36,6 +36,7 @@ for times in range(1,2):
                     tag_home_medicine.tagHomeMedicine(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 2009:
                     tag_home_headmastermail.tagHeadMasterMail(actionTypeMessageCode(actionType,driver,picFlile,appType))
+                print "a"
 
 
 
