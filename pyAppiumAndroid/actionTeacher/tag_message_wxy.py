@@ -2,7 +2,10 @@
 
 from pubaction import *
 
-def weixueyuan(driver,picFlile):
+def weixueyuan(actionTypeMessage):
+    driver = actionTypeMessage["driver"]
+    picFlile = actionTypeMessage["picFlile"]
+
     funcName = "微学园_"
     if checkTag(driver) == "message":
         inTagMessageAtion = 1

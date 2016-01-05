@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from pubaction import *
 
-def messageCloudCardList(driver,picFlile):
-
+def messageCloudCardList(actionTypeMessage):
+    driver = actionTypeMessage["driver"]
+    picFlile = actionTypeMessage["picFlile"]
     funcName = "云卫士刷卡_"
     if checkTag(driver) == "message":
         inTagMessageAtion = 1
