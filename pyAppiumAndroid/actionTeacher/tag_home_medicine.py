@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 from pubaction import *
 
-def tagHomeMedicine(driver,picFlile,appType):
+def tagHomeMedicine(actionTypeMessage):
+    driver = actionTypeMessage["driver"]
+    picFlile = actionTypeMessage["picFlile"]
+    homeIconType = int(actionTypeMessage["homeIconType"])
+    appType = actionTypeMessage["appType"]
     funcName = "喂药_"
     if checkTag(driver) == "home":
         inTagHomeAtion = 1
@@ -11,7 +15,7 @@ def tagHomeMedicine(driver,picFlile,appType):
 
     if inTagHomeAtion == 1:
         try:
-            driver.find_element_by_name("喂药").click()
+            driver.find_elements_by_id("com.tuxing.app.teacher:id/home_item_icon")[homeIconType].click()
             time.sleep(2)
             screenshot(driver,picFlile+u"家园_喂药列表.png")
             logging.info(u"进入喂药成功")

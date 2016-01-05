@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 from pubaction import *
 
-def tagHomeMyAttendance(driver,picFlile):
-
+def tagHomeMyAttendance(actionTypeMessage):
+    driver = actionTypeMessage["driver"]
+    picFlile = actionTypeMessage["picFlile"]
+    homeIconType = int(actionTypeMessage["homeIconType"])
+    appType = actionTypeMessage["appType"]
     funcName = "我的考勤_"
     if checkTag(driver) == "home":
         inTagHomeAtion = 1
@@ -12,7 +15,7 @@ def tagHomeMyAttendance(driver,picFlile):
 
     if inTagHomeAtion == 1:
         try:
-            driver.find_element_by_name('我的考勤').click()
+            driver.find_elements_by_id("com.tuxing.app.teacher:id/home_item_icon")[homeIconType].click()
             time.sleep(1)
             path = picFlile+u"家园_我的考勤列表.png"
             screenshot(driver,path)

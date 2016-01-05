@@ -2,7 +2,11 @@
 from pubaction import *
 import ctypes
 
-def tagHomeHeadMasterMail(driver,picFlile,appType):
+def tagHomeHeadMasterMail(actionTypeMessage):
+    driver = actionTypeMessage["driver"]
+    picFlile = actionTypeMessage["picFlile"]
+    homeIconType = int(actionTypeMessage["homeIconType"])
+    appType = actionTypeMessage["appType"]
     if appType == 1:
         funcName = "园长信箱_"
         if checkTag(driver) == "home":
@@ -13,7 +17,7 @@ def tagHomeHeadMasterMail(driver,picFlile,appType):
 
         if inTagHomeAtion == 1:
             try:
-                driver.find_element_by_name("园长信箱").click()
+                driver.find_elements_by_id("com.tuxing.app.teacher:id/home_item_icon")[homeIconType].click()
                 time.sleep(2)
                 screenshot(driver,picFlile+u"家园_园长信箱_列表.png")
                 logging.info(u"进入园长信箱成功")

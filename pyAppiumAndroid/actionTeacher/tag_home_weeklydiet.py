@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 from pubaction import *
 
-def tagHomeWeeklydiet(driver,picFlile):
+def tagHomeWeeklydiet(actionTypeMessage):
+    driver = actionTypeMessage["driver"]
+    picFlile = actionTypeMessage["picFlile"]
+    homeIconType = int(actionTypeMessage["homeIconType"])
+    appType = actionTypeMessage["appType"]
+
     funcName = "食谱_"
     if checkTag(driver) == "home":
         inTagHomeAtion = 1
@@ -11,7 +16,7 @@ def tagHomeWeeklydiet(driver,picFlile):
 
     if inTagHomeAtion == 1:
         try:
-            driver.find_element_by_name('食谱').click()
+            driver.find_elements_by_id("com.tuxing.app.teacher:id/home_item_icon")[homeIconType].click()
             time.sleep(2)
             path = picFlile+u"家园_食谱列表.png"
             screenshot(driver,path)

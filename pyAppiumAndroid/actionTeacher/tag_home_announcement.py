@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 from pubaction import *
 
-def tagHomeAnnouncement(driver,picFlile):
+def tagHomeAnnouncement(actionTypeMessage):
+    driver = actionTypeMessage["driver"]
+    picFlile = actionTypeMessage["picFlile"]
+    homeIconType = int(actionTypeMessage["homeIconType"])
+
     funcName = "公告_"
     if checkTag(driver) == "home":
         inTagHomeAtion = 1
@@ -11,7 +15,7 @@ def tagHomeAnnouncement(driver,picFlile):
 
     if inTagHomeAtion == 1:
         try:
-            driver.find_element_by_name("公告").click()
+            driver.find_elements_by_id("com.tuxing.app.teacher:id/home_item_icon")[homeIconType].click()
             time.sleep(2)
             screenshot(driver,picFlile+u"家园_公告列表.png")
             logging.info(u"进入公告成功")

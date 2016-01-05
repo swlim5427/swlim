@@ -4,8 +4,13 @@ from pubaction import *
 childNum = 1
 selectClild = []
 
-def tagHomeChlidAttendance(driver,picFlile):
+def tagHomeChlidAttendance(actionTypeMessage):
+    driver = actionTypeMessage["driver"]
+    picFlile = actionTypeMessage["picFlile"]
+    homeIconType = int(actionTypeMessage["homeIconType"])
+    appType = actionTypeMessage["appType"]
     funcName = "幼儿考勤_"
+
     if checkTag(driver) == "home":
         inTagHomeAtion = 1
     else:
@@ -14,7 +19,7 @@ def tagHomeChlidAttendance(driver,picFlile):
 
     if inTagHomeAtion == 1:
         try:
-            driver.find_element_by_name(u"幼儿考勤").click()
+            driver.find_elements_by_id("com.tuxing.app.teacher:id/home_item_icon")[homeIconType].click()
             time.sleep(2)
             screenshot(driver,picFlile+u"家园_进入幼儿考勤.png")
             logging.info(u"进入幼儿考勤成功")

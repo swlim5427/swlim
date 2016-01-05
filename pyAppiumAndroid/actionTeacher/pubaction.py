@@ -97,4 +97,22 @@ def getNumber(str):
     mode = re.compile(r'\d+')
     return mode.findall(str)[0]
 
-
+def actionTypeMessageCode(actionType,driver,picFlile,appType):
+    if actionType == 2001:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":0,"appType":appType}
+    elif actionType == 2002:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":1,"appType":appType}
+    elif actionType == 2003:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":2,"appType":appType}
+    elif actionType == 2004:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":3,"appType":appType}
+    elif actionType == 2005:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":4,"appType":appType}
+    elif actionType == 2006:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":6,"appType":appType}
+    elif actionType == 2007:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":7,"appType":appType}
+    elif actionType == 2008:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":8,"appType":appType}
+    elif actionType == 2009:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":9,"appType":appType}

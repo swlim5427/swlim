@@ -4,8 +4,8 @@ from actionTeacher.pubaction import *
 from actionTeacher import *
 
 appType = 1
-#actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
-actionTypeList = [2000007]
+actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
+#actionTypeList = [2000007]
 
 for times in range(1,2):
 
@@ -19,23 +19,24 @@ for times in range(1,2):
         def actionType():
             for actionType in actionTypeList:
                 if actionType == 1001:
-                    tag_message_wxy.weixueyuan(driver,picFlile)
+                    tag_message_wxy.weixueyuan(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 1002:
-                    tag_message_cloudcardlist.messageCloudCardList(driver,picFlile)
+                    tag_message_cloudcardlist.messageCloudCardList(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 2001:
-                    tag_home_announcement.tagHomeAnnouncement(driver,picFlile)
+                    tag_home_announcement.tagHomeAnnouncement(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 2002:
-                    tag_home_activity.tagHomeActivity(driver,picFlile)
+                    tag_home_activity.tagHomeActivity(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 2003:
-                    tag_home_weeklydiet.tagHomeWeeklydiet(driver,picFlile)
+                    tag_home_weeklydiet.tagHomeWeeklydiet(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 2004:
-                    tag_home_medicine.tagHomeMedicine(driver,picFlile,appType)
+                    tag_home_childattendance.tagHomeChlidAttendance(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 2005:
-                    tag_home_myattendance.tagHomeMyAttendance(driver,picFlile)
-                elif actionType == 2006:
-                    tag_home_headmastermail.tagHeadMasterMail(driver,picFlile,appType)
+                    tag_home_myattendance.tagHomeMyAttendance(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 2007:
-                    tag_home_childattendance.tagHomeChlidAttendance(driver,picFlile)
+                    tag_home_medicine.tagHomeMedicine(actionTypeMessageCode(actionType,driver,picFlile,appType))
+                elif actionType == 2009:
+                    tag_home_headmastermail.tagHeadMasterMail(actionTypeMessageCode(actionType,driver,picFlile,appType))
+
 
 
         time.sleep(5)
@@ -96,7 +97,11 @@ for times in range(1,2):
 # 2001：家园-公告，tag_home_announcenment
 # 2002：家园-活动，tag_home_activity
 # 2003：家园-食谱，tag_home_weklydiet
-# 2004：家园-喂药，tag_home_medicine
+# 2004：家园-幼儿考勤，tag_home_chlidattendance
 # 2005：家园-我的考勤，tag_home_myattendance
-# 2006：家园-园长信箱，tag_home_headmastermail
-# 2007: 家园-幼儿考勤，tag_home_chlidattendance
+# 2006：家园-通知，tag_home_notice
+# 2007：家园-喂药，tag_home_medicine
+# 2009: 家园-园长信箱，tag_home_headmastermail
+
+# actionTypeMessage = {"driver":driver,"picFlile":picFlile,"homeIconType":[0,1,2,3,4,5,6,7,8,9],"appType":[0,1]}
+# actionTypeMessage   0:公告，1：活动，2：食谱，3：幼儿考勤，4：我的考勤，5：语音播报,6:通知，7：喂药，8：通讯录，9：园长信箱
