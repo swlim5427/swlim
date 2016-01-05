@@ -4,8 +4,8 @@ from actionTeacher.pubaction import *
 from actionTeacher import *
 
 appType = 1
-actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
-#actionTypeList = [2000007]
+#actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
+actionTypeList = [2004]
 
 for times in range(1,2):
 
@@ -19,6 +19,7 @@ for times in range(1,2):
         def actionType():
             for actionType in actionTypeList:
                 if actionType == 1001:
+                    print actionTypeMessageCode(actionType,driver,picFlile,appType)
                     tag_message_wxy.weixueyuan(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 1002:
                     tag_message_cloudcardlist.messageCloudCardList(actionTypeMessageCode(actionType,driver,picFlile,appType))

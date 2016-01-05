@@ -175,14 +175,15 @@ def tagHomeChlidAttendance(actionTypeMessage):
                 classListButton.click()
                 time.sleep(1)
                 try:
-                    classList = driver.find_elements_by_id("com.tuxing.app.teacher:id/title_tv")
+                    classList = driver.find_elements_by_id("com.tuxing.app.teacher:id/content")
                     if len(classList) > 0:
                         screenshot(driver,picFlile+u"幼儿考勤_班级列表.png")
                         logging.info(u"幼儿考勤-打开班级列表成功")
                         try:
                             classList[1].click()
                             time.sleep(1)
-                            screenshot(driver,picFlile+u"幼儿考勤_班级列表_选择班级"+str(classList[1].text)+".png")
+                            screenshot(driver,picFlile+u"幼儿考勤_班级列表_选择班级"+
+                                       str(classList[1].find_element_by_id("com.tuxing.app.teacher:id/title_tv").text)+".png")
                             logging.info(u"幼儿考勤-班级列表-选择班级成功")
                         except:
                             logging.info(u"幼儿考勤_班级列表_选择班级失败")
