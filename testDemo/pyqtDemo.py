@@ -5,7 +5,7 @@ import datetime
 import StringIO
 import cStringIO
 
-
+'''
 def timeAction():
 
     inputYear = datetime.datetime.now().year
@@ -31,10 +31,8 @@ timeOutIO = timeInIO.getvalue()
 print timeAction()
 print timeOutIO
 timeInIO.close()
-
-
-
 '''
+
 app = QtGui.QApplication(sys.argv)
 
 widget = QtGui.QWidget()
@@ -42,4 +40,3 @@ widget.resize(250, 150)
 widget.setWindowTitle('swlim')
 widget.show()
 sys.exit(app.exec_())
-'''
