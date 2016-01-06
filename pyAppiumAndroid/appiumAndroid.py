@@ -48,7 +48,8 @@ for times in range(1,2):
                 wxyLoin = driver.find_element_by_name("登 录")
                 screenshot(driver,picFlile+u"登录.png")
                 wxyLoin_userName = driver.find_element_by_id("com.tuxing.app.teacher:id/et_username")
-                wxyLoin_userName.send_keys("14100000001")
+                wxyLoin_userName.send_keys("18800000001")#正式服
+                # wxyLoin_userName.send_keys("14100000001")#测试服
                 time.sleep(1)
                 screenshot(driver,picFlile+u"登录_用户名.png")
                 driver.find_element_by_id("com.tuxing.app.teacher:id/et_password").send_keys("111111")

@@ -179,12 +179,12 @@ def tagHomeChlidAttendance(actionTypeMessage):
                     if len(classList) > 0:
                         screenshot(driver,picFlile+u"幼儿考勤_班级列表.png")
                         logging.info(u"幼儿考勤-打开班级列表成功")
+                        selectClassName = classList[1].find_element_by_id("com.tuxing.app.teacher:id/title_tv").text
                         try:
                             classList[1].click()
                             time.sleep(1)
-                            screenshot(driver,picFlile+u"幼儿考勤_班级列表_选择班级"+
-                                       str(classList[1].find_element_by_id("com.tuxing.app.teacher:id/title_tv").text)+".png")
-                            logging.info(u"幼儿考勤-班级列表-选择班级成功")
+                            screenshot(driver,picFlile+u"幼儿考勤_班级列表_选择班级"+selectClassName+".png")
+                            logging.info(u"幼儿考勤-班级列表-选择班级成功("+selectClassName+")")
                         except:
                             logging.info(u"幼儿考勤_班级列表_选择班级失败")
                     else:
@@ -198,40 +198,76 @@ def tagHomeChlidAttendance(actionTypeMessage):
                 logging.error(u"幼儿考勤-打开班级列表失败")
 
             try:
-                dateList = driver.find_elements_by_class_name("android.widget.NumberPicker")
-                dateListYear = dateList[0].find_elements_by_class_name("android.widget.Button")
-                dateListMonth = dateList[1].find_elements_by_class_name("android.widget.Button")
-                dateListDate = dateList[2].find_elements_by_class_name("android.widget.Button")
+                driver.find_element_by_id("com.tuxing.app.teacher:id/tv_date").click()
+                time.sleep(1)
+                screenshot(driver,picFlile+u"幼儿考勤_打开日期列表.png")
+                logging.info(u"幼儿考勤-打开日期列表")
+                try:
+                    dateList = driver.find_elements_by_class_name("android.widget.NumberPicker")
+                    try:
+                        dateListYear = dateList[0].find_elements_by_class_name("android.widget.Button")
 
-                dateListYear[0].click()
-                time.sleep(1)
-                screenshot(driver,picFlile+u"幼儿考勤_选择上一年.png")
-                logging.info(u"选择上一年")
-                dateListYear[1].click()
-                time.sleep(1)
-                screenshot(driver,picFlile+u"幼儿考勤_选择下一年.png")
-                logging.info(u"选择下一年")
+                        dateListYear[0].click()
+                        time.sleep(1)
+                        screenshot(driver,picFlile+u"幼儿考勤_选择上一年.png")
+                        logging.info(u"选择上一年")
+                        dateListYear[1].click()
+                        time.sleep(1)
+                        screenshot(driver,picFlile+u"幼儿考勤_选择下一年.png")
+                        logging.info(u"选择下一年")
+                    except:
+                        logging.error(u"幼儿考勤-选择年失败")
+                    try:
+                        dateListMonth = dateList[1].find_elements_by_class_name("android.widget.Button")
+                        dateListMonth[0].click()
+                        time.sleep(1)
+                        screenshot(driver,picFlile+u"幼儿考勤_选择上一月.png")
+                        logging.info(u"选择上一月")
+                        dateListMonth[1].click()
+                        time.sleep(1)
+                        screenshot(driver,picFlile+u"幼儿考勤_选择下一月.png")
+                        logging.info(u"选择下一月")
+                    except:
+                        try:
+                            if dateList[1].find_elements_by_class_name("android.widget.Button").text == "1月":
+                                logging.info(u"幼儿考勤当前为新年的一月份")
+                                screenshot(driver,picFlile+u"幼儿考勤_新年的一月份.png")
+                        except:
+                            logging.error(u"幼儿考勤-选择月份失败")
 
-                dateListMonth[0].click()
-                time.sleep(1)
-                screenshot(driver,picFlile+u"幼儿考勤_选择上一月.png")
-                logging.info(u"选择上一年")
-                dateListMonth[1].click()
-                time.sleep(1)
-                screenshot(driver,picFlile+u"幼儿考勤_选择下一月.png")
-                logging.info(u"选择下一年")
+                    try:
+                        dateListDate = dateList[2].find_elements_by_class_name("android.widget.Button")
+                        dateListDate[0].click()
+                        time.sleep(1)
+                        screenshot(driver,picFlile+u"幼儿考勤_选择上一日.png")
+                        logging.info(u"选择上一日")
+                        dateListDate[1].click()
+                        time.sleep(1)
+                        screenshot(driver,picFlile+u"幼儿考勤_选择下一日.png")
+                        logging.info(u"选择下一日")
+                    except:
+                        try:
+                            if dateList[2].find_elements_by_class_name("android.widget.Button").text == "1日":
+                                logging.info(u"幼儿考勤当前为1日")
+                                screenshot(driver,picFlile+u"幼儿考勤_1日.png")
+                        except:
+                            logging.error(u"幼儿考勤-选择日失败")
+                    try:
+                        driver.find_element_by_id("com.tuxing.app.teacher:id/time_bt_ok").click()
+                        time.sleep(2)
+                    except IOError as e:
+                        print(e)
 
-                dateListDate[0].click()
-                time.sleep(1)
-                screenshot(driver,picFlile+u"幼儿考勤_选择上一日.png")
-                logging.info(u"选择上一年")
-                dateListDate[1].click()
-                time.sleep(1)
-                screenshot(driver,picFlile+u"幼儿考勤_选择下一日.png")
-                logging.info(u"选择下一年")
+                except:
+                    logging.error(u"幼儿考勤-修改日期失败")
+                    try:
+                        driver.find_element_by_id("com.tuxing.app.teacher:id/time_bt_ok").click()
+                        time.sleep(2)
+                    except IOError as e:
+                        print(e)
 
             except:
-                logging.error(u"幼儿考勤-修改日期失败")
+                logging.error(u"幼儿考勤-打开日期列表失败")
 
             picName_details_back = u"微家园_幼儿考勤返回.png"
             backButton(driver,picFlile,picName_details_back,funcName)
