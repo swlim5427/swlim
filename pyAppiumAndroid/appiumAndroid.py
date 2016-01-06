@@ -102,6 +102,7 @@ for times in range(1,2):
 # 2005：家园-我的考勤，tag_home_myattendance
 # 2006：家园-通知，tag_home_notice
 # 2007：家园-喂药，tag_home_medicine
+# 2008:
 # 2009: 家园-园长信箱，tag_home_headmastermail
 
 # actionTypeMessage = {"driver":driver,"picFlile":picFlile,"homeIconType":[0,1,2,3,4,5,6,7,8,9],"appType":[0,1]}
