@@ -98,7 +98,11 @@ def getNumber(str):
     return mode.findall(str)[0]
 
 def actionTypeMessageCode(actionType,driver,picFlile,appType):
-    if actionType == 2001:
+    if actionType == 1001:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":9,"appType":appType}
+    elif actionType == 1002:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":9,"appType":appType}
+    elif actionType == 2001:
         return {"driver":driver,"picFlile":picFlile,"homeIconType":0,"appType":appType}
     elif actionType == 2002:
         return {"driver":driver,"picFlile":picFlile,"homeIconType":1,"appType":appType}
@@ -116,7 +120,5 @@ def actionTypeMessageCode(actionType,driver,picFlile,appType):
         return {"driver":driver,"picFlile":picFlile,"homeIconType":8,"appType":appType}
     elif actionType == 2009:
         return {"driver":driver,"picFlile":picFlile,"homeIconType":9,"appType":appType}
-    elif actionType == 1001:
-        return {"driver":driver,"picFlile":picFlile,"homeIconType":9,"appType":appType}
-    elif actionType == 1002:
-        return {"driver":driver,"picFlile":picFlile,"homeIconType":9,"appType":appType}
+    elif actionType == 3001:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":0,"appType":appType}

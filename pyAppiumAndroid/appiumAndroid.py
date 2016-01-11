@@ -5,7 +5,7 @@ from actionTeacher import *
 
 appType = 1
 #actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
-actionTypeList = [2004]
+actionTypeList = [3001]
 
 for times in range(1,2):
 
@@ -35,8 +35,9 @@ for times in range(1,2):
                     tag_home_myattendance.tagHomeMyAttendance(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 2007:
                     tag_home_medicine.tagHomeMedicine(actionTypeMessageCode(actionType,driver,picFlile,appType))
-                elif actionType == 2009:
-                    tag_home_headmastermail.tagHeadMasterMail(actionTypeMessageCode(actionType,driver,picFlile,appType))
+                elif actionType == 3001:
+                    tag_discovery_qzq.tagDiscoveryQzq(actionTypeMessageCode(actionType,driver,picFlile,appType))
+
 
 
         time.sleep(5)
@@ -104,6 +105,7 @@ for times in range(1,2):
 # 2007：家园-喂药，tag_home_medicine
 # 2008:
 # 2009: 家园-园长信箱，tag_home_headmastermail
+# 3001: 发现-亲子圈，tag_discovery_qzq
 
 # actionTypeMessage = {"driver":driver,"picFlile":picFlile,"homeIconType":[0,1,2,3,4,5,6,7,8,9],"appType":[0,1]}
 # actionTypeMessage   0:公告，1：活动，2：食谱，3：幼儿考勤，4：我的考勤，5：语音播报,6:通知，7：喂药，8：通讯录，9：园长信箱
