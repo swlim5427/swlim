@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from pubaction import *
+from pub_interactive_action import *
 
 childNum = 1
 selectClild = []
@@ -265,12 +266,18 @@ def tagHomeChlidAttendance(actionTypeMessage):
                         time.sleep(2)
                     except IOError as e:
                         print(e)
-
             except:
                 logging.error(u"幼儿考勤-打开日期列表失败")
 
             picName_details_back = u"微家园_幼儿考勤返回.png"
             backButton(driver,picFlile,picName_details_back,funcName)
+
+            try:
+                message = {"interactiveType":1,"appType":1,"picFlile":picFlile,"leaveReason":"这是请假"}
+                interactive(message)
+            except:
+                logging.error(u"进入幼儿考勤-刷卡记录失败")
+
 
         except:
             logging.error(u"进入幼儿考勤失败")

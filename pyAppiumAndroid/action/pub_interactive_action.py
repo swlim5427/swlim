@@ -86,7 +86,11 @@ def interactive(message):
                                 leaveType[i].click()
                                 time.sleep(1)
                                 driver.find_element_by_name("待处理")
-                                driver.find_element_by_name(leaveReason)
+                                try:
+                                    driver.find_element_by_name(leaveReason)
+                                except:
+                                    logging.info(u"幼儿考勤_幼儿请假理由为空")
+                                    leaveReason = ""
                                 screenshot(driver,picFlile+u"幼儿考勤_幼儿请假内容详情.png")
                                 logging.info(u"幼儿考勤-进入幼儿请假内容详情成功")
                                 try:
