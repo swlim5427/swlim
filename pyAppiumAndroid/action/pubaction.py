@@ -122,3 +122,21 @@ def actionTypeMessageCode(actionType,driver,picFlile,appType):
         return {"driver":driver,"picFlile":picFlile,"homeIconType":9,"appType":appType}
     elif actionType == 3001:
         return {"driver":driver,"picFlile":picFlile,"homeIconType":0,"appType":appType}
+    elif actionType == 101001:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":0,"appType":appType}
+    elif actionType == 102001:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":0,"appType":appType}
+    elif actionType == 102002:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":1,"appType":appType}
+    elif actionType == 102003:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":2,"appType":appType}
+    elif actionType == 102004:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":3,"appType":appType}
+    elif actionType == 102005:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":4,"appType":appType}
+    elif actionType == 102006:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":5,"appType":appType}
+    elif actionType == 102007:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":6,"appType":appType}
+    elif actionType == 102008:
+        return {"driver":driver,"picFlile":picFlile,"homeIconType":7,"appType":appType}
