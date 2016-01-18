@@ -45,7 +45,7 @@ for times in range(1,2):
                 elif actionType == 102003:
                     tag_home_weeklydiet.tagHomeWeeklydiet(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 102004:
-                    tag_home_childattendance.tagHomeChlidAttendance(actionTypeMessageCode(actionType,driver,picFlile,appType))
+                    tag_home_mychildattendance.tatMyChildAttendance(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 102006:
                     tag_home_medicine.tagHomeMedicine(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 103001:
