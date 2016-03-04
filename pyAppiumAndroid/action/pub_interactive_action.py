@@ -63,11 +63,12 @@ def interactive(message):
     interactiveType = message["interactiveType"]
     appType = message["appType"]
     picFlile = message["picFlile"]
-    leaveReason = message["leaveReason"]
+ #   leaveReason = message["leaveReason"]
+#    print(leaveReason)
+    driver = message["driver"]
 
-    if interactiveType == "1":
-        if appType == "1":
-            driver = message["driver"]
+    if interactiveType == 1:
+        if appType == 1:
             try:
                 picName_in ="jiayuan_main_childattendance_leavelist.png"
                 funcName = "幼儿考勤_查看幼儿请假列表"
@@ -77,37 +78,43 @@ def interactive(message):
                 screenshot(driver,picFlile+u"幼儿考勤_幼儿请假.png")
                 logging.info(u"幼儿考勤-进入幼儿请假成功")
 
-                if inTagHomeAtion == "1":
+                if inTagHomeAtion == 0:
                     try:
                         leaveType = driver.find_elements_by_id("com.tuxing.app.teacher:id/leave_record_item_state")
-                        leavState = leaveType.text
+#                        leavState = leaveType.text
                         for i in range(0,len(leaveType)):
-                            if leavState[i] == "待处理":
+                            if leaveType[i].text == u"待处理":
                                 leaveType[i].click()
                                 time.sleep(1)
                                 driver.find_element_by_name("待处理")
                                 try:
-                                    driver.find_element_by_name(leaveReason)
+                                    leaveReasonId =  driver.find_element_by_id("com.tuxing.app.teacher:id/leave_record_info_item_content")
+                                    leaveReason = leaveReasonId.text
                                 except:
                                     logging.info(u"幼儿考勤_幼儿请假理由为空")
                                     leaveReason = ""
                                 screenshot(driver,picFlile+u"幼儿考勤_幼儿请假内容详情.png")
                                 logging.info(u"幼儿考勤-进入幼儿请假内容详情成功")
                                 try:
-                                    teacherEdit = driver.find_elements_by_id("com.tuxing.app.teacher:id/leave_record_teacher_edit")
+                                    teacherEdit = driver.find_element_by_id("com.tuxing.app.teacher:id/leave_record_teacher_edit")
                                     teacherEdit.send_keys(leaveReason+"re")
+                                    time.sleep(1)
+                                    driver.find_element_by_id("com.tuxing.app.teacher:id/leave_record_teacher_btn").click()
                                     time.sleep(1)
                                     screenshot(driver,picFlile+u"幼儿考勤_幼儿请假_教师审批成功.png")
                                     logging.info(u"幼儿考勤-幼儿请假-教师审批成功")
-
                                 except:
                                     logging.error(u"幼儿考勤-幼儿请假-教师审批失败")
-                                break
+                            elif i == len(leaveType) and leaveType[i].text == u"已处理":
+                                screenshot(driver,picFlile+u"幼儿考勤_幼儿请假_当前页没有未处理任务.png")
+                                logging.info(u"幼儿考勤-幼儿请假-当前页没有未处理任务")
                     except:
                         logging.error(u"幼儿考勤-进入幼儿请假内容详情失败")
                 return 1
             except:
                 logging.error(u"幼儿考勤-进入幼儿请假失败")
+        else:
+            print(appType)
 
 
 

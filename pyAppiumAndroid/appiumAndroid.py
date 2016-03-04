@@ -5,7 +5,7 @@ from action import *
 
 appType = 1
 #actionTypeList = [1001,1002,2001,2002,2003,2004,2005,2006,2007,8,9,10,11,12,13,14,15,16,17,18,19,20]
-actionTypeList = [3001]
+actionTypeList = [2004]
 
 for times in range(1,2):
 
@@ -35,6 +35,7 @@ for times in range(1,2):
                 elif actionType == 2007:
                     tag_home_medicine.tagHomeMedicine(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 3001:
+
                     tag_discovery_qzq.tagDiscoveryQzq(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 101001:
                     tag_message_wxy.weixueyuan(actionTypeMessageCode(actionType,driver,picFlile,appType))
@@ -61,7 +62,7 @@ for times in range(1,2):
                 screenshot(driver,picFlile+u"登录.png")
                 wxyLoin_userName = driver.find_element_by_id("com.tuxing.app.teacher:id/et_username")
                 #wxyLoin_userName.send_keys("18800000001")#正式服
-                wxyLoin_userName.send_keys("14100000001")#测试服
+                wxyLoin_userName.send_keys("14100000002")#测试服
                 time.sleep(1)
                 screenshot(driver,picFlile+u"登录_用户名.png")
                 driver.find_element_by_id("com.tuxing.app.teacher:id/et_password").send_keys("111111")

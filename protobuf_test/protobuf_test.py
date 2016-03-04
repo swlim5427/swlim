@@ -63,8 +63,8 @@ class myFrame (wx.Frame):
 
                 self.messageIp = wx.TextCtrl(self.panelRight,-1,"123.57.150.40:8080",(60,35),size=(200,25))
                 self.messageGardenId = wx.TextCtrl(self.panelRight,-1,"1026510",(60,75),size=(200,25))
-                self.messageCustId = wx.TextCtrl(self.panelRight,-1,"1111",(320,35),size=(85,25))
-                self.messageCardCode = wx.TextCtrl(self.panelRight,-1,"1",(320,75),size=(85,25))
+                self.messageCustId = wx.TextCtrl(self.panelRight,-1,"",(320,35),size=(85,25))
+                self.messageCardCode = wx.TextCtrl(self.panelRight,-1,"",(320,75),size=(85,25))
                 self.messageDateYear = wx.TextCtrl(self.panelRight,-1,"",(10,155),size=(40,25))
                 self.messageDateMonth = wx.TextCtrl(self.panelRight,-1,"",(80,155),size=(40,25))
                 self.messageDateDay = wx.TextCtrl(self.panelRight,-1,"",(150,155),size=(40,25))
@@ -196,12 +196,12 @@ app = myApp()
 app.MainLoop()
 
 
-##
-#
+
+
 #
 # ip = "123.57.150.40:8080"
 # #url = "http://123.57.43.111:8080/http_invoke"
-# url = "http://+"+ip+"/http_invoke"
+# url = "http://"+ip+"/http_invoke"
 #
 # s = requests.session()
 # headers ={"Content-type": "application/x-protobuf;charset=utf-8","Connection":"Keep-Alive"}
@@ -214,8 +214,8 @@ app.MainLoop()
 # inputMonth = raw_input("month:")
 # inputDay = raw_input("day:")
 # inputHour = raw_input("hour:")
-# inputMinute = raw_input("minute")
-# inputSecond = raw_input("second")
+# inputMinute = raw_input("minute:")
+# inputSecond = raw_input("second:")
 # if inputYear == "" :
 #     inputYear = datetime.datetime.now().year
 # if inputMonth == "" :
@@ -248,11 +248,11 @@ app.MainLoop()
 # ##########Checkin
 # messageCheckin = wjy_pb2.Checkin()
 # messageCheckin.id = long("12313131321")
-# messageCheckin.cardCode = str("01000011")
+# messageCheckin.cardCode = str("10000032")
 # #10000004
 # messageCheckin.attach.fileurl= messageAttach.fileurl
 # messageCheckin.attach.attachType = messageAttach.attachType
-# messageCheckin.userId = long("2291366")
+# messageCheckin.userId = long("2291012")
 # #2290987
 # messageCheckin.checkinTime = long(nowTime)
 # messageCheckin.gardenId = long("1026510")

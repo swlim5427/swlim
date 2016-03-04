@@ -4,7 +4,7 @@ from pubaction import *
 def tatMyChildAttendance(actionTypeMessage):
     driver = actionTypeMessage["driver"]
     picFlile = actionTypeMessage["picFlile"]
-    homeIconType = int(actionTypeMessage["homeIconType"])
+#    homeIconType = int(actionTypeMessage["homeIconType"])
     appType = actionTypeMessage["appType"]
     funcName = "宝宝考勤_"
 
@@ -15,6 +15,12 @@ def tatMyChildAttendance(actionTypeMessage):
         inTagHomeAtion = inTagHome(driver,picFlile,picName_in,funcName)
 
     if inTagHomeAtion == 1:
+        try:
+            homeIconType = checkAcction(driver,u"宝宝考勤")
+        except Exception as e:
+            print(e)
+        except IOError as f :
+            print(f)
         try:
             driver.find_elements_by_id("com.tuxing.app.teacher:id/home_item_icon")[homeIconType].click()
             time.sleep(2)

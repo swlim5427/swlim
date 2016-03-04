@@ -4,9 +4,8 @@ from pubaction import *
 def tagHomeAnnouncement(actionTypeMessage):
     driver = actionTypeMessage["driver"]
     picFlile = actionTypeMessage["picFlile"]
-    homeIconType = int(actionTypeMessage["homeIconType"])
+#   homeIconType = int(actionTypeMessage["homeIconType"])
     appType = actionTypeMessage["appType"]
-
     funcName = "公告_"
     if checkTag(driver) == "home":
         inTagHomeAtion = 1
@@ -15,7 +14,14 @@ def tagHomeAnnouncement(actionTypeMessage):
         inTagHomeAtion = inTagHome(driver,picFlile,picName_in,funcName)
 
     if inTagHomeAtion == 1:
+        try:
+            homeIconType = checkAcction(driver,u"公告")
+        except Exception as e:
+            print(e)
+        except IOError as f :
+            print(f)
         if appType == 1:
+
             try:
                 driver.find_elements_by_id("com.tuxing.app.teacher:id/home_item_icon")[homeIconType].click()
                 time.sleep(2)

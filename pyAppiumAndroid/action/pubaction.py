@@ -97,6 +97,12 @@ def getNumber(str):
     mode = re.compile(r'\d+')
     return mode.findall(str)[0]
 
+def checkAcction(driver,acctionName):
+    actionId = driver.find_elements_by_id("com.tuxing.app.teacher:id/home_item_name")
+    for i in range(0,len(actionId)):
+        if actionId[i].text == acctionName:
+            return i
+
 def actionTypeMessageCode(actionType,driver,picFlile,appType):
     if actionType == 1001:
         return {"driver":driver,"picFlile":picFlile,"homeIconType":9,"appType":appType}

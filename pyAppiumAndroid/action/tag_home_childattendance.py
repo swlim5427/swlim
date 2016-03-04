@@ -8,7 +8,7 @@ selectClild = []
 def tagHomeChlidAttendance(actionTypeMessage):
     driver = actionTypeMessage["driver"]
     picFlile = actionTypeMessage["picFlile"]
-    homeIconType = int(actionTypeMessage["homeIconType"])
+#    homeIconType = int(actionTypeMessage["homeIconType"])
     appType = actionTypeMessage["appType"]
     funcName = "幼儿考勤_"
 
@@ -19,6 +19,20 @@ def tagHomeChlidAttendance(actionTypeMessage):
         inTagHomeAtion = inTagHome(driver,picFlile,picName_in,funcName)
 
     if inTagHomeAtion == 1:
+        try:
+            homeIconType = checkAcction(driver,u"宝宝考勤")
+        except Exception as e:
+            print(e)
+        except IOError as f :
+            print(f)
+
+        driver.find_elements_by_id("com.tuxing.app.teacher:id/home_item_icon")[homeIconType].click()
+        time.sleep(2)
+        screenshot(driver,picFlile+u"家园_进入幼儿考勤.png")
+        logging.info(u"进入幼儿考勤成功")
+        time.sleep(2)
+
+
         try:
             driver.find_elements_by_id("com.tuxing.app.teacher:id/home_item_icon")[homeIconType].click()
             time.sleep(2)
@@ -269,18 +283,23 @@ def tagHomeChlidAttendance(actionTypeMessage):
             except:
                 logging.error(u"幼儿考勤-打开日期列表失败")
 
-            picName_details_back = u"微家园_幼儿考勤返回.png"
-            backButton(driver,picFlile,picName_details_back,funcName)
-
             try:
-                message = {"interactiveType":1,"appType":1,"picFlile":picFlile,"leaveReason":"这是请假"}
+                message = {"interactiveType":1,"appType":1,"picFlile":picFlile,"leaveReason":"这是请假","drover":driver}
                 interactive(message)
             except:
                 logging.error(u"进入幼儿考勤-刷卡记录失败")
 
+            picName_details_back = u"微家园_幼儿考勤返回.png"
+            backButton(driver,picFlile,picName_details_back,funcName)
 
         except:
             logging.error(u"进入幼儿考勤失败")
+
+        # try:
+        #     message = {"interactiveType":1,"appType":1,"picFlile":picFlile,"leaveReason":u"这是请假","driver":driver}
+        #     interactive(message)
+        # except:
+        #     logging.error(u"进入幼儿考勤-刷卡记录失败")
     else:
         try:
             logging.info(u"进入家园返回值 = "+str(inTagHomeAtion))
