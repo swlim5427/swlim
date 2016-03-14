@@ -202,8 +202,8 @@ import logging
 
 # ip = "101.200.139.197:80"
 ip = "123.57.150.40:8080"
-#url = "http://123.57.43.111:8080/http_invoke"
-url = "http://"+ip+"/http_invoke"
+url = "http://123.57.43.111:8080/http_invoke"
+# url = "http://"+ip+"/http_invoke"
 dbName = "wjy_test"
 dbUrl = "tuxingdb.mysql.rds.aliyuncs.com"
 
@@ -296,27 +296,3 @@ localprint = postMessage.text.encode('gbk','ignore')
 print localprint
 #print json.dumps(unicode( localprint , errors='ignore'))
 #print rMessage.ParseFromString(postMessage.text)
-
-
-# def sqlAction(self,sql,memberCount,sqlType):
-#
-#     if sqlType == "loginSql":
-#         try:
-#             s = time.time()
-#             conn=MySQLdb.connect(host=dbUrl,user='root',passwd='Tx2010_Tuxing',db=dbName,port=3306)
-# #                conn=MySQLdb.connect(host=dbUrl,user='root',passwd='JZww123456',db=dbName,port=3306)
-#             cur=conn.cursor()
-#             print sql+" limit "+str(memberCount)
-#             sqlResultCount = cur.execute(sql+" limit "+str(memberCount))
-#             phoneList = cur.fetchmany(sqlResultCount)
-#
-#             for phone in phoneList:
-#                 phoneListResult.append(phone[0])
-#             cur.close()
-#             conn.close()
-#             e = time.time()
-#             uTime = e-s
-#             print "sqltime: " +str(uTime)
-#             return phoneListResult
-#         except MySQLdb.Error,e:
-#             print "Mysql Error %d: %s" % (e.args[0], e.args[1])
