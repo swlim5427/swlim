@@ -8,9 +8,7 @@ appType = 1
 actionTypeList = [2004]
 
 for times in range(1,2):
-
     message = {"appType":appType,"runningTimes":times}
-
     try:
         requestMessage = pub_interactive_action.runAppType(message)
         driver = requestMessage["driver"]
@@ -35,7 +33,6 @@ for times in range(1,2):
                 elif actionType == 2007:
                     tag_home_medicine.tagHomeMedicine(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 3001:
-
                     tag_discovery_qzq.tagDiscoveryQzq(actionTypeMessageCode(actionType,driver,picFlile,appType))
                 elif actionType == 101001:
                     tag_message_wxy.weixueyuan(actionTypeMessageCode(actionType,driver,picFlile,appType))
