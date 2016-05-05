@@ -201,9 +201,10 @@ import logging
 
 
 # ip = "101.200.139.197:80"
-ip = "123.57.150.40:8080"
-url = "http://123.57.43.111:8080/http_invoke"
-# url = "http://"+ip+"/http_invoke"
+ip = "192.168.10.202:8080"
+#ip = "123.57.150.40:8080"
+#url = "http://123.57.43.111:8080/http_invoke"
+url = "http://"+ip+"/http_invoke"
 dbName = "wjy_test"
 dbUrl = "tuxingdb.mysql.rds.aliyuncs.com"
 
@@ -253,14 +254,14 @@ fetchAgreementRequest = wjy_pb2.FetchAgreementRequest()
 ##########Checkin
 messageCheckin = wjy_pb2.Checkin()
 messageCheckin.id = long("12313131321")
-messageCheckin.cardCode = str("10000035")
+messageCheckin.cardCode = str("08217736")
 #10000004
 messageCheckin.attach.fileurl= messageAttach.fileurl
 messageCheckin.attach.attachType = messageAttach.attachType
-messageCheckin.userId = long("2293831")
+messageCheckin.userId = long("2294767")
 #2290987
 messageCheckin.checkinTime = long(nowTime)
-messageCheckin.gardenId = long("1026510")
+messageCheckin.gardenId = long("1027094")
 
 ##########CheckinRequest
 machineCheckin = wjy_pb2.CheckinRequest()
@@ -269,7 +270,8 @@ machineCheckin.machineId = "m00000000000002"
 checkIn = machineCheckin.checkin.add()
 checkIn.id = messageCheckin.id
 checkIn.cardCode = messageCheckin.cardCode
-checkIn.attach.fileurl = messageCheckin.attach.fileurl
+checkIn.attach.fileurl = messageCheckin\
+    .attach.fileurl
 checkIn.attach.attachType = messageCheckin.attach.attachType
 checkIn.userId = messageCheckin.userId
 checkIn.checkinTime = messageCheckin.checkinTime

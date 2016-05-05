@@ -19,7 +19,7 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='wjy.proto',
   package='',
-  serialized_pb=_b('\n\twjy.proto\"\xd9\x03\n\x04User\x12\x0e\n\x06userId\x18\x01 \x02(\x03\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x10\n\x08nickname\x18\x03 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x04 \x01(\t\x12\x13\n\x0b\x63hildUserId\x18\x05 \x01(\x03\x12\x0e\n\x06mobile\x18\x06 \x01(\t\x12\x0c\n\x04sign\x18\x07 \x01(\t\x12\x1b\n\x08userType\x18\x08 \x01(\x0e\x32\t.UserType\x12\x1f\n\nactionType\x18\t \x01(\x0e\x32\x0b.ActionType\x12\x13\n\x0b\x66irstLetter\x18\n \x01(\t\x12\x19\n\x07sexType\x18\x0b \x01(\x0e\x32\x08.SexType\x12\x10\n\x08\x62irthday\x18\x0c \x01(\x03\x12\x0f\n\x07\x61\x64\x64ress\x18\r \x01(\t\x12\x10\n\x08realname\x18\x0e \x01(\t\x12\x12\n\ngardenName\x18\x0f \x01(\t\x12\x11\n\tclassName\x18\x10 \x01(\t\x12\x1f\n\nParentType\x18\x11 \x01(\x0e\x32\x0b.ParentType\x12\x10\n\x08gardenId\x18\x12 \x01(\x03\x12\x0f\n\x07\x63lassId\x18\x13 \x01(\x03\x12\x12\n\npositionId\x18\x14 \x01(\x03\x12\x14\n\x0cpositionName\x18\x15 \x01(\t\x12\x0f\n\x07guarder\x18\x16 \x01(\t\x12\x11\n\tactivated\x18\x17 \x01(\x08\"\xb1\x01\n\nDepartment\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04name\x18\x02 \x02(\t\x12\x10\n\x08parentId\x18\x03 \x02(\x03\x12\x0f\n\x07groupId\x18\x04 \x01(\t\x12\x1d\n\x04type\x18\x05 \x02(\x0e\x32\x0f.DepartmentType\x12\x1f\n\nactionType\x18\x06 \x02(\x0e\x32\x0b.ActionType\x12\x12\n\nclassPhoto\x18\x07 \x01(\t\x12\x12\n\nshowParent\x18\x08 \x01(\x08\"\xa0\x01\n\x06Notice\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0f\n\x07\x63ontent\x18\x02 \x02(\t\x12\x19\n\x08\x61ttaches\x18\x03 \x03(\x0b\x32\x07.Attach\x12\x12\n\nsendUserId\x18\x04 \x02(\x03\x12\x10\n\x08sendTime\x18\x05 \x02(\x03\x12\x0e\n\x06isRead\x18\x06 \x01(\x08\x12\x12\n\nsenderName\x18\x07 \x01(\t\x12\x14\n\x0csenderAvatar\x18\x08 \x01(\t\":\n\x06\x41ttach\x12\x0f\n\x07\x66ileurl\x18\x01 \x02(\t\x12\x1f\n\nattachType\x18\x02 \x02(\x0e\x32\x0b.AttachType\"\x94\x01\n\x10NoticeDepartment\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x10\n\x08noticeId\x18\x02 \x01(\x03\x12\x14\n\x0c\x64\x65partmentId\x18\x03 \x02(\x03\x12\x13\n\x0bmemberCount\x18\x04 \x01(\x05\x12\x13\n\x0breadedCount\x18\x05 \x01(\x05\x12\x15\n\rmemberUserIds\x18\x06 \x03(\x03\x12\x0b\n\x03\x61ll\x18\x07 \x01(\x08\"\\\n\x0cNoticeMember\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0e\n\x06userId\x18\x02 \x02(\x03\x12\x10\n\x08nickname\x18\x03 \x01(\t\x12\x0e\n\x06isRead\x18\x04 \x01(\x08\x12\x0e\n\x06\x61vatar\x18\x05 \x01(\t\"\xe0\x01\n\x08UserCard\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0e\n\x06userId\x18\x02 \x02(\x03\x12\x14\n\x0cparentUserId\x18\x03 \x01(\x03\x12\x10\n\x08\x63\x61rdCode\x18\x04 \x02(\t\x12\x10\n\x08userName\x18\x05 \x01(\t\x12\x12\n\nparentName\x18\x06 \x01(\t\x12\x1f\n\nactionType\x18\x07 \x01(\x0e\x32\x0b.ActionType\x12\x1b\n\x08usertype\x18\x08 \x01(\x0e\x32\t.UserType\x12\x14\n\x0cpositionName\x18\t \x01(\t\x12\x16\n\x0e\x64\x65partmentName\x18\n \x01(\t\"\xb0\x01\n\x07\x43heckin\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x10\n\x08\x63\x61rdCode\x18\x02 \x02(\t\x12\x17\n\x06\x61ttach\x18\x03 \x02(\x0b\x32\x07.Attach\x12\x0e\n\x06userId\x18\x04 \x01(\x03\x12\x13\n\x0b\x63heckinTime\x18\x05 \x02(\x03\x12\x10\n\x08gardenId\x18\x06 \x01(\x03\x12\x10\n\x08userName\x18\x07 \x01(\t\x12\x12\n\nparentName\x18\x08 \x01(\t\x12\x11\n\tclassName\x18\t \x01(\t\"2\n\x0cLoginRequest\x12\x10\n\x08username\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\"g\n\rLoginResponse\x12\x0e\n\x06isInit\x18\x01 \x02(\x08\x12\r\n\x05token\x18\x02 \x02(\t\x12\x13\n\x04user\x18\x03 \x02(\x0b\x32\x05.User\x12\"\n\x0cuserProfiles\x18\x04 \x03(\x0b\x32\x0c.UserProfile\"1\n\x14\x46\x65tchContactsRequest\x12\x19\n\x11lastModifiedSince\x18\x01 \x02(\x03\"L\n\x15\x46\x65tchContactsResponse\x12 \n\x0b\x64\x65partments\x18\x01 \x03(\x0b\x32\x0b.Department\x12\x11\n\tfetchTime\x18\x02 \x02(\x03\"L\n\x1d\x46\x65tchDepartmentMembersRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\x12\x15\n\rlastFetchTime\x18\x02 \x02(\x03\"`\n\x1e\x46\x65tchDepartmentMembersResponse\x12\x16\n\x07members\x18\x01 \x03(\x0b\x32\x05.User\x12\x15\n\rlastFetchTime\x18\x04 \x02(\x03\x12\x0f\n\x07hasMore\x18\x05 \x02(\x08\"#\n\x14\x46\x65tchUserinfoRequest\x12\x0b\n\x03uid\x18\x01 \x02(\x03\",\n\x15\x46\x65tchUserinfoResponse\x12\x13\n\x04user\x18\x01 \x02(\x0b\x32\x05.User\"2\n\x1a\x46\x65tchDepartmentinfoRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\">\n\x1b\x46\x65tchDepartmentinfoResponse\x12\x1f\n\ndepartment\x18\x01 \x02(\x0b\x32\x0b.Department\"2\n\x1f\x46\x65tchDepartmentByGroupIdRequest\x12\x0f\n\x07groupId\x18\x01 \x02(\t\"C\n FetchDepartmentByGroupIdResponse\x12\x1f\n\ndepartment\x18\x01 \x02(\x0b\x32\x0b.Department\"l\n\x11SendNoticeRequest\x12\x0f\n\x07\x63ontent\x18\x01 \x02(\t\x12\x18\n\x07\x61ttches\x18\x02 \x03(\x0b\x32\x07.Attach\x12,\n\x11noticeDepartments\x18\x03 \x03(\x0b\x32\x11.NoticeDepartment\"5\n\x12SendNoticeResponse\x12\x10\n\x08noticeId\x18\x01 \x02(\x03\x12\r\n\x05\x62onus\x18\x02 \x01(\x05\"E\n\x12\x46\x65tchNoticeRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\x12\x0f\n\x07isInbox\x18\x03 \x02(\x08\"@\n\x13\x46\x65tchNoticeResponse\x12\x18\n\x07notices\x18\x01 \x03(\x0b\x32\x07.Notice\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\"1\n\x1d\x46\x65tchNoticeDepartmentsRequest\x12\x10\n\x08noticeId\x18\x01 \x02(\x03\"N\n\x1e\x46\x65tchNoticeDepartmentsResponse\x12,\n\x11noticeDepartments\x18\x01 \x03(\x0b\x32\x11.NoticeDepartment\"C\n\x19\x46\x65tchNoticeMembersRequest\x12\x10\n\x08noticeId\x18\x01 \x02(\x03\x12\x14\n\x0c\x64\x65partmentId\x18\x02 \x02(\x03\"B\n\x1a\x46\x65tchNoticeMembersResponse\x12$\n\rnoticeMembers\x18\x01 \x03(\x0b\x32\r.NoticeMember\"%\n\x11ReadNoticeRequest\x12\x10\n\x08noticeId\x18\x01 \x02(\x03\"\x14\n\x12ReadNoticeResponse\"\x1f\n\x1dGetUserUnreadNoticeCntRequest\"9\n\x1eGetUserUnreadNoticeCntResponse\x12\x17\n\x0funreadNoticeCnt\x18\x01 \x02(\x05\"3\n\x0f\x42indCardRequest\x12\x10\n\x08\x63\x61rdCode\x18\x01 \x02(\t\x12\x0e\n\x06userId\x18\x02 \x02(\x03\"9\n\x19\x46\x65tchChildBindCardRequest\x12\x1c\n\tuserCards\x18\x01 \x03(\x0b\x32\t.UserCard\")\n\x15ReportLossCardRequest\x12\x10\n\x08\x63\x61rdCode\x18\x01 \x02(\t\">\n\x0e\x43heckinRequest\x12\x11\n\tmachineId\x18\x01 \x02(\t\x12\x19\n\x07\x63heckin\x18\x02 \x03(\x0b\x32\x08.Checkin\"\x11\n\x0f\x43heckinResponse\"R\n\x1dRegisterCheckinMachineRequest\x12\x0c\n\x04oaId\x18\x01 \x01(\x03\x12\x10\n\x08gardenId\x18\x02 \x01(\x03\x12\x11\n\tmachineId\x18\x03 \x02(\t\"F\n\x1eRegisterCheckinMachineResponse\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\x12\x12\n\ngardenName\x18\x02 \x02(\t\"<\n\x16\x43heckPermissionRequest\x12\x10\n\x08password\x18\x01 \x02(\t\x12\x10\n\x08gardenId\x18\x02 \x01(\x03\"\x19\n\x17\x43heckPermissionResponse\"?\n\x10\x46\x65tchCardRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\x12\x19\n\x11lastModifiedSince\x18\x02 \x02(\x03\"P\n\x11\x46\x65tchCardResponse\x12\x17\n\x04\x63\x61rd\x18\x01 \x03(\x0b\x32\t.UserCard\x12\x11\n\tfetchTime\x18\x02 \x02(\x03\x12\x0f\n\x07hasMore\x18\x03 \x02(\x08\"%\n\x11\x46\x65tchVoiceRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\"R\n\x12\x46\x65tchVoiceResponse\x12\x12\n\nvoiceClass\x18\x01 \x02(\x05\x12\x13\n\x0bvoicePrefix\x18\x02 \x01(\t\x12\x13\n\x0bvoiceSuffix\x18\x03 \x01(\t\"5\n\x13\x46\x65tchCheckinRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\"Z\n\x14\x46\x65tchCheckinResponse\x12\x1a\n\x08\x63heckins\x18\x01 \x03(\x0b\x32\x08.Checkin\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\x12\x15\n\rlastFetchTime\x18\x03 \x02(\x03\"\x16\n\x14GetUploadinfoRequest\"&\n\x15GetUploadinfoResponse\x12\r\n\x05token\x18\x01 \x02(\t\"\x1e\n\x1cGetCheckinUploadTokenRequest\".\n\x1dGetCheckinUploadTokenResponse\x12\r\n\x05token\x18\x01 \x02(\t\"u\n\x0c\x42indCardInfo\x12\x10\n\x08\x63\x61rdCode\x18\x01 \x01(\t\x12\x10\n\x08nickName\x18\x02 \x01(\t\x12\x1f\n\nparentType\x18\x03 \x01(\x0e\x32\x0b.ParentType\x12\x0e\n\x06\x61vatar\x18\x04 \x01(\t\x12\x10\n\x08parentId\x18\x05 \x01(\x03\"=\n\x15\x46\x65tchUserCardResponse\x12$\n\rbiandCardInfo\x18\x01 \x03(\x0b\x32\r.BindCardInfo\"\x9f\x02\n\x10\x46\x65\x65\x64MedicineTask\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x11\n\tbeginDate\x18\x02 \x02(\x03\x12\x0c\n\x04\x64\x65sc\x18\x03 \x02(\t\x12\x19\n\x08\x61ttaches\x18\x04 \x03(\x0b\x32\x07.Attach\x12\x14\n\x0cparentUserId\x18\x05 \x02(\x03\x12\x12\n\nparentName\x18\x06 \x01(\t\x12\x17\n\x0fparentAvatarUrl\x18\x07 \x01(\t\x12\x0f\n\x07\x63lassId\x18\x08 \x01(\x03\x12\x11\n\tclassName\x18\t \x01(\t\x12\x16\n\x0e\x63lassAvatarUrl\x18\n \x01(\t\x12\x11\n\tcreatedOn\x18\x0b \x01(\x03\x12\x0e\n\x06status\x18\x0c \x01(\x05\x12\x10\n\x08updateOn\x18\r \x01(\x03\x12\x0f\n\x07hasRead\x18\x0e \x01(\x08\">\n\x1c\x46\x65tchFeedMedicineTaskRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\"]\n\x1d\x46\x65tchFeedMedicineTaskResponse\x12+\n\x10\x66\x65\x65\x64MedicineTask\x18\x01 \x03(\x0b\x32\x11.FeedMedicineTask\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\"9\n\x1bReadFeedMedicineTaskRequest\x12\x1a\n\x12\x66\x65\x65\x64MedicineTaskId\x18\x01 \x02(\x03\"Y\n\x1bSendFeedMedicineTaskRequest\x12\x11\n\tbeginDate\x18\x01 \x02(\x03\x12\x0c\n\x04\x64\x65sc\x18\x02 \x02(\t\x12\x19\n\x08\x61ttaches\x18\x03 \x03(\x0b\x32\x07.Attach\":\n\x1cSendFeedMedicineTaskResponse\x12\x1a\n\x12\x66\x65\x65\x64MedicineTaskId\x18\x01 \x02(\x03\"\x86\x02\n\nGardenMail\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x10\n\x08gardenId\x18\x02 \x02(\x03\x12\x12\n\ngardenName\x18\x03 \x01(\t\x12\x17\n\x0fgardenAvatarUrl\x18\x04 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x05 \x02(\t\x12\x11\n\tcreatedOn\x18\x06 \x02(\x03\x12\x11\n\tanonymous\x18\x07 \x02(\x08\x12\x12\n\nfromUserId\x18\x08 \x02(\x03\x12\x14\n\x0c\x66romUsername\x18\t \x01(\t\x12\x19\n\x11\x66romUserAvatarUrl\x18\n \x01(\t\x12\x0e\n\x06status\x18\x0b \x01(\x05\x12\x10\n\x08updateOn\x18\x0c \x01(\x03\x12\x0f\n\x07hasRead\x18\r \x01(\x08\"8\n\x16\x46\x65tchGardenMailRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\"K\n\x17\x46\x65tchGardenMailResponse\x12\x1f\n\ngardenMail\x18\x01 \x03(\x0b\x32\x0b.GardenMail\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\";\n\x15SendGardenMailRequest\x12\x0f\n\x07\x63ontent\x18\x01 \x02(\t\x12\x11\n\tanonymous\x18\x02 \x02(\x08\"$\n\x16SendGardenMailResponse\x12\n\n\x02id\x18\x01 \x02(\x03\"g\n\x12SendSmsCodeRequest\x12\x0e\n\x06mobile\x18\x01 \x02(\t\x12)\n\x0fsendSmsCodeType\x18\x02 \x02(\x0e\x32\x10.SendSmsCodeType\x12\x16\n\x07isVoice\x18\x03 \x01(\x08:\x05\x66\x61lse\"\x15\n\x13SendSmsCodeResponse\"C\n\x11\x41\x63tiveUserRequest\x12\x0e\n\x06mobile\x18\x01 \x02(\t\x12\x0c\n\x04\x63ode\x18\x02 \x02(\t\x12\x10\n\x08password\x18\x03 \x02(\t\"\\\n\x12\x41\x63tiveUserResponse\x12\r\n\x05token\x18\x01 \x02(\t\x12\x13\n\x04user\x18\x02 \x02(\x0b\x32\x05.User\x12\"\n\x0cuserProfiles\x18\x03 \x03(\x0b\x32\x0c.UserProfile\"\x13\n\x11\x46\x65tchChildRequest\"-\n\x12\x46\x65tchChildResponse\x12\x17\n\x08\x63hildren\x18\x01 \x02(\x0b\x32\x05.User\"k\n\x10\x42indChildRequest\x12\x1f\n\nparentType\x18\x01 \x02(\x0e\x32\x0b.ParentType\x12\x13\n\x0b\x63hildUserId\x18\x02 \x02(\x03\x12\x10\n\x08\x62irthday\x18\x03 \x02(\x03\x12\x0f\n\x07guarder\x18\x04 \x02(\t\"@\n\x11\x42indChildResponse\x12\x15\n\x06parent\x18\x01 \x02(\x0b\x32\x05.User\x12\x14\n\x05\x63hild\x18\x02 \x02(\x0b\x32\x05.User\"D\n\x12SetPasswordRequest\x12\x0c\n\x04\x63ode\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\x0e\n\x06mobile\x18\x03 \x02(\t\"\x15\n\x13SetPasswordResponse\"A\n\x15UpdatePasswordRequest\x12\x13\n\x0boldPassword\x18\x01 \x02(\t\x12\x13\n\x0bnewPassword\x18\x02 \x02(\t\"\x18\n\x16UpdatePasswordResponse\"[\n\x11\x42indingParentInfo\x12\x13\n\x04user\x18\x01 \x02(\x0b\x32\x05.User\x12\x1f\n\nparentType\x18\x02 \x02(\x0e\x32\x0b.ParentType\x12\x10\n\x08isMaster\x18\x03 \x02(\x08\"\x1d\n\x1bGetBindingParentListRequest\"G\n\x1cGetBindingParentListResponse\x12\'\n\x0b\x62indParents\x18\x01 \x03(\x0b\x32\x12.BindingParentInfo\"F\n\x11UpdateBindRequest\x12\x10\n\x08parentId\x18\x01 \x02(\x03\x12\x1f\n\nparentType\x18\x02 \x02(\x0e\x32\x0b.ParentType\")\n\x12UpdateBindResponse\x12\x13\n\x04user\x18\x01 \x02(\x0b\x32\x05.User\",\n\x15UpdateUserInfoRequest\x12\x13\n\x04user\x18\x01 \x02(\x0b\x32\x05.User\"\x18\n\x16UpdateUserInfoResponse\"j\n\x17\x41\x63tiveInviteUserRequest\x12\x0e\n\x06mobile\x18\x01 \x02(\t\x12\x0c\n\x04\x63ode\x18\x02 \x02(\t\x12\x1f\n\nparentType\x18\x03 \x02(\x0e\x32\x0b.ParentType\x12\x10\n\x08password\x18\x04 \x02(\t\"/\n\x18\x41\x63tiveInviteUserResponse\x12\x13\n\x04user\x18\x01 \x02(\x0b\x32\x05.User\"&\n\x12RelieveBindRequest\x12\x10\n\x08parentId\x18\x01 \x02(\x03\"\x15\n\x13RelieveBindResponse\"3\n\x13UpdateMobileRequest\x12\x0e\n\x06mobile\x18\x03 \x02(\t\x12\x0c\n\x04\x63ode\x18\x04 \x02(\t\"\x16\n\x14UpdateMobileResponse\",\n\x0bUserProfile\x12\x0e\n\x06option\x18\x01 \x02(\t\x12\r\n\x05value\x18\x02 \x02(\t\"<\n\x16SaveUserProfileRequest\x12\"\n\x0cuserProfiles\x18\x01 \x03(\x0b\x32\x0c.UserProfile\"\x19\n\x17SaveUserProfileResponse\"\x19\n\x17\x46\x65tchUserProfileRequest\">\n\x18\x46\x65tchUserProfileResponse\x12\"\n\x0cuserProfiles\x18\x01 \x03(\x0b\x32\x0c.UserProfile\"\x0f\n\rLogOutRequest\"\x10\n\x0eLogOutResponse\"d\n\x04Like\x12\x0e\n\x06userId\x18\x01 \x02(\x03\x12\x10\n\x08nickName\x18\x02 \x01(\t\x12\x15\n\ruserAvatarUrl\x18\x03 \x01(\t\x12\x10\n\x08targetId\x18\x04 \x02(\x03\x12\x11\n\tcommentId\x18\x05 \x02(\x03\"\xf4\x01\n\x04\x46\x65\x65\x64\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\x12\x10\n\x08\x63reateOn\x18\x03 \x02(\x03\x12\x19\n\x08\x61ttaches\x18\x04 \x03(\x0b\x32\x07.Attach\x12\x14\n\x05likes\x18\x05 \x03(\x0b\x32\x05.Like\x12\x1a\n\x08\x63omments\x18\x06 \x03(\x0b\x32\x08.Comment\x12\x0e\n\x06userId\x18\x07 \x02(\x03\x12\x14\n\x0cuserNickName\x18\x08 \x02(\t\x12\x15\n\ruserAvatarUrl\x18\t \x02(\t\x12\x16\n\x0ehasMoreComment\x18\n \x01(\x08\x12\x1b\n\x08userType\x18\x0b \x01(\x0e\x32\t.UserType\"q\n\x0fSendFeedRequest\x12\x15\n\rdepartmentIds\x18\x02 \x03(\x03\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\x12\x19\n\x08\x61ttaches\x18\x04 \x03(\x0b\x32\x07.Attach\x12\x1b\n\x13syncDepartmentPhoto\x18\x05 \x01(\x08\"1\n\x10SendFeedResponse\x12\x0e\n\x06\x66\x65\x65\x64Id\x18\x01 \x02(\x03\x12\r\n\x05\x62onus\x18\x02 \x01(\x05\"y\n\x08\x41\x63tivity\x12\n\n\x02id\x18\x01 \x02(\x03\x12\r\n\x05title\x18\x02 \x02(\t\x12\x0e\n\x06picUrl\x18\x03 \x03(\t\x12\x11\n\tavatarUrl\x18\x04 \x02(\t\x12\x10\n\x08nickname\x18\x05 \x02(\t\x12\x10\n\x08\x63reateOn\x18\x06 \x02(\x03\x12\x0b\n\x03url\x18\x07 \x02(\t\"Y\n\x10\x46\x65tchFeedRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\x12\x0f\n\x07isInbox\x18\x03 \x02(\x08\x12\x14\n\x0c\x64\x65partmentId\x18\x04 \x01(\x03\"n\n\x11\x46\x65tchFeedResponse\x12\x14\n\x05\x66\x65\x65\x64s\x18\x01 \x03(\x0b\x32\x05.Feed\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\x12\x15\n\rlastFetchTime\x18\x03 \x02(\x03\x12\x1b\n\x08\x61\x63tivity\x18\x04 \x01(\x0b\x32\t.Activity\"F\n\x14\x46\x65tchUserFeedRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\x12\x0e\n\x06userId\x18\x03 \x02(\x03\">\n\x15\x46\x65tchUserFeedResponse\x12\x14\n\x05\x66\x65\x65\x64s\x18\x01 \x03(\x0b\x32\x05.Feed\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\"#\n\x11\x44\x65leteFeedRequest\x12\x0e\n\x06\x66\x65\x65\x64Id\x18\x01 \x02(\x03\"\x14\n\x12\x44\x65leteFeedResponse\"\x90\x01\n\x18UpdateDeviceTokenRequest\x12\x13\n\x0b\x64\x65viceToken\x18\x01 \x02(\t\x12#\n\x0cplatformType\x18\x02 \x02(\x0e\x32\r.PlatformType\x12\x11\n\tosVersion\x18\x03 \x02(\t\x12\x15\n\rmobileVersion\x18\x04 \x02(\t\x12\x10\n\x08\x64\x65viceId\x18\x05 \x02(\t\"\x1b\n\x19UpdateDeviceTokenResponse\"&\n\x07\x43ounter\x12\x0c\n\x04item\x18\x01 \x02(\t\x12\r\n\x05\x63ount\x18\x02 \x02(\x05\"\x15\n\x13\x46\x65tchCounterRequest\"2\n\x14\x46\x65tchCounterResponse\x12\x1a\n\x08\x63ounters\x18\x01 \x03(\x0b\x32\x08.Counter\"\x8b\x02\n\x07\x43omment\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\x12!\n\x0b\x63ommentType\x18\x03 \x02(\x0e\x32\x0c.CommentType\x12\x10\n\x08targetId\x18\x04 \x02(\x03\x12\x14\n\x0ctargetUserId\x18\x05 \x02(\x03\x12\x1f\n\ntargetType\x18\x06 \x02(\x0e\x32\x0b.TargetType\x12\x10\n\x08toUserId\x18\x07 \x01(\x03\x12\x16\n\x0etoUserNickName\x18\x08 \x01(\t\x12\x10\n\x08\x63reateOn\x18\t \x02(\x03\x12\x0e\n\x06userId\x18\n \x02(\x03\x12\x14\n\x0cuserNickName\x18\x0b \x01(\t\x12\x15\n\ruserAvatarUrl\x18\x0c \x01(\t\"\x8d\x01\n\x12SendCommentRequest\x12\x0f\n\x07\x63ontent\x18\x01 \x02(\t\x12!\n\x0b\x63ommentType\x18\x02 \x02(\x0e\x32\x0c.CommentType\x12\x10\n\x08toUserId\x18\x03 \x01(\x03\x12\x10\n\x08targetId\x18\x04 \x02(\x03\x12\x1f\n\ntargetType\x18\x05 \x02(\x0e\x32\x0b.TargetType\"7\n\x13SendCommentResponse\x12\x11\n\tcommentId\x18\x01 \x02(\x03\x12\r\n\x05\x62onus\x18\x02 \x01(\x05\"*\n\x15\x44\x65leteCommnetsRequest\x12\x11\n\tcommentId\x18\x01 \x02(\x03\"g\n\x12ShowCommentRequest\x12\x10\n\x08targetId\x18\x01 \x02(\x03\x12\x1f\n\ntargetType\x18\x02 \x02(\x0e\x32\x0b.TargetType\x12\r\n\x05maxId\x18\x03 \x01(\x03\x12\x0f\n\x07sinceId\x18\x04 \x01(\x03\"A\n\x13ShowCommentResponse\x12\x19\n\x07\x63omment\x18\x01 \x03(\x0b\x32\x08.Comment\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\">\n\x1c\x46\x65tchConcernedCommentRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\"=\n\x0b\x46\x65\x65\x64\x43omment\x12\x13\n\x04\x66\x65\x65\x64\x18\x01 \x02(\x0b\x32\x05.Feed\x12\x19\n\x07\x63omment\x18\x02 \x02(\x0b\x32\x08.Comment\"S\n\x1d\x46\x65tchConcernedCommentResponse\x12!\n\x0b\x66\x65\x65\x64\x43omment\x18\x01 \x03(\x0b\x32\x0c.FeedComment\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\"\x1f\n\x1d\x44\x65leteConcernedCommentRequest\" \n\x1e\x44\x65leteConcernedCommentResponse\"\xaf\x01\n\x04Post\x12\n\n\x02id\x18\x01 \x02(\x03\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x04 \x01(\t\x12\x15\n\rcoverImageUrl\x18\x05 \x01(\t\x12\x11\n\tcreatedOn\x18\x06 \x01(\x03\x12\x1b\n\x08postType\x18\x07 \x01(\x0e\x32\t.PostType\x12\x12\n\norderValue\x18\x08 \x01(\x03\x12\x0f\n\x07postUrl\x18\t \x01(\t\"a\n\x10\x46\x65tchPostRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\x12\r\n\x05maxId\x18\x02 \x01(\x03\x12\x0f\n\x07sinceId\x18\x03 \x01(\x03\x12\x1b\n\x08postType\x18\x04 \x02(\x0e\x32\t.PostType\"P\n\x11\x46\x65tchPostResponse\x12\x13\n\x04post\x18\x01 \x03(\x0b\x32\x05.Post\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\x12\x15\n\rlastFetchTime\x18\x03 \x01(\x03\"E\n\x16\x46\x65tchPostDetailRequest\x12\x0e\n\x06postId\x18\x01 \x01(\x03\x12\x1b\n\x08postType\x18\x02 \x01(\x0e\x32\t.PostType\"Q\n\x17\x46\x65tchPostDetailResponse\x12\x13\n\x04post\x18\x01 \x01(\x0b\x32\x05.Post\x12\x10\n\x08postHtml\x18\x02 \x01(\t\x12\x0f\n\x07postUrl\x18\x03 \x01(\t\"\x19\n\x17\x46\x65tchGardenIntroRequest\"R\n\x18\x46\x65tchGardenIntroResponse\x12\x13\n\x04post\x18\x01 \x01(\x0b\x32\x05.Post\x12\x10\n\x08postHtml\x18\x02 \x01(\t\x12\x0f\n\x07postUrl\x18\x03 \x01(\t\"\x17\n\x15\x46\x65tchAgreementRequest\"P\n\x16\x46\x65tchAgreementResponse\x12\x13\n\x04post\x18\x01 \x01(\x0b\x32\x05.Post\x12\x10\n\x08postHtml\x18\x02 \x01(\t\x12\x0f\n\x07postUrl\x18\x03 \x01(\t\",\n\tPostGroup\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x13\n\x04post\x18\x02 \x03(\x0b\x32\x05.Post\"I\n\x15\x46\x65tchPostGroupRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\x12\x10\n\x08gardenId\x18\x03 \x01(\x03\"_\n\x16\x46\x65tchPostGroupResponse\x12\x1d\n\tpostGroup\x18\x01 \x03(\x0b\x32\n.PostGroup\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\x12\x15\n\rlastFetchTime\x18\x03 \x02(\x03\"a\n\x0bMuteRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\x12\x14\n\x0c\x63hildUserIds\x18\x02 \x03(\x03\x12\x17\n\x04type\x18\x03 \x01(\x0e\x32\t.MuteType\x12\r\n\x05\x63over\x18\x04 \x01(\x08\"\x0e\n\x0cMuteResponse\"T\n\rUnMuteRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\x12\x14\n\x0c\x63hildUserIds\x18\x02 \x02(\x03\x12\x17\n\x04type\x18\x03 \x01(\x0e\x32\t.MuteType\"\x10\n\x0eUnMuteResponse\"A\n\x10\x46\x65tchMuteRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\x12\x17\n\x04type\x18\x02 \x01(\x0e\x32\t.MuteType\")\n\x11\x46\x65tchMuteResponse\x12\x14\n\x0c\x63hildUserIds\x18\x01 \x03(\x03\"#\n\x15ReadGardenMailRequest\x12\n\n\x02id\x18\x01 \x02(\x03\"\x18\n\x16ReadGardenMailResponse\"%\n\x17ReadFeedMedicineRequest\x12\n\n\x02id\x18\x01 \x02(\x03\"\x1a\n\x18ReadFeedMedicineResponse\"$\n\x11\x43ollectLogRequest\x12\x0f\n\x07\x63ontent\x18\x01 \x02(\t\"\x14\n\x12\x43ollectLogResponse\"6\n\x11MachineLogRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\x12\x0f\n\x07\x63ontent\x18\x02 \x02(\t\"\x14\n\x12MachineLogResponse\"\x8f\x01\n\x07Upgrade\x12\x12\n\nshowAtMain\x18\x01 \x01(\x08\x12\x12\n\nmustUpdate\x18\x02 \x01(\x08\x12\x10\n\x08isUpdate\x18\x03 \x02(\x08\x12\x11\n\tupdateMsg\x18\x04 \x01(\t\x12\x0f\n\x07showMsg\x18\x05 \x01(\t\x12\x13\n\x0bversionCode\x18\x06 \x01(\t\x12\x11\n\tupdateUrl\x18\x07 \x01(\t\"5\n\x0eUpgradeRequest\x12#\n\x0cplatformType\x18\x01 \x02(\x0e\x32\r.PlatformType\":\n\x15MachineUpgradeRequest\x12\x0f\n\x07version\x18\x01 \x02(\t\x12\x10\n\x08\x64\x65viceId\x18\x02 \x01(\t\",\n\x0fUpgradeResponse\x12\x19\n\x07upgrade\x18\x01 \x01(\x0b\x32\x08.Upgrade\"O\n\x16ScanCodeCheckinRequest\x12\x10\n\x08\x63\x61rdCode\x18\x01 \x01(\t\x12\x0e\n\x06userId\x18\x02 \x01(\x03\x12\x13\n\x0b\x63heckinTime\x18\x03 \x02(\x03\"\x19\n\x17ScanCodeCheckinResponse\"(\n\x14GetGardenNameRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\"+\n\x15GetGardenNameResponse\x12\x12\n\ngardenName\x18\x02 \x02(\t\"$\n\x13\x43learCheckInRequest\x12\r\n\x05maxId\x18\x01 \x02(\x03\"4\n\x12\x43learNoticeRequest\x12\r\n\x05maxId\x18\x01 \x02(\x03\x12\x0f\n\x07isInbox\x18\x02 \x02(\x08\"S\n\x1b\x46\x65tchDepartmentPhotoRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\x12\r\n\x05maxId\x18\x02 \x01(\x03\x12\x0f\n\x07sinceId\x18\x03 \x01(\x03\"@\n\x0f\x44\x65partmentPhoto\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0f\n\x07\x66ileKey\x18\x02 \x02(\t\x12\x10\n\x08\x63reateOn\x18\x03 \x02(\x03\"c\n\x1c\x46\x65tchDepartmentPhotoResponse\x12 \n\x06photos\x18\x01 \x03(\x0b\x32\x10.DepartmentPhoto\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\x12\x10\n\x08totalCnt\x18\x03 \x01(\x03\"\x14\n\x12UserCheckInRequest\"$\n\x13UserCheckInResponse\x12\r\n\x05\x62onus\x18\x01 \x01(\x05*\x85\x01\n\nParentType\x12\n\n\x06\x46\x41THER\x10\x01\x12\n\n\x06MOTHER\x10\x02\x12\x11\n\rFATHERSFATHER\x10\x03\x12\x11\n\rFATHERSMOTHER\x10\x04\x12\x11\n\rMOTHERSFATHER\x10\x05\x12\x11\n\rMOTHERSMOTHER\x10\x06\x12\x13\n\x0fOTHERPARENTTYPE\x10\x64*;\n\x08UserType\x12\t\n\x05\x43HILD\x10\x01\x12\n\n\x06PARENT\x10\x02\x12\x0b\n\x07TEACHER\x10\x03\x12\x0b\n\x07PARTNER\x10\x04*a\n\x0e\x44\x65partmentType\x12\n\n\x06GARDEN\x10\x01\x12\t\n\x05\x43LAZZ\x10\x02\x12\x10\n\x0cGROUP_GARDEN\x10\x03\x12\r\n\tEDUCATION\x10\x04\x12\x17\n\x13OTHERDEPARTMENTTYPE\x10\x64*@\n\nActionType\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06UPDATE\x10\x02\x12\x11\n\rADD_OR_UPDATE\x10\x03\x12\n\n\x06\x44\x45LETE\x10\x04*@\n\nAttachType\x12\x07\n\x03PIC\x10\x01\x12\t\n\x05\x41UDIO\x10\x02\x12\t\n\x05VEDIO\x10\x03\x12\x13\n\x0fOTHERATTACHTYPE\x10\x04*2\n\x11\x45xemptDisturbType\x12\t\n\x05\x43LOSE\x10\x01\x12\t\n\x05NIGHT\x10\x02\x12\x07\n\x03\x41LL\x10\x03*\x1f\n\x07SexType\x12\n\n\x06\x46\x45MALE\x10\x01\x12\x08\n\x04MALE\x10\x02*1\n\x0cPositionType\x12\r\n\tPRINCIPAL\x10\x01\x12\x12\n\x0eVICE_PRINCIPAL\x10\x02*a\n\tErrorCode\x12\x08\n\x03SUC\x10\xc8\x01\x12\r\n\x08NOTFOUND\x10\x94\x03\x12\r\n\x08NOTALLOW\x10\x93\x03\x12\n\n\x05\x45RROR\x10\xf4\x03\x12\x0c\n\x07KICKOFF\x10\xe9\x07\x12\x12\n\rTOKEN_EXPIRED\x10\xea\x07*a\n\x08PushType\x12\n\n\x06NOTICE\x10\x01\x12\x0b\n\x07\x43HECKIN\x10\x02\x12\n\n\x06GAKUEN\x10\x03\x12\x0c\n\x08MEDICINE\x10\x04\x12\r\n\tVOICECODE\x10\x05\x12\x13\n\x0fPUSH_LERNGARDEN\x10\x06*$\n\x0cPlatformType\x12\x07\n\x03IOS\x10\x01\x12\x0b\n\x07\x41NDROID\x10\x02*`\n\x0fSendSmsCodeType\x12\x13\n\x0f\x46ORGET_PASSWORD\x10\x01\x12\x0c\n\x08\x41\x43TIVATE\x10\x02\x12\x17\n\x13INVITATION_ACTIVATE\x10\x03\x12\x11\n\rUPDATE_MOBILE\x10\x04*\"\n\x0b\x43ommentType\x12\x08\n\x04LIKE\x10\x01\x12\t\n\x05REPLY\x10\x02*>\n\nTargetType\x12\x08\n\x04\x46\x45\x45\x44\x10\x01\x12\x0f\n\x0bGARDEN_MAIL\x10\x02\x12\x15\n\x11\x46\x45\x45\x44_MEDICIN_TASK\x10\x03*a\n\x08PostType\x12\x0c\n\x08\x41\x43TIVITY\x10\x01\x12\x10\n\x0c\x41NNOUNCEMENT\x10\x02\x12\x0e\n\nLERNGARDEN\x10\x03\x12\t\n\x05INTRO\x10\x04\x12\x0b\n\x07RECIPES\x10\x05\x12\r\n\tAGREEMENT\x10\x06*(\n\x08MuteType\x12\r\n\tMUTE_CHAT\x10\x01\x12\r\n\tMUTE_FEED\x10\x02\x42\x1f\n\x14\x63om.tuxing.rpc.protoB\x07TxProto')
+  serialized_pb=_b('\n\twjy.proto\"\x9f\x04\n\x04User\x12\x0e\n\x06userId\x18\x01 \x02(\x03\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x10\n\x08nickname\x18\x03 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x04 \x01(\t\x12\x13\n\x0b\x63hildUserId\x18\x05 \x01(\x03\x12\x0e\n\x06mobile\x18\x06 \x01(\t\x12\x0c\n\x04sign\x18\x07 \x01(\t\x12\x1b\n\x08userType\x18\x08 \x01(\x0e\x32\t.UserType\x12\x1f\n\nactionType\x18\t \x01(\x0e\x32\x0b.ActionType\x12\x13\n\x0b\x66irstLetter\x18\n \x01(\t\x12\x19\n\x07sexType\x18\x0b \x01(\x0e\x32\x08.SexType\x12\x10\n\x08\x62irthday\x18\x0c \x01(\x03\x12\x0f\n\x07\x61\x64\x64ress\x18\r \x01(\t\x12\x10\n\x08realname\x18\x0e \x01(\t\x12\x12\n\ngardenName\x18\x0f \x01(\t\x12\x11\n\tclassName\x18\x10 \x01(\t\x12\x1f\n\nParentType\x18\x11 \x01(\x0e\x32\x0b.ParentType\x12\x10\n\x08gardenId\x18\x12 \x01(\x03\x12\x0f\n\x07\x63lassId\x18\x13 \x01(\x03\x12\x12\n\npositionId\x18\x14 \x01(\x03\x12\x14\n\x0cpositionName\x18\x15 \x01(\t\x12\x0f\n\x07guarder\x18\x16 \x01(\t\x12\x11\n\tactivated\x18\x17 \x01(\x08\x12\x12\n\ncustomName\x18\x18 \x01(\t\x12\x16\n\x06\x63hilds\x18\x19 \x03(\x0b\x32\x06.Child\x12\x18\n\x10\x63ombinedNickname\x18\x1a \x01(\t\"Q\n\x05\x43hild\x12\x0e\n\x06userId\x18\x01 \x02(\x03\x12\x1f\n\nParentType\x18\x02 \x01(\x0e\x32\x0b.ParentType\x12\x17\n\x08isMaster\x18\x03 \x01(\x08:\x05\x66\x61lse\"\xb1\x01\n\nDepartment\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04name\x18\x02 \x02(\t\x12\x10\n\x08parentId\x18\x03 \x02(\x03\x12\x0f\n\x07groupId\x18\x04 \x01(\t\x12\x1d\n\x04type\x18\x05 \x02(\x0e\x32\x0f.DepartmentType\x12\x1f\n\nactionType\x18\x06 \x02(\x0e\x32\x0b.ActionType\x12\x12\n\nclassPhoto\x18\x07 \x01(\t\x12\x12\n\nshowParent\x18\x08 \x01(\x08\"\xa0\x01\n\x06Notice\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0f\n\x07\x63ontent\x18\x02 \x02(\t\x12\x19\n\x08\x61ttaches\x18\x03 \x03(\x0b\x32\x07.Attach\x12\x12\n\nsendUserId\x18\x04 \x02(\x03\x12\x10\n\x08sendTime\x18\x05 \x02(\x03\x12\x0e\n\x06isRead\x18\x06 \x01(\x08\x12\x12\n\nsenderName\x18\x07 \x01(\t\x12\x14\n\x0csenderAvatar\x18\x08 \x01(\t\":\n\x06\x41ttach\x12\x0f\n\x07\x66ileurl\x18\x01 \x02(\t\x12\x1f\n\nattachType\x18\x02 \x02(\x0e\x32\x0b.AttachType\"\x94\x01\n\x10NoticeDepartment\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x10\n\x08noticeId\x18\x02 \x01(\x03\x12\x14\n\x0c\x64\x65partmentId\x18\x03 \x02(\x03\x12\x13\n\x0bmemberCount\x18\x04 \x01(\x05\x12\x13\n\x0breadedCount\x18\x05 \x01(\x05\x12\x15\n\rmemberUserIds\x18\x06 \x03(\x03\x12\x0b\n\x03\x61ll\x18\x07 \x01(\x08\"\\\n\x0cNoticeMember\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0e\n\x06userId\x18\x02 \x02(\x03\x12\x10\n\x08nickname\x18\x03 \x01(\t\x12\x0e\n\x06isRead\x18\x04 \x01(\x08\x12\x0e\n\x06\x61vatar\x18\x05 \x01(\t\"\xf8\x01\n\x08UserCard\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0e\n\x06userId\x18\x02 \x02(\x03\x12\x14\n\x0cparentUserId\x18\x03 \x01(\x03\x12\x10\n\x08\x63\x61rdCode\x18\x04 \x02(\t\x12\x10\n\x08userName\x18\x05 \x01(\t\x12\x12\n\nparentName\x18\x06 \x01(\t\x12\x1f\n\nactionType\x18\x07 \x01(\x0e\x32\x0b.ActionType\x12\x1b\n\x08usertype\x18\x08 \x01(\x0e\x32\t.UserType\x12\x14\n\x0cpositionName\x18\t \x01(\t\x12\x16\n\x0e\x64\x65partmentName\x18\n \x01(\t\x12\x16\n\x0euserNameUnison\x18\x0b \x01(\t\"\xb0\x01\n\x07\x43heckin\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x10\n\x08\x63\x61rdCode\x18\x02 \x02(\t\x12\x17\n\x06\x61ttach\x18\x03 \x02(\x0b\x32\x07.Attach\x12\x0e\n\x06userId\x18\x04 \x01(\x03\x12\x13\n\x0b\x63heckinTime\x18\x05 \x02(\x03\x12\x10\n\x08gardenId\x18\x06 \x01(\x03\x12\x10\n\x08userName\x18\x07 \x01(\t\x12\x12\n\nparentName\x18\x08 \x01(\t\x12\x11\n\tclassName\x18\t \x01(\t\"2\n\x0cLoginRequest\x12\x10\n\x08username\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\"g\n\rLoginResponse\x12\x0e\n\x06isInit\x18\x01 \x02(\x08\x12\r\n\x05token\x18\x02 \x02(\t\x12\x13\n\x04user\x18\x03 \x02(\x0b\x32\x05.User\x12\"\n\x0cuserProfiles\x18\x04 \x03(\x0b\x32\x0c.UserProfile\"1\n\x14\x46\x65tchContactsRequest\x12\x19\n\x11lastModifiedSince\x18\x01 \x02(\x03\"L\n\x15\x46\x65tchContactsResponse\x12 \n\x0b\x64\x65partments\x18\x01 \x03(\x0b\x32\x0b.Department\x12\x11\n\tfetchTime\x18\x02 \x02(\x03\"L\n\x1d\x46\x65tchDepartmentMembersRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\x12\x15\n\rlastFetchTime\x18\x02 \x02(\x03\"`\n\x1e\x46\x65tchDepartmentMembersResponse\x12\x16\n\x07members\x18\x01 \x03(\x0b\x32\x05.User\x12\x15\n\rlastFetchTime\x18\x04 \x02(\x03\x12\x0f\n\x07hasMore\x18\x05 \x02(\x08\"#\n\x14\x46\x65tchUserinfoRequest\x12\x0b\n\x03uid\x18\x01 \x02(\x03\",\n\x15\x46\x65tchUserinfoResponse\x12\x13\n\x04user\x18\x01 \x02(\x0b\x32\x05.User\"2\n\x1a\x46\x65tchDepartmentinfoRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\">\n\x1b\x46\x65tchDepartmentinfoResponse\x12\x1f\n\ndepartment\x18\x01 \x02(\x0b\x32\x0b.Department\"2\n\x1f\x46\x65tchDepartmentByGroupIdRequest\x12\x0f\n\x07groupId\x18\x01 \x02(\t\"C\n FetchDepartmentByGroupIdResponse\x12\x1f\n\ndepartment\x18\x01 \x02(\x0b\x32\x0b.Department\"l\n\x11SendNoticeRequest\x12\x0f\n\x07\x63ontent\x18\x01 \x02(\t\x12\x18\n\x07\x61ttches\x18\x02 \x03(\x0b\x32\x07.Attach\x12,\n\x11noticeDepartments\x18\x03 \x03(\x0b\x32\x11.NoticeDepartment\"5\n\x12SendNoticeResponse\x12\x10\n\x08noticeId\x18\x01 \x02(\x03\x12\r\n\x05\x62onus\x18\x02 \x01(\x05\"E\n\x12\x46\x65tchNoticeRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\x12\x0f\n\x07isInbox\x18\x03 \x02(\x08\"@\n\x13\x46\x65tchNoticeResponse\x12\x18\n\x07notices\x18\x01 \x03(\x0b\x32\x07.Notice\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\"1\n\x1d\x46\x65tchNoticeDepartmentsRequest\x12\x10\n\x08noticeId\x18\x01 \x02(\x03\"N\n\x1e\x46\x65tchNoticeDepartmentsResponse\x12,\n\x11noticeDepartments\x18\x01 \x03(\x0b\x32\x11.NoticeDepartment\"C\n\x19\x46\x65tchNoticeMembersRequest\x12\x10\n\x08noticeId\x18\x01 \x02(\x03\x12\x14\n\x0c\x64\x65partmentId\x18\x02 \x02(\x03\"B\n\x1a\x46\x65tchNoticeMembersResponse\x12$\n\rnoticeMembers\x18\x01 \x03(\x0b\x32\r.NoticeMember\"%\n\x11ReadNoticeRequest\x12\x10\n\x08noticeId\x18\x01 \x02(\x03\"\x14\n\x12ReadNoticeResponse\"\x1f\n\x1dGetUserUnreadNoticeCntRequest\"9\n\x1eGetUserUnreadNoticeCntResponse\x12\x17\n\x0funreadNoticeCnt\x18\x01 \x02(\x05\"D\n\x0f\x42indCardRequest\x12\x10\n\x08\x63\x61rdCode\x18\x01 \x02(\t\x12\x0e\n\x06userId\x18\x02 \x02(\x03\x12\x0f\n\x07\x63hildId\x18\x03 \x01(\x03\")\n\x15ReportLossCardRequest\x12\x10\n\x08\x63\x61rdCode\x18\x01 \x02(\t\">\n\x0e\x43heckinRequest\x12\x11\n\tmachineId\x18\x01 \x02(\t\x12\x19\n\x07\x63heckin\x18\x02 \x03(\x0b\x32\x08.Checkin\"\x11\n\x0f\x43heckinResponse\"f\n\x1dRegisterCheckinMachineRequest\x12\x0c\n\x04oaId\x18\x01 \x01(\x03\x12\x10\n\x08gardenId\x18\x02 \x01(\x03\x12\x11\n\tmachineId\x18\x03 \x02(\t\x12\x12\n\nmacAddress\x18\x04 \x01(\t\"F\n\x1eRegisterCheckinMachineResponse\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\x12\x12\n\ngardenName\x18\x02 \x02(\t\"<\n\x16\x43heckPermissionRequest\x12\x10\n\x08password\x18\x01 \x02(\t\x12\x10\n\x08gardenId\x18\x02 \x01(\x03\"\x19\n\x17\x43heckPermissionResponse\"?\n\x10\x46\x65tchCardRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\x12\x19\n\x11lastModifiedSince\x18\x02 \x02(\x03\"P\n\x11\x46\x65tchCardResponse\x12\x17\n\x04\x63\x61rd\x18\x01 \x03(\x0b\x32\t.UserCard\x12\x11\n\tfetchTime\x18\x02 \x02(\x03\x12\x0f\n\x07hasMore\x18\x03 \x02(\x08\"C\n\x1a\x46\x65tchOldMachineCardRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\x12\x13\n\x0bsyncVersion\x18\x02 \x02(\x03\"K\n\x1b\x46\x65tchOldMachineCardResponse\x12\x17\n\x04\x63\x61rd\x18\x01 \x03(\x0b\x32\t.UserCard\x12\x13\n\x0bsyncVersion\x18\x02 \x01(\x03\"%\n\x11\x46\x65tchVoiceRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\"R\n\x12\x46\x65tchVoiceResponse\x12\x12\n\nvoiceClass\x18\x01 \x02(\x05\x12\x13\n\x0bvoicePrefix\x18\x02 \x01(\t\x12\x13\n\x0bvoiceSuffix\x18\x03 \x01(\t\"5\n\x13\x46\x65tchCheckinRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\"Z\n\x14\x46\x65tchCheckinResponse\x12\x1a\n\x08\x63heckins\x18\x01 \x03(\x0b\x32\x08.Checkin\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\x12\x15\n\rlastFetchTime\x18\x03 \x02(\x03\"\x16\n\x14GetUploadinfoRequest\"&\n\x15GetUploadinfoResponse\x12\r\n\x05token\x18\x01 \x02(\t\"\x1e\n\x1cGetCheckinUploadTokenRequest\".\n\x1dGetCheckinUploadTokenResponse\x12\r\n\x05token\x18\x01 \x02(\t\"\x86\x01\n\x0c\x42indCardInfo\x12\x10\n\x08\x63\x61rdCode\x18\x01 \x01(\t\x12\x10\n\x08nickName\x18\x02 \x01(\t\x12\x1f\n\nparentType\x18\x03 \x01(\x0e\x32\x0b.ParentType\x12\x0e\n\x06\x61vatar\x18\x04 \x01(\t\x12\x10\n\x08parentId\x18\x05 \x01(\x03\x12\x0f\n\x07\x63hildId\x18\x06 \x01(\x03\"=\n\x15\x46\x65tchUserCardResponse\x12$\n\rbiandCardInfo\x18\x01 \x03(\x0b\x32\r.BindCardInfo\"\xd8\x02\n\x10\x46\x65\x65\x64MedicineTask\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x11\n\tbeginDate\x18\x02 \x02(\x03\x12\x0c\n\x04\x64\x65sc\x18\x03 \x02(\t\x12\x19\n\x08\x61ttaches\x18\x04 \x03(\x0b\x32\x07.Attach\x12\x14\n\x0cparentUserId\x18\x05 \x02(\x03\x12\x12\n\nparentName\x18\x06 \x01(\t\x12\x17\n\x0fparentAvatarUrl\x18\x07 \x01(\t\x12\x0f\n\x07\x63lassId\x18\x08 \x01(\x03\x12\x11\n\tclassName\x18\t \x01(\t\x12\x16\n\x0e\x63lassAvatarUrl\x18\n \x01(\t\x12\x11\n\tcreatedOn\x18\x0b \x01(\x03\x12\x0e\n\x06status\x18\x0c \x01(\x05\x12\x10\n\x08updateOn\x18\r \x01(\x03\x12\x0f\n\x07hasRead\x18\x0e \x01(\x08\x12\x0f\n\x07\x63hildId\x18\x0f \x01(\x03\x12\x11\n\tchildName\x18\x10 \x01(\t\x12\x13\n\x0b\x63hildAvatar\x18\x11 \x01(\t\">\n\x1c\x46\x65tchFeedMedicineTaskRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\"]\n\x1d\x46\x65tchFeedMedicineTaskResponse\x12+\n\x10\x66\x65\x65\x64MedicineTask\x18\x01 \x03(\x0b\x32\x11.FeedMedicineTask\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\"9\n\x1bReadFeedMedicineTaskRequest\x12\x1a\n\x12\x66\x65\x65\x64MedicineTaskId\x18\x01 \x02(\x03\"j\n\x1bSendFeedMedicineTaskRequest\x12\x11\n\tbeginDate\x18\x01 \x02(\x03\x12\x0c\n\x04\x64\x65sc\x18\x02 \x02(\t\x12\x19\n\x08\x61ttaches\x18\x03 \x03(\x0b\x32\x07.Attach\x12\x0f\n\x07\x63hildId\x18\x04 \x01(\x03\":\n\x1cSendFeedMedicineTaskResponse\x12\x1a\n\x12\x66\x65\x65\x64MedicineTaskId\x18\x01 \x02(\x03\"\x86\x02\n\nGardenMail\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x10\n\x08gardenId\x18\x02 \x02(\x03\x12\x12\n\ngardenName\x18\x03 \x01(\t\x12\x17\n\x0fgardenAvatarUrl\x18\x04 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x05 \x02(\t\x12\x11\n\tcreatedOn\x18\x06 \x02(\x03\x12\x11\n\tanonymous\x18\x07 \x02(\x08\x12\x12\n\nfromUserId\x18\x08 \x02(\x03\x12\x14\n\x0c\x66romUsername\x18\t \x01(\t\x12\x19\n\x11\x66romUserAvatarUrl\x18\n \x01(\t\x12\x0e\n\x06status\x18\x0b \x01(\x05\x12\x10\n\x08updateOn\x18\x0c \x01(\x03\x12\x0f\n\x07hasRead\x18\r \x01(\x08\"8\n\x16\x46\x65tchGardenMailRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\"K\n\x17\x46\x65tchGardenMailResponse\x12\x1f\n\ngardenMail\x18\x01 \x03(\x0b\x32\x0b.GardenMail\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\";\n\x15SendGardenMailRequest\x12\x0f\n\x07\x63ontent\x18\x01 \x02(\t\x12\x11\n\tanonymous\x18\x02 \x02(\x08\"$\n\x16SendGardenMailResponse\x12\n\n\x02id\x18\x01 \x02(\x03\"g\n\x12SendSmsCodeRequest\x12\x0e\n\x06mobile\x18\x01 \x02(\t\x12)\n\x0fsendSmsCodeType\x18\x02 \x02(\x0e\x32\x10.SendSmsCodeType\x12\x16\n\x07isVoice\x18\x03 \x01(\x08:\x05\x66\x61lse\"\'\n\x13SendSmsCodeResponse\x12\x10\n\x08isActive\x18\x01 \x01(\x08\"C\n\x11\x41\x63tiveUserRequest\x12\x0e\n\x06mobile\x18\x01 \x02(\t\x12\x0c\n\x04\x63ode\x18\x02 \x02(\t\x12\x10\n\x08password\x18\x03 \x02(\t\"\\\n\x12\x41\x63tiveUserResponse\x12\r\n\x05token\x18\x01 \x02(\t\x12\x13\n\x04user\x18\x02 \x02(\x0b\x32\x05.User\x12\"\n\x0cuserProfiles\x18\x03 \x03(\x0b\x32\x0c.UserProfile\"\x13\n\x11\x46\x65tchChildRequest\"-\n\x12\x46\x65tchChildResponse\x12\x17\n\x08\x63hildren\x18\x01 \x02(\x0b\x32\x05.User\"\x86\x01\n\x10\x42indChildRequest\x12\x1f\n\nparentType\x18\x01 \x02(\x0e\x32\x0b.ParentType\x12\x13\n\x0b\x63hildUserId\x18\x02 \x02(\x03\x12\x10\n\x08\x62irthday\x18\x03 \x02(\x03\x12\x0f\n\x07guarder\x18\x04 \x02(\t\x12\x19\n\x07sexType\x18\x05 \x01(\x0e\x32\x08.SexType\"@\n\x11\x42indChildResponse\x12\x15\n\x06parent\x18\x01 \x02(\x0b\x32\x05.User\x12\x14\n\x05\x63hild\x18\x02 \x02(\x0b\x32\x05.User\"D\n\x12SetPasswordRequest\x12\x0c\n\x04\x63ode\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\x0e\n\x06mobile\x18\x03 \x02(\t\"\x15\n\x13SetPasswordResponse\"A\n\x15UpdatePasswordRequest\x12\x13\n\x0boldPassword\x18\x01 \x02(\t\x12\x13\n\x0bnewPassword\x18\x02 \x02(\t\"\x18\n\x16UpdatePasswordResponse\"[\n\x11\x42indingParentInfo\x12\x13\n\x04user\x18\x01 \x02(\x0b\x32\x05.User\x12\x1f\n\nparentType\x18\x02 \x02(\x0e\x32\x0b.ParentType\x12\x10\n\x08isMaster\x18\x03 \x02(\x08\".\n\x1bGetBindingParentListRequest\x12\x0f\n\x07\x63hildId\x18\x01 \x01(\x03\"G\n\x1cGetBindingParentListResponse\x12\'\n\x0b\x62indParents\x18\x01 \x03(\x0b\x32\x12.BindingParentInfo\"W\n\x11UpdateBindRequest\x12\x10\n\x08parentId\x18\x01 \x02(\x03\x12\x1f\n\nparentType\x18\x02 \x02(\x0e\x32\x0b.ParentType\x12\x0f\n\x07\x63hildId\x18\x03 \x01(\x03\")\n\x12UpdateBindResponse\x12\x13\n\x04user\x18\x01 \x02(\x0b\x32\x05.User\",\n\x15UpdateUserInfoRequest\x12\x13\n\x04user\x18\x01 \x02(\x0b\x32\x05.User\"\x18\n\x16UpdateUserInfoResponse\"{\n\x17\x41\x63tiveInviteUserRequest\x12\x0e\n\x06mobile\x18\x01 \x02(\t\x12\x0c\n\x04\x63ode\x18\x02 \x02(\t\x12\x1f\n\nparentType\x18\x03 \x02(\x0e\x32\x0b.ParentType\x12\x10\n\x08password\x18\x04 \x02(\t\x12\x0f\n\x07\x63hildId\x18\x05 \x01(\x03\"/\n\x18\x41\x63tiveInviteUserResponse\x12\x13\n\x04user\x18\x01 \x02(\x0b\x32\x05.User\"7\n\x12RelieveBindRequest\x12\x10\n\x08parentId\x18\x01 \x02(\x03\x12\x0f\n\x07\x63hildId\x18\x02 \x01(\x03\"\x15\n\x13RelieveBindResponse\"3\n\x13UpdateMobileRequest\x12\x0e\n\x06mobile\x18\x03 \x02(\t\x12\x0c\n\x04\x63ode\x18\x04 \x02(\t\"\x16\n\x14UpdateMobileResponse\",\n\x0bUserProfile\x12\x0e\n\x06option\x18\x01 \x02(\t\x12\r\n\x05value\x18\x02 \x02(\t\"<\n\x16SaveUserProfileRequest\x12\"\n\x0cuserProfiles\x18\x01 \x03(\x0b\x32\x0c.UserProfile\"\x19\n\x17SaveUserProfileResponse\"\x19\n\x17\x46\x65tchUserProfileRequest\">\n\x18\x46\x65tchUserProfileResponse\x12\"\n\x0cuserProfiles\x18\x01 \x03(\x0b\x32\x0c.UserProfile\"\x0f\n\rLogOutRequest\"\x10\n\x0eLogOutResponse\"d\n\x04Like\x12\x0e\n\x06userId\x18\x01 \x02(\x03\x12\x10\n\x08nickName\x18\x02 \x01(\t\x12\x15\n\ruserAvatarUrl\x18\x03 \x01(\t\x12\x10\n\x08targetId\x18\x04 \x02(\x03\x12\x11\n\tcommentId\x18\x05 \x02(\x03\"\xf4\x01\n\x04\x46\x65\x65\x64\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\x12\x10\n\x08\x63reateOn\x18\x03 \x02(\x03\x12\x19\n\x08\x61ttaches\x18\x04 \x03(\x0b\x32\x07.Attach\x12\x14\n\x05likes\x18\x05 \x03(\x0b\x32\x05.Like\x12\x1a\n\x08\x63omments\x18\x06 \x03(\x0b\x32\x08.Comment\x12\x0e\n\x06userId\x18\x07 \x02(\x03\x12\x14\n\x0cuserNickName\x18\x08 \x02(\t\x12\x15\n\ruserAvatarUrl\x18\t \x02(\t\x12\x16\n\x0ehasMoreComment\x18\n \x01(\x08\x12\x1b\n\x08userType\x18\x0b \x01(\x0e\x32\t.UserType\"q\n\x0fSendFeedRequest\x12\x15\n\rdepartmentIds\x18\x02 \x03(\x03\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\x12\x19\n\x08\x61ttaches\x18\x04 \x03(\x0b\x32\x07.Attach\x12\x1b\n\x13syncDepartmentPhoto\x18\x05 \x01(\x08\"1\n\x10SendFeedResponse\x12\x0e\n\x06\x66\x65\x65\x64Id\x18\x01 \x02(\x03\x12\r\n\x05\x62onus\x18\x02 \x01(\x05\"y\n\x08\x41\x63tivity\x12\n\n\x02id\x18\x01 \x02(\x03\x12\r\n\x05title\x18\x02 \x02(\t\x12\x0e\n\x06picUrl\x18\x03 \x03(\t\x12\x11\n\tavatarUrl\x18\x04 \x02(\t\x12\x10\n\x08nickname\x18\x05 \x02(\t\x12\x10\n\x08\x63reateOn\x18\x06 \x02(\x03\x12\x0b\n\x03url\x18\x07 \x02(\t\"Y\n\x10\x46\x65tchFeedRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\x12\x0f\n\x07isInbox\x18\x03 \x02(\x08\x12\x14\n\x0c\x64\x65partmentId\x18\x04 \x01(\x03\"n\n\x11\x46\x65tchFeedResponse\x12\x14\n\x05\x66\x65\x65\x64s\x18\x01 \x03(\x0b\x32\x05.Feed\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\x12\x15\n\rlastFetchTime\x18\x03 \x02(\x03\x12\x1b\n\x08\x61\x63tivity\x18\x04 \x01(\x0b\x32\t.Activity\"F\n\x14\x46\x65tchUserFeedRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\x12\x0e\n\x06userId\x18\x03 \x02(\x03\">\n\x15\x46\x65tchUserFeedResponse\x12\x14\n\x05\x66\x65\x65\x64s\x18\x01 \x03(\x0b\x32\x05.Feed\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\"#\n\x11\x44\x65leteFeedRequest\x12\x0e\n\x06\x66\x65\x65\x64Id\x18\x01 \x02(\x03\"\x14\n\x12\x44\x65leteFeedResponse\"\x90\x01\n\x18UpdateDeviceTokenRequest\x12\x13\n\x0b\x64\x65viceToken\x18\x01 \x02(\t\x12#\n\x0cplatformType\x18\x02 \x02(\x0e\x32\r.PlatformType\x12\x11\n\tosVersion\x18\x03 \x02(\t\x12\x15\n\rmobileVersion\x18\x04 \x02(\t\x12\x10\n\x08\x64\x65viceId\x18\x05 \x02(\t\"\x1b\n\x19UpdateDeviceTokenResponse\"&\n\x07\x43ounter\x12\x0c\n\x04item\x18\x01 \x02(\t\x12\r\n\x05\x63ount\x18\x02 \x02(\x05\"\x15\n\x13\x46\x65tchCounterRequest\"2\n\x14\x46\x65tchCounterResponse\x12\x1a\n\x08\x63ounters\x18\x01 \x03(\x0b\x32\x08.Counter\"\xbb\x02\n\x07\x43omment\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\x12!\n\x0b\x63ommentType\x18\x03 \x02(\x0e\x32\x0c.CommentType\x12\x10\n\x08targetId\x18\x04 \x02(\x03\x12\x14\n\x0ctargetUserId\x18\x05 \x02(\x03\x12\x1f\n\ntargetType\x18\x06 \x02(\x0e\x32\x0b.TargetType\x12\x10\n\x08toUserId\x18\x07 \x01(\x03\x12\x16\n\x0etoUserNickName\x18\x08 \x01(\t\x12\x10\n\x08\x63reateOn\x18\t \x02(\x03\x12\x0e\n\x06userId\x18\n \x02(\x03\x12\x14\n\x0cuserNickName\x18\x0b \x01(\t\x12\x15\n\ruserAvatarUrl\x18\x0c \x01(\t\x12\x1b\n\x08userType\x18\r \x01(\x0e\x32\t.UserType\x12\x11\n\tuserTitle\x18\x0e \x01(\t\"\x8d\x01\n\x12SendCommentRequest\x12\x0f\n\x07\x63ontent\x18\x01 \x02(\t\x12!\n\x0b\x63ommentType\x18\x02 \x02(\x0e\x32\x0c.CommentType\x12\x10\n\x08toUserId\x18\x03 \x01(\x03\x12\x10\n\x08targetId\x18\x04 \x02(\x03\x12\x1f\n\ntargetType\x18\x05 \x02(\x0e\x32\x0b.TargetType\"7\n\x13SendCommentResponse\x12\x11\n\tcommentId\x18\x01 \x02(\x03\x12\r\n\x05\x62onus\x18\x02 \x01(\x05\"*\n\x15\x44\x65leteCommnetsRequest\x12\x11\n\tcommentId\x18\x01 \x02(\x03\"g\n\x12ShowCommentRequest\x12\x10\n\x08targetId\x18\x01 \x02(\x03\x12\x1f\n\ntargetType\x18\x02 \x02(\x0e\x32\x0b.TargetType\x12\r\n\x05maxId\x18\x03 \x01(\x03\x12\x0f\n\x07sinceId\x18\x04 \x01(\x03\"A\n\x13ShowCommentResponse\x12\x19\n\x07\x63omment\x18\x01 \x03(\x0b\x32\x08.Comment\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\">\n\x1c\x46\x65tchConcernedCommentRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\"=\n\x0b\x46\x65\x65\x64\x43omment\x12\x13\n\x04\x66\x65\x65\x64\x18\x01 \x02(\x0b\x32\x05.Feed\x12\x19\n\x07\x63omment\x18\x02 \x02(\x0b\x32\x08.Comment\"S\n\x1d\x46\x65tchConcernedCommentResponse\x12!\n\x0b\x66\x65\x65\x64\x43omment\x18\x01 \x03(\x0b\x32\x0c.FeedComment\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\"\x1f\n\x1d\x44\x65leteConcernedCommentRequest\" \n\x1e\x44\x65leteConcernedCommentResponse\"\xaf\x01\n\x04Post\x12\n\n\x02id\x18\x01 \x02(\x03\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x04 \x01(\t\x12\x15\n\rcoverImageUrl\x18\x05 \x01(\t\x12\x11\n\tcreatedOn\x18\x06 \x01(\x03\x12\x1b\n\x08postType\x18\x07 \x01(\x0e\x32\t.PostType\x12\x12\n\norderValue\x18\x08 \x01(\x03\x12\x0f\n\x07postUrl\x18\t \x01(\t\"a\n\x10\x46\x65tchPostRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\x12\r\n\x05maxId\x18\x02 \x01(\x03\x12\x0f\n\x07sinceId\x18\x03 \x01(\x03\x12\x1b\n\x08postType\x18\x04 \x02(\x0e\x32\t.PostType\"P\n\x11\x46\x65tchPostResponse\x12\x13\n\x04post\x18\x01 \x03(\x0b\x32\x05.Post\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\x12\x15\n\rlastFetchTime\x18\x03 \x01(\x03\"E\n\x16\x46\x65tchPostDetailRequest\x12\x0e\n\x06postId\x18\x01 \x01(\x03\x12\x1b\n\x08postType\x18\x02 \x01(\x0e\x32\t.PostType\"Q\n\x17\x46\x65tchPostDetailResponse\x12\x13\n\x04post\x18\x01 \x01(\x0b\x32\x05.Post\x12\x10\n\x08postHtml\x18\x02 \x01(\t\x12\x0f\n\x07postUrl\x18\x03 \x01(\t\"\x19\n\x17\x46\x65tchGardenIntroRequest\"R\n\x18\x46\x65tchGardenIntroResponse\x12\x13\n\x04post\x18\x01 \x01(\x0b\x32\x05.Post\x12\x10\n\x08postHtml\x18\x02 \x01(\t\x12\x0f\n\x07postUrl\x18\x03 \x01(\t\"\x17\n\x15\x46\x65tchAgreementRequest\"P\n\x16\x46\x65tchAgreementResponse\x12\x13\n\x04post\x18\x01 \x01(\x0b\x32\x05.Post\x12\x10\n\x08postHtml\x18\x02 \x01(\t\x12\x0f\n\x07postUrl\x18\x03 \x01(\t\",\n\tPostGroup\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x13\n\x04post\x18\x02 \x03(\x0b\x32\x05.Post\"I\n\x15\x46\x65tchPostGroupRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\x12\x10\n\x08gardenId\x18\x03 \x01(\x03\"_\n\x16\x46\x65tchPostGroupResponse\x12\x1d\n\tpostGroup\x18\x01 \x03(\x0b\x32\n.PostGroup\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\x12\x15\n\rlastFetchTime\x18\x03 \x02(\x03\"a\n\x0bMuteRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\x12\x14\n\x0c\x63hildUserIds\x18\x02 \x03(\x03\x12\x17\n\x04type\x18\x03 \x01(\x0e\x32\t.MuteType\x12\r\n\x05\x63over\x18\x04 \x01(\x08\"\x0e\n\x0cMuteResponse\"T\n\rUnMuteRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\x12\x14\n\x0c\x63hildUserIds\x18\x02 \x02(\x03\x12\x17\n\x04type\x18\x03 \x01(\x0e\x32\t.MuteType\"\x10\n\x0eUnMuteResponse\"A\n\x10\x46\x65tchMuteRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\x12\x17\n\x04type\x18\x02 \x01(\x0e\x32\t.MuteType\")\n\x11\x46\x65tchMuteResponse\x12\x14\n\x0c\x63hildUserIds\x18\x01 \x03(\x03\"#\n\x15ReadGardenMailRequest\x12\n\n\x02id\x18\x01 \x02(\x03\"\x18\n\x16ReadGardenMailResponse\"%\n\x17ReadFeedMedicineRequest\x12\n\n\x02id\x18\x01 \x02(\x03\"\x1a\n\x18ReadFeedMedicineResponse\"$\n\x11\x43ollectLogRequest\x12\x0f\n\x07\x63ontent\x18\x01 \x02(\t\"\x14\n\x12\x43ollectLogResponse\"6\n\x11MachineLogRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\x12\x0f\n\x07\x63ontent\x18\x02 \x02(\t\"\x14\n\x12MachineLogResponse\"\x8f\x01\n\x07Upgrade\x12\x12\n\nshowAtMain\x18\x01 \x01(\x08\x12\x12\n\nmustUpdate\x18\x02 \x01(\x08\x12\x10\n\x08isUpdate\x18\x03 \x02(\x08\x12\x11\n\tupdateMsg\x18\x04 \x01(\t\x12\x0f\n\x07showMsg\x18\x05 \x01(\t\x12\x13\n\x0bversionCode\x18\x06 \x01(\t\x12\x11\n\tupdateUrl\x18\x07 \x01(\t\"5\n\x0eUpgradeRequest\x12#\n\x0cplatformType\x18\x01 \x02(\x0e\x32\r.PlatformType\":\n\x15MachineUpgradeRequest\x12\x0f\n\x07version\x18\x01 \x02(\t\x12\x10\n\x08\x64\x65viceId\x18\x02 \x01(\t\",\n\x0fUpgradeResponse\x12\x19\n\x07upgrade\x18\x01 \x01(\x0b\x32\x08.Upgrade\"`\n\x16ScanCodeCheckinRequest\x12\x10\n\x08\x63\x61rdCode\x18\x01 \x01(\t\x12\x0e\n\x06userId\x18\x02 \x01(\x03\x12\x13\n\x0b\x63heckinTime\x18\x03 \x02(\x03\x12\x0f\n\x07\x63hildId\x18\x04 \x01(\x03\"\x19\n\x17ScanCodeCheckinResponse\"(\n\x14GetGardenNameRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\"+\n\x15GetGardenNameResponse\x12\x12\n\ngardenName\x18\x02 \x02(\t\"$\n\x13\x43learCheckInRequest\x12\r\n\x05maxId\x18\x01 \x02(\x03\"4\n\x12\x43learNoticeRequest\x12\r\n\x05maxId\x18\x01 \x02(\x03\x12\x0f\n\x07isInbox\x18\x02 \x02(\x08\"S\n\x1b\x46\x65tchDepartmentPhotoRequest\x12\x14\n\x0c\x64\x65partmentId\x18\x01 \x02(\x03\x12\r\n\x05maxId\x18\x02 \x01(\x03\x12\x0f\n\x07sinceId\x18\x03 \x01(\x03\"@\n\x0f\x44\x65partmentPhoto\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0f\n\x07\x66ileKey\x18\x02 \x02(\t\x12\x10\n\x08\x63reateOn\x18\x03 \x02(\x03\"c\n\x1c\x46\x65tchDepartmentPhotoResponse\x12 \n\x06photos\x18\x01 \x03(\x0b\x32\x10.DepartmentPhoto\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\x12\x10\n\x08totalCnt\x18\x03 \x01(\x03\"\x14\n\x12UserCheckInRequest\"$\n\x13UserCheckInResponse\x12\r\n\x05\x62onus\x18\x01 \x01(\x05\"8\n\x16\x46\x65tchAttendanceRequest\x12\r\n\x05maxId\x18\x01 \x01(\x03\x12\x0f\n\x07sinceId\x18\x02 \x01(\x03\"F\n\x17\x46\x65tchAttendanceResponse\x12\x1a\n\x08\x63heckins\x18\x01 \x03(\x0b\x32\x08.Checkin\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\"7\n\x16\x43lassAttendanceRequest\x12\x0f\n\x07\x63lassId\x18\x01 \x02(\x03\x12\x0c\n\x04\x64\x61te\x18\x02 \x02(\x03\"r\n\x17\x43lassAttendanceResponse\x12\x16\n\x07present\x18\x01 \x03(\x0b\x32\x05.User\x12\x16\n\x07\x61\x62sence\x18\x02 \x03(\x0b\x32\x05.User\x12\x14\n\x05leave\x18\x03 \x03(\x0b\x32\x05.User\x12\x11\n\tisRestDay\x18\x04 \x01(\x08\"8\n\x16\x43hildAttendanceRequest\x12\r\n\x05month\x18\x01 \x02(\x03\x12\x0f\n\x07\x63hildId\x18\x02 \x01(\x03\"X\n\x17\x43hildAttendanceResponse\x12\x0f\n\x07present\x18\x01 \x03(\x03\x12\x0f\n\x07\x61\x62sence\x18\x02 \x03(\x03\x12\r\n\x05leave\x18\x03 \x03(\x03\x12\x0c\n\x04rest\x18\x04 \x03(\x03\"X\n\x17UpdateAttendanceRequest\x12\x0f\n\x07present\x18\x01 \x03(\x03\x12\x0f\n\x07\x61\x62sence\x18\x02 \x03(\x03\x12\r\n\x05leave\x18\x03 \x03(\x03\x12\x0c\n\x04\x64\x61te\x18\x04 \x02(\x03\"\x1a\n\x18UpdateAttendanceResponse\"\xea\x02\n\x05Leave\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x13\n\x0b\x61pplyUserId\x18\x02 \x02(\x03\x12\x15\n\rapplyUserName\x18\x03 \x02(\t\x12\x17\n\x0f\x61pplyUserAvatar\x18\x04 \x01(\t\x12\x0e\n\x06userId\x18\x05 \x02(\x03\x12\x12\n\nuserAvatar\x18\x06 \x01(\t\x12\x10\n\x08userName\x18\x07 \x02(\t\x12\x0e\n\x06reason\x18\x08 \x01(\t\x12\x11\n\tbeginDate\x18\t \x02(\x03\x12\x0f\n\x07\x65ndDate\x18\n \x02(\x03\x12\x0c\n\x04\x64\x61ys\x18\x0b \x02(\x01\x12\x1d\n\tleaveType\x18\x0c \x02(\x0e\x32\n.LeaveType\x12\x13\n\x0breplyUserId\x18\r \x01(\x03\x12\x15\n\rreplyUserName\x18\x0e \x01(\t\x12\r\n\x05reply\x18\x0f \x01(\t\x12\x1c\n\x06status\x18\x10 \x02(\x0e\x32\x0c.LeaveStatus\x12\x11\n\tcreatedOn\x18\x11 \x02(\x03\x12\r\n\x05\x64\x61tes\x18\x12 \x03(\x03\"C\n\x11\x46\x65tchLeaveRequest\x12\x0f\n\x07sinceId\x18\x01 \x02(\x03\x12\r\n\x05maxId\x18\x02 \x02(\x03\x12\x0e\n\x06userId\x18\x03 \x01(\x03\"=\n\x12\x46\x65tchLeaveResponse\x12\x16\n\x06leaves\x18\x01 \x03(\x0b\x32\x06.Leave\x12\x0f\n\x07hasMore\x18\x02 \x02(\x08\"v\n\x11\x41pplyLeaveRequest\x12\x0e\n\x06reason\x18\x01 \x01(\t\x12\x11\n\tbeginDate\x18\x02 \x02(\x03\x12\x0f\n\x07\x65ndDate\x18\x03 \x02(\x03\x12\x1d\n\tleaveType\x18\x04 \x02(\x0e\x32\n.LeaveType\x12\x0e\n\x06userId\x18\x05 \x01(\x03\"\x14\n\x12\x41pplyLeaveResponse\"5\n\x13\x41pproveLeaveRequest\x12\x0f\n\x07leaveId\x18\x01 \x02(\x03\x12\r\n\x05reply\x18\x02 \x01(\t\"\x16\n\x14\x41pproveLeaveResponse\"2\n\x1eTeacherInvitationParentRequest\x12\x10\n\x08parentId\x18\x01 \x02(\x03\"!\n\x1fTeacherInvitationParentResponse\"#\n\x13\x46\x65tchRestDayRequest\x12\x0c\n\x04\x64\x61te\x18\x01 \x02(\x03\"\'\n\x14\x46\x65tchRestDayResponse\x12\x0f\n\x07restDay\x18\x01 \x03(\x03\"\xa4\x01\n\x03\x41pp\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\x0c\n\x04sign\x18\x02 \x02(\t\x12\x0c\n\x04icon\x18\x03 \x02(\t\x12\x19\n\x07\x61ppType\x18\x04 \x02(\x0e\x32\x08.AppType\x12\x0b\n\x03url\x18\x05 \x01(\t\x12\x13\n\x0b\x63ounterName\x18\x06 \x01(\t\x12$\n\x0b\x63ounterType\x18\x07 \x01(\x0e\x32\x0f.AppCounterType\x12\x10\n\x08isNewApp\x18\x08 \x02(\x08\"\x11\n\x0f\x46\x65tchAppRequest\"*\n\x10\x46\x65tchAppResponse\x12\x16\n\x08homeApps\x18\x01 \x03(\x0b\x32\x04.App*\x85\x01\n\nParentType\x12\n\n\x06\x46\x41THER\x10\x01\x12\n\n\x06MOTHER\x10\x02\x12\x11\n\rFATHERSFATHER\x10\x03\x12\x11\n\rFATHERSMOTHER\x10\x04\x12\x11\n\rMOTHERSFATHER\x10\x05\x12\x11\n\rMOTHERSMOTHER\x10\x06\x12\x13\n\x0fOTHERPARENTTYPE\x10\x64*q\n\x08UserType\x12\t\n\x05\x43HILD\x10\x01\x12\n\n\x06PARENT\x10\x02\x12\x0b\n\x07TEACHER\x10\x03\x12\x0b\n\x07PARTNER\x10\x04\x12\n\n\x06\x45XPERT\x10\x05\x12\x14\n\x10RESOURCE_PARTNER\x10\x06\x12\x12\n\x0e\x43OURSE_TEACHER\x10\x07*\x9c\x01\n\x0e\x44\x65partmentType\x12\n\n\x06GARDEN\x10\x01\x12\t\n\x05\x43LAZZ\x10\x02\x12\x10\n\x0cGROUP_GARDEN\x10\x03\x12\r\n\tEDUCATION\x10\x04\x12\x17\n\x13OTHERDEPARTMENTTYPE\x10\x64\x12\x0e\n\nDEPARTMENT\x10\x05\x12\x12\n\x0eINTEREST_CLAZZ\x10\x06\x12\n\n\x06SCHOOL\x10\x0b\x12\t\n\x05GRADE\x10\x0c*@\n\nActionType\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06UPDATE\x10\x02\x12\x11\n\rADD_OR_UPDATE\x10\x03\x12\n\n\x06\x44\x45LETE\x10\x04*@\n\nAttachType\x12\x07\n\x03PIC\x10\x01\x12\t\n\x05\x41UDIO\x10\x02\x12\t\n\x05VEDIO\x10\x03\x12\x13\n\x0fOTHERATTACHTYPE\x10\x04*2\n\x11\x45xemptDisturbType\x12\t\n\x05\x43LOSE\x10\x01\x12\t\n\x05NIGHT\x10\x02\x12\x07\n\x03\x41LL\x10\x03*\x1f\n\x07SexType\x12\n\n\x06\x46\x45MALE\x10\x01\x12\x08\n\x04MALE\x10\x02*1\n\x0cPositionType\x12\r\n\tPRINCIPAL\x10\x01\x12\x12\n\x0eVICE_PRINCIPAL\x10\x02*a\n\tErrorCode\x12\x08\n\x03SUC\x10\xc8\x01\x12\r\n\x08NOTFOUND\x10\x94\x03\x12\r\n\x08NOTALLOW\x10\x93\x03\x12\n\n\x05\x45RROR\x10\xf4\x03\x12\x0c\n\x07KICKOFF\x10\xe9\x07\x12\x12\n\rTOKEN_EXPIRED\x10\xea\x07*\xa5\x01\n\x08PushType\x12\n\n\x06NOTICE\x10\x01\x12\x0b\n\x07\x43HECKIN\x10\x02\x12\n\n\x06GAKUEN\x10\x03\x12\x0c\n\x08MEDICINE\x10\x04\x12\r\n\tVOICECODE\x10\x05\x12\x13\n\x0fPUSH_LERNGARDEN\x10\x06\x12\r\n\tPUSH_REST\x10\x07\x12\x10\n\x0cPUSH_APPROVE\x10\x08\x12\x12\n\x0ePUSH_COMMUNION\x10\t\x12\r\n\tPUSH_FEED\x10\n*$\n\x0cPlatformType\x12\x07\n\x03IOS\x10\x01\x12\x0b\n\x07\x41NDROID\x10\x02*`\n\x0fSendSmsCodeType\x12\x13\n\x0f\x46ORGET_PASSWORD\x10\x01\x12\x0c\n\x08\x41\x43TIVATE\x10\x02\x12\x17\n\x13INVITATION_ACTIVATE\x10\x03\x12\x11\n\rUPDATE_MOBILE\x10\x04*7\n\x10\x41ttendanceStatus\x12\x0b\n\x07\x41\x42SENCE\x10\x00\x12\x0b\n\x07PRESENT\x10\x01\x12\t\n\x05LEAVE\x10\x02*\x1d\n\x07\x41ppType\x12\n\n\x06NATIVE\x10\x01\x12\x06\n\x02H5\x10\x02*)\n\x0e\x41ppCounterType\x12\x0c\n\x08SUBTRACT\x10\x01\x12\t\n\x05RESET\x10\x02*\"\n\x0b\x43ommentType\x12\x08\n\x04LIKE\x10\x01\x12\t\n\x05REPLY\x10\x02*\x95\x01\n\nTargetType\x12\x08\n\x04\x46\x45\x45\x44\x10\x01\x12\x0f\n\x0bGARDEN_MAIL\x10\x02\x12\x15\n\x11\x46\x45\x45\x44_MEDICIN_TASK\x10\x03\x12\n\n\x06\x41NSWER\x10\x04\x12\r\n\tKNOWLEDGE\x10\x05\x12\x0c\n\x08RESOURCE\x10\x06\x12\x10\n\x0c\x43OURSE_SCORE\x10\x07\x12\x1a\n\x16\x43OURSE_LESSON_QUESTION\x10\x08*o\n\x08PostType\x12\x0c\n\x08\x41\x43TIVITY\x10\x01\x12\x10\n\x0c\x41NNOUNCEMENT\x10\x02\x12\x0e\n\nLERNGARDEN\x10\x03\x12\t\n\x05INTRO\x10\x04\x12\x0b\n\x07RECIPES\x10\x05\x12\r\n\tAGREEMENT\x10\x06\x12\x0c\n\x08SYLLABUS\x10\x32*(\n\x08MuteType\x12\r\n\tMUTE_CHAT\x10\x01\x12\r\n\tMUTE_FEED\x10\x02*(\n\x0bLeaveStatus\x12\x0b\n\x07\x41PPLIED\x10\x00\x12\x0c\n\x08\x41PPROVED\x10\x01*\x1d\n\tLeaveType\x12\x07\n\x03SCK\x10\x02\x12\x07\n\x03UNP\x10\x03\x42\x1f\n\x14\x63om.tuxing.rpc.protoB\x07TxProto')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -60,8 +60,8 @@ _PARENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11840,
-  serialized_end=11973,
+  serialized_start=14094,
+  serialized_end=14227,
 )
 _sym_db.RegisterEnumDescriptor(_PARENTTYPE)
 
@@ -88,11 +88,23 @@ _USERTYPE = _descriptor.EnumDescriptor(
       name='PARTNER', index=3, number=4,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='EXPERT', index=4, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RESOURCE_PARTNER', index=5, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COURSE_TEACHER', index=6, number=7,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=11975,
-  serialized_end=12034,
+  serialized_start=14229,
+  serialized_end=14342,
 )
 _sym_db.RegisterEnumDescriptor(_USERTYPE)
 
@@ -123,11 +135,27 @@ _DEPARTMENTTYPE = _descriptor.EnumDescriptor(
       name='OTHERDEPARTMENTTYPE', index=4, number=100,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DEPARTMENT', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='INTEREST_CLAZZ', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SCHOOL', index=7, number=11,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='GRADE', index=8, number=12,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=12036,
-  serialized_end=12133,
+  serialized_start=14345,
+  serialized_end=14501,
 )
 _sym_db.RegisterEnumDescriptor(_DEPARTMENTTYPE)
 
@@ -157,8 +185,8 @@ _ACTIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12135,
-  serialized_end=12199,
+  serialized_start=14503,
+  serialized_end=14567,
 )
 _sym_db.RegisterEnumDescriptor(_ACTIONTYPE)
 
@@ -188,8 +216,8 @@ _ATTACHTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12201,
-  serialized_end=12265,
+  serialized_start=14569,
+  serialized_end=14633,
 )
 _sym_db.RegisterEnumDescriptor(_ATTACHTYPE)
 
@@ -215,8 +243,8 @@ _EXEMPTDISTURBTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12267,
-  serialized_end=12317,
+  serialized_start=14635,
+  serialized_end=14685,
 )
 _sym_db.RegisterEnumDescriptor(_EXEMPTDISTURBTYPE)
 
@@ -238,8 +266,8 @@ _SEXTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12319,
-  serialized_end=12350,
+  serialized_start=14687,
+  serialized_end=14718,
 )
 _sym_db.RegisterEnumDescriptor(_SEXTYPE)
 
@@ -261,8 +289,8 @@ _POSITIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12352,
-  serialized_end=12401,
+  serialized_start=14720,
+  serialized_end=14769,
 )
 _sym_db.RegisterEnumDescriptor(_POSITIONTYPE)
 
@@ -300,8 +328,8 @@ _ERRORCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12403,
-  serialized_end=12500,
+  serialized_start=14771,
+  serialized_end=14868,
 )
 _sym_db.RegisterEnumDescriptor(_ERRORCODE)
 
@@ -336,11 +364,27 @@ _PUSHTYPE = _descriptor.EnumDescriptor(
       name='PUSH_LERNGARDEN', index=5, number=6,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PUSH_REST', index=6, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PUSH_APPROVE', index=7, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PUSH_COMMUNION', index=8, number=9,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PUSH_FEED', index=9, number=10,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=12502,
-  serialized_end=12599,
+  serialized_start=14871,
+  serialized_end=15036,
 )
 _sym_db.RegisterEnumDescriptor(_PUSHTYPE)
 
@@ -362,8 +406,8 @@ _PLATFORMTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12601,
-  serialized_end=12637,
+  serialized_start=15038,
+  serialized_end=15074,
 )
 _sym_db.RegisterEnumDescriptor(_PLATFORMTYPE)
 
@@ -393,12 +437,85 @@ _SENDSMSCODETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12639,
-  serialized_end=12735,
+  serialized_start=15076,
+  serialized_end=15172,
 )
 _sym_db.RegisterEnumDescriptor(_SENDSMSCODETYPE)
 
 SendSmsCodeType = enum_type_wrapper.EnumTypeWrapper(_SENDSMSCODETYPE)
+_ATTENDANCESTATUS = _descriptor.EnumDescriptor(
+  name='AttendanceStatus',
+  full_name='AttendanceStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ABSENCE', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PRESENT', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='LEAVE', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=15174,
+  serialized_end=15229,
+)
+_sym_db.RegisterEnumDescriptor(_ATTENDANCESTATUS)
+
+AttendanceStatus = enum_type_wrapper.EnumTypeWrapper(_ATTENDANCESTATUS)
+_APPTYPE = _descriptor.EnumDescriptor(
+  name='AppType',
+  full_name='AppType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='NATIVE', index=0, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='H5', index=1, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=15231,
+  serialized_end=15260,
+)
+_sym_db.RegisterEnumDescriptor(_APPTYPE)
+
+AppType = enum_type_wrapper.EnumTypeWrapper(_APPTYPE)
+_APPCOUNTERTYPE = _descriptor.EnumDescriptor(
+  name='AppCounterType',
+  full_name='AppCounterType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='SUBTRACT', index=0, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RESET', index=1, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=15262,
+  serialized_end=15303,
+)
+_sym_db.RegisterEnumDescriptor(_APPCOUNTERTYPE)
+
+AppCounterType = enum_type_wrapper.EnumTypeWrapper(_APPCOUNTERTYPE)
 _COMMENTTYPE = _descriptor.EnumDescriptor(
   name='CommentType',
   full_name='CommentType',
@@ -416,8 +533,8 @@ _COMMENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12737,
-  serialized_end=12771,
+  serialized_start=15305,
+  serialized_end=15339,
 )
 _sym_db.RegisterEnumDescriptor(_COMMENTTYPE)
 
@@ -440,11 +557,31 @@ _TARGETTYPE = _descriptor.EnumDescriptor(
       name='FEED_MEDICIN_TASK', index=2, number=3,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ANSWER', index=3, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='KNOWLEDGE', index=4, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RESOURCE', index=5, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COURSE_SCORE', index=6, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COURSE_LESSON_QUESTION', index=7, number=8,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=12773,
-  serialized_end=12835,
+  serialized_start=15342,
+  serialized_end=15491,
 )
 _sym_db.RegisterEnumDescriptor(_TARGETTYPE)
 
@@ -479,11 +616,15 @@ _POSTTYPE = _descriptor.EnumDescriptor(
       name='AGREEMENT', index=5, number=6,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SYLLABUS', index=6, number=50,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=12837,
-  serialized_end=12934,
+  serialized_start=15493,
+  serialized_end=15604,
 )
 _sym_db.RegisterEnumDescriptor(_POSTTYPE)
 
@@ -505,12 +646,58 @@ _MUTETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12936,
-  serialized_end=12976,
+  serialized_start=15606,
+  serialized_end=15646,
 )
 _sym_db.RegisterEnumDescriptor(_MUTETYPE)
 
 MuteType = enum_type_wrapper.EnumTypeWrapper(_MUTETYPE)
+_LEAVESTATUS = _descriptor.EnumDescriptor(
+  name='LeaveStatus',
+  full_name='LeaveStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='APPLIED', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='APPROVED', index=1, number=1,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=15648,
+  serialized_end=15688,
+)
+_sym_db.RegisterEnumDescriptor(_LEAVESTATUS)
+
+LeaveStatus = enum_type_wrapper.EnumTypeWrapper(_LEAVESTATUS)
+_LEAVETYPE = _descriptor.EnumDescriptor(
+  name='LeaveType',
+  full_name='LeaveType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='SCK', index=0, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='UNP', index=1, number=3,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=15690,
+  serialized_end=15719,
+)
+_sym_db.RegisterEnumDescriptor(_LEAVETYPE)
+
+LeaveType = enum_type_wrapper.EnumTypeWrapper(_LEAVETYPE)
 FATHER = 1
 MOTHER = 2
 FATHERSFATHER = 3
@@ -522,11 +709,18 @@ CHILD = 1
 PARENT = 2
 TEACHER = 3
 PARTNER = 4
+EXPERT = 5
+RESOURCE_PARTNER = 6
+COURSE_TEACHER = 7
 GARDEN = 1
 CLAZZ = 2
 GROUP_GARDEN = 3
 EDUCATION = 4
 OTHERDEPARTMENTTYPE = 100
+DEPARTMENT = 5
+INTEREST_CLAZZ = 6
+SCHOOL = 11
+GRADE = 12
 ADD = 1
 UPDATE = 2
 ADD_OR_UPDATE = 3
@@ -554,25 +748,46 @@ GAKUEN = 3
 MEDICINE = 4
 VOICECODE = 5
 PUSH_LERNGARDEN = 6
+PUSH_REST = 7
+PUSH_APPROVE = 8
+PUSH_COMMUNION = 9
+PUSH_FEED = 10
 IOS = 1
 ANDROID = 2
 FORGET_PASSWORD = 1
 ACTIVATE = 2
 INVITATION_ACTIVATE = 3
 UPDATE_MOBILE = 4
+ABSENCE = 0
+PRESENT = 1
+LEAVE = 2
+NATIVE = 1
+H5 = 2
+SUBTRACT = 1
+RESET = 2
 LIKE = 1
 REPLY = 2
 FEED = 1
 GARDEN_MAIL = 2
 FEED_MEDICIN_TASK = 3
+ANSWER = 4
+KNOWLEDGE = 5
+RESOURCE = 6
+COURSE_SCORE = 7
+COURSE_LESSON_QUESTION = 8
 ACTIVITY = 1
 ANNOUNCEMENT = 2
 LERNGARDEN = 3
 INTRO = 4
 RECIPES = 5
 AGREEMENT = 6
+SYLLABUS = 50
 MUTE_CHAT = 1
 MUTE_FEED = 2
+APPLIED = 0
+APPROVED = 1
+SCK = 2
+UNP = 3
 
 
 
@@ -744,6 +959,27 @@ _USER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='customName', full_name='User.customName', index=23,
+      number=24, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='childs', full_name='User.childs', index=24,
+      number=25, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='combinedNickname', full_name='User.combinedNickname', index=25,
+      number=26, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -756,7 +992,51 @@ _USER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=14,
-  serialized_end=487,
+  serialized_end=557,
+)
+
+
+_CHILD = _descriptor.Descriptor(
+  name='Child',
+  full_name='Child',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='userId', full_name='Child.userId', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ParentType', full_name='Child.ParentType', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=1,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='isMaster', full_name='Child.isMaster', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=True, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=559,
+  serialized_end=640,
 )
 
 
@@ -834,8 +1114,8 @@ _DEPARTMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=490,
-  serialized_end=667,
+  serialized_start=643,
+  serialized_end=820,
 )
 
 
@@ -913,8 +1193,8 @@ _NOTICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=670,
-  serialized_end=830,
+  serialized_start=823,
+  serialized_end=983,
 )
 
 
@@ -950,8 +1230,8 @@ _ATTACH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=832,
-  serialized_end=890,
+  serialized_start=985,
+  serialized_end=1043,
 )
 
 
@@ -1022,8 +1302,8 @@ _NOTICEDEPARTMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=893,
-  serialized_end=1041,
+  serialized_start=1046,
+  serialized_end=1194,
 )
 
 
@@ -1080,8 +1360,8 @@ _NOTICEMEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1043,
-  serialized_end=1135,
+  serialized_start=1196,
+  serialized_end=1288,
 )
 
 
@@ -1162,6 +1442,13 @@ _USERCARD = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='userNameUnison', full_name='UserCard.userNameUnison', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -1173,8 +1460,8 @@ _USERCARD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1138,
-  serialized_end=1362,
+  serialized_start=1291,
+  serialized_end=1539,
 )
 
 
@@ -1259,8 +1546,8 @@ _CHECKIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1365,
-  serialized_end=1541,
+  serialized_start=1542,
+  serialized_end=1718,
 )
 
 
@@ -1296,8 +1583,8 @@ _LOGINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1543,
-  serialized_end=1593,
+  serialized_start=1720,
+  serialized_end=1770,
 )
 
 
@@ -1347,8 +1634,8 @@ _LOGINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1595,
-  serialized_end=1698,
+  serialized_start=1772,
+  serialized_end=1875,
 )
 
 
@@ -1377,8 +1664,8 @@ _FETCHCONTACTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1700,
-  serialized_end=1749,
+  serialized_start=1877,
+  serialized_end=1926,
 )
 
 
@@ -1414,8 +1701,8 @@ _FETCHCONTACTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1751,
-  serialized_end=1827,
+  serialized_start=1928,
+  serialized_end=2004,
 )
 
 
@@ -1451,8 +1738,8 @@ _FETCHDEPARTMENTMEMBERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1829,
-  serialized_end=1905,
+  serialized_start=2006,
+  serialized_end=2082,
 )
 
 
@@ -1495,8 +1782,8 @@ _FETCHDEPARTMENTMEMBERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1907,
-  serialized_end=2003,
+  serialized_start=2084,
+  serialized_end=2180,
 )
 
 
@@ -1525,8 +1812,8 @@ _FETCHUSERINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2005,
-  serialized_end=2040,
+  serialized_start=2182,
+  serialized_end=2217,
 )
 
 
@@ -1555,8 +1842,8 @@ _FETCHUSERINFORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2042,
-  serialized_end=2086,
+  serialized_start=2219,
+  serialized_end=2263,
 )
 
 
@@ -1585,8 +1872,8 @@ _FETCHDEPARTMENTINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2088,
-  serialized_end=2138,
+  serialized_start=2265,
+  serialized_end=2315,
 )
 
 
@@ -1615,8 +1902,8 @@ _FETCHDEPARTMENTINFORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2140,
-  serialized_end=2202,
+  serialized_start=2317,
+  serialized_end=2379,
 )
 
 
@@ -1645,8 +1932,8 @@ _FETCHDEPARTMENTBYGROUPIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2204,
-  serialized_end=2254,
+  serialized_start=2381,
+  serialized_end=2431,
 )
 
 
@@ -1675,8 +1962,8 @@ _FETCHDEPARTMENTBYGROUPIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2256,
-  serialized_end=2323,
+  serialized_start=2433,
+  serialized_end=2500,
 )
 
 
@@ -1719,8 +2006,8 @@ _SENDNOTICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2325,
-  serialized_end=2433,
+  serialized_start=2502,
+  serialized_end=2610,
 )
 
 
@@ -1756,8 +2043,8 @@ _SENDNOTICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2435,
-  serialized_end=2488,
+  serialized_start=2612,
+  serialized_end=2665,
 )
 
 
@@ -1800,8 +2087,8 @@ _FETCHNOTICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2490,
-  serialized_end=2559,
+  serialized_start=2667,
+  serialized_end=2736,
 )
 
 
@@ -1837,8 +2124,8 @@ _FETCHNOTICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2561,
-  serialized_end=2625,
+  serialized_start=2738,
+  serialized_end=2802,
 )
 
 
@@ -1867,8 +2154,8 @@ _FETCHNOTICEDEPARTMENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2627,
-  serialized_end=2676,
+  serialized_start=2804,
+  serialized_end=2853,
 )
 
 
@@ -1897,8 +2184,8 @@ _FETCHNOTICEDEPARTMENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2678,
-  serialized_end=2756,
+  serialized_start=2855,
+  serialized_end=2933,
 )
 
 
@@ -1934,8 +2221,8 @@ _FETCHNOTICEMEMBERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2758,
-  serialized_end=2825,
+  serialized_start=2935,
+  serialized_end=3002,
 )
 
 
@@ -1964,8 +2251,8 @@ _FETCHNOTICEMEMBERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2827,
-  serialized_end=2893,
+  serialized_start=3004,
+  serialized_end=3070,
 )
 
 
@@ -1994,8 +2281,8 @@ _READNOTICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2895,
-  serialized_end=2932,
+  serialized_start=3072,
+  serialized_end=3109,
 )
 
 
@@ -2017,8 +2304,8 @@ _READNOTICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2934,
-  serialized_end=2954,
+  serialized_start=3111,
+  serialized_end=3131,
 )
 
 
@@ -2040,8 +2327,8 @@ _GETUSERUNREADNOTICECNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2956,
-  serialized_end=2987,
+  serialized_start=3133,
+  serialized_end=3164,
 )
 
 
@@ -2070,8 +2357,8 @@ _GETUSERUNREADNOTICECNTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2989,
-  serialized_end=3046,
+  serialized_start=3166,
+  serialized_end=3223,
 )
 
 
@@ -2096,33 +2383,10 @@ _BINDCARDREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3048,
-  serialized_end=3099,
-)
-
-
-_FETCHCHILDBINDCARDREQUEST = _descriptor.Descriptor(
-  name='FetchChildBindCardRequest',
-  full_name='FetchChildBindCardRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='userCards', full_name='FetchChildBindCardRequest.userCards', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='childId', full_name='BindCardRequest.childId', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -2137,8 +2401,8 @@ _FETCHCHILDBINDCARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3101,
-  serialized_end=3158,
+  serialized_start=3225,
+  serialized_end=3293,
 )
 
 
@@ -2167,8 +2431,8 @@ _REPORTLOSSCARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3160,
-  serialized_end=3201,
+  serialized_start=3295,
+  serialized_end=3336,
 )
 
 
@@ -2204,8 +2468,8 @@ _CHECKINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3203,
-  serialized_end=3265,
+  serialized_start=3338,
+  serialized_end=3400,
 )
 
 
@@ -2227,8 +2491,8 @@ _CHECKINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3267,
-  serialized_end=3284,
+  serialized_start=3402,
+  serialized_end=3419,
 )
 
 
@@ -2260,6 +2524,13 @@ _REGISTERCHECKINMACHINEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='macAddress', full_name='RegisterCheckinMachineRequest.macAddress', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -2271,8 +2542,8 @@ _REGISTERCHECKINMACHINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3286,
-  serialized_end=3368,
+  serialized_start=3421,
+  serialized_end=3523,
 )
 
 
@@ -2308,8 +2579,8 @@ _REGISTERCHECKINMACHINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3370,
-  serialized_end=3440,
+  serialized_start=3525,
+  serialized_end=3595,
 )
 
 
@@ -2345,8 +2616,8 @@ _CHECKPERMISSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3442,
-  serialized_end=3502,
+  serialized_start=3597,
+  serialized_end=3657,
 )
 
 
@@ -2368,8 +2639,8 @@ _CHECKPERMISSIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3504,
-  serialized_end=3529,
+  serialized_start=3659,
+  serialized_end=3684,
 )
 
 
@@ -2405,8 +2676,8 @@ _FETCHCARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3531,
-  serialized_end=3594,
+  serialized_start=3686,
+  serialized_end=3749,
 )
 
 
@@ -2449,8 +2720,82 @@ _FETCHCARDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3596,
-  serialized_end=3676,
+  serialized_start=3751,
+  serialized_end=3831,
+)
+
+
+_FETCHOLDMACHINECARDREQUEST = _descriptor.Descriptor(
+  name='FetchOldMachineCardRequest',
+  full_name='FetchOldMachineCardRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='gardenId', full_name='FetchOldMachineCardRequest.gardenId', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='syncVersion', full_name='FetchOldMachineCardRequest.syncVersion', index=1,
+      number=2, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3833,
+  serialized_end=3900,
+)
+
+
+_FETCHOLDMACHINECARDRESPONSE = _descriptor.Descriptor(
+  name='FetchOldMachineCardResponse',
+  full_name='FetchOldMachineCardResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='card', full_name='FetchOldMachineCardResponse.card', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='syncVersion', full_name='FetchOldMachineCardResponse.syncVersion', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3902,
+  serialized_end=3977,
 )
 
 
@@ -2479,8 +2824,8 @@ _FETCHVOICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3678,
-  serialized_end=3715,
+  serialized_start=3979,
+  serialized_end=4016,
 )
 
 
@@ -2523,8 +2868,8 @@ _FETCHVOICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3717,
-  serialized_end=3799,
+  serialized_start=4018,
+  serialized_end=4100,
 )
 
 
@@ -2560,8 +2905,8 @@ _FETCHCHECKINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3801,
-  serialized_end=3854,
+  serialized_start=4102,
+  serialized_end=4155,
 )
 
 
@@ -2604,8 +2949,8 @@ _FETCHCHECKINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3856,
-  serialized_end=3946,
+  serialized_start=4157,
+  serialized_end=4247,
 )
 
 
@@ -2627,8 +2972,8 @@ _GETUPLOADINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3948,
-  serialized_end=3970,
+  serialized_start=4249,
+  serialized_end=4271,
 )
 
 
@@ -2657,8 +3002,8 @@ _GETUPLOADINFORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3972,
-  serialized_end=4010,
+  serialized_start=4273,
+  serialized_end=4311,
 )
 
 
@@ -2680,8 +3025,8 @@ _GETCHECKINUPLOADTOKENREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4012,
-  serialized_end=4042,
+  serialized_start=4313,
+  serialized_end=4343,
 )
 
 
@@ -2710,8 +3055,8 @@ _GETCHECKINUPLOADTOKENRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4044,
-  serialized_end=4090,
+  serialized_start=4345,
+  serialized_end=4391,
 )
 
 
@@ -2757,6 +3102,13 @@ _BINDCARDINFO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='childId', full_name='BindCardInfo.childId', index=5,
+      number=6, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -2768,8 +3120,8 @@ _BINDCARDINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4092,
-  serialized_end=4209,
+  serialized_start=4394,
+  serialized_end=4528,
 )
 
 
@@ -2798,8 +3150,8 @@ _FETCHUSERCARDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4211,
-  serialized_end=4272,
+  serialized_start=4530,
+  serialized_end=4591,
 )
 
 
@@ -2908,6 +3260,27 @@ _FEEDMEDICINETASK = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='childId', full_name='FeedMedicineTask.childId', index=14,
+      number=15, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='childName', full_name='FeedMedicineTask.childName', index=15,
+      number=16, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='childAvatar', full_name='FeedMedicineTask.childAvatar', index=16,
+      number=17, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -2919,8 +3292,8 @@ _FEEDMEDICINETASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4275,
-  serialized_end=4562,
+  serialized_start=4594,
+  serialized_end=4938,
 )
 
 
@@ -2956,8 +3329,8 @@ _FETCHFEEDMEDICINETASKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4564,
-  serialized_end=4626,
+  serialized_start=4940,
+  serialized_end=5002,
 )
 
 
@@ -2993,8 +3366,8 @@ _FETCHFEEDMEDICINETASKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4628,
-  serialized_end=4721,
+  serialized_start=5004,
+  serialized_end=5097,
 )
 
 
@@ -3023,8 +3396,8 @@ _READFEEDMEDICINETASKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4723,
-  serialized_end=4780,
+  serialized_start=5099,
+  serialized_end=5156,
 )
 
 
@@ -3056,6 +3429,13 @@ _SENDFEEDMEDICINETASKREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='childId', full_name='SendFeedMedicineTaskRequest.childId', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -3067,8 +3447,8 @@ _SENDFEEDMEDICINETASKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4782,
-  serialized_end=4871,
+  serialized_start=5158,
+  serialized_end=5264,
 )
 
 
@@ -3097,8 +3477,8 @@ _SENDFEEDMEDICINETASKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4873,
-  serialized_end=4931,
+  serialized_start=5266,
+  serialized_end=5324,
 )
 
 
@@ -3211,8 +3591,8 @@ _GARDENMAIL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4934,
-  serialized_end=5196,
+  serialized_start=5327,
+  serialized_end=5589,
 )
 
 
@@ -3248,8 +3628,8 @@ _FETCHGARDENMAILREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5198,
-  serialized_end=5254,
+  serialized_start=5591,
+  serialized_end=5647,
 )
 
 
@@ -3285,8 +3665,8 @@ _FETCHGARDENMAILRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5256,
-  serialized_end=5331,
+  serialized_start=5649,
+  serialized_end=5724,
 )
 
 
@@ -3322,8 +3702,8 @@ _SENDGARDENMAILREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5333,
-  serialized_end=5392,
+  serialized_start=5726,
+  serialized_end=5785,
 )
 
 
@@ -3352,8 +3732,8 @@ _SENDGARDENMAILRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5394,
-  serialized_end=5430,
+  serialized_start=5787,
+  serialized_end=5823,
 )
 
 
@@ -3396,8 +3776,8 @@ _SENDSMSCODEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5432,
-  serialized_end=5535,
+  serialized_start=5825,
+  serialized_end=5928,
 )
 
 
@@ -3408,6 +3788,13 @@ _SENDSMSCODERESPONSE = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='isActive', full_name='SendSmsCodeResponse.isActive', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -3419,8 +3806,8 @@ _SENDSMSCODERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5537,
-  serialized_end=5558,
+  serialized_start=5930,
+  serialized_end=5969,
 )
 
 
@@ -3463,8 +3850,8 @@ _ACTIVEUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5560,
-  serialized_end=5627,
+  serialized_start=5971,
+  serialized_end=6038,
 )
 
 
@@ -3507,8 +3894,8 @@ _ACTIVEUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5629,
-  serialized_end=5721,
+  serialized_start=6040,
+  serialized_end=6132,
 )
 
 
@@ -3530,8 +3917,8 @@ _FETCHCHILDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5723,
-  serialized_end=5742,
+  serialized_start=6134,
+  serialized_end=6153,
 )
 
 
@@ -3560,8 +3947,8 @@ _FETCHCHILDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5744,
-  serialized_end=5789,
+  serialized_start=6155,
+  serialized_end=6200,
 )
 
 
@@ -3600,6 +3987,13 @@ _BINDCHILDREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='sexType', full_name='BindChildRequest.sexType', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=1,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -3611,8 +4005,8 @@ _BINDCHILDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5791,
-  serialized_end=5898,
+  serialized_start=6203,
+  serialized_end=6337,
 )
 
 
@@ -3648,8 +4042,8 @@ _BINDCHILDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5900,
-  serialized_end=5964,
+  serialized_start=6339,
+  serialized_end=6403,
 )
 
 
@@ -3692,8 +4086,8 @@ _SETPASSWORDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5966,
-  serialized_end=6034,
+  serialized_start=6405,
+  serialized_end=6473,
 )
 
 
@@ -3715,8 +4109,8 @@ _SETPASSWORDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6036,
-  serialized_end=6057,
+  serialized_start=6475,
+  serialized_end=6496,
 )
 
 
@@ -3752,8 +4146,8 @@ _UPDATEPASSWORDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6059,
-  serialized_end=6124,
+  serialized_start=6498,
+  serialized_end=6563,
 )
 
 
@@ -3775,8 +4169,8 @@ _UPDATEPASSWORDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6126,
-  serialized_end=6150,
+  serialized_start=6565,
+  serialized_end=6589,
 )
 
 
@@ -3819,8 +4213,8 @@ _BINDINGPARENTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6152,
-  serialized_end=6243,
+  serialized_start=6591,
+  serialized_end=6682,
 )
 
 
@@ -3831,6 +4225,13 @@ _GETBINDINGPARENTLISTREQUEST = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='childId', full_name='GetBindingParentListRequest.childId', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -3842,8 +4243,8 @@ _GETBINDINGPARENTLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6245,
-  serialized_end=6274,
+  serialized_start=6684,
+  serialized_end=6730,
 )
 
 
@@ -3872,8 +4273,8 @@ _GETBINDINGPARENTLISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6276,
-  serialized_end=6347,
+  serialized_start=6732,
+  serialized_end=6803,
 )
 
 
@@ -3898,6 +4299,13 @@ _UPDATEBINDREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='childId', full_name='UpdateBindRequest.childId', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -3909,8 +4317,8 @@ _UPDATEBINDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6349,
-  serialized_end=6419,
+  serialized_start=6805,
+  serialized_end=6892,
 )
 
 
@@ -3939,8 +4347,8 @@ _UPDATEBINDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6421,
-  serialized_end=6462,
+  serialized_start=6894,
+  serialized_end=6935,
 )
 
 
@@ -3969,8 +4377,8 @@ _UPDATEUSERINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6464,
-  serialized_end=6508,
+  serialized_start=6937,
+  serialized_end=6981,
 )
 
 
@@ -3992,8 +4400,8 @@ _UPDATEUSERINFORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6510,
-  serialized_end=6534,
+  serialized_start=6983,
+  serialized_end=7007,
 )
 
 
@@ -4032,6 +4440,13 @@ _ACTIVEINVITEUSERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='childId', full_name='ActiveInviteUserRequest.childId', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -4043,8 +4458,8 @@ _ACTIVEINVITEUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6536,
-  serialized_end=6642,
+  serialized_start=7009,
+  serialized_end=7132,
 )
 
 
@@ -4073,8 +4488,8 @@ _ACTIVEINVITEUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6644,
-  serialized_end=6691,
+  serialized_start=7134,
+  serialized_end=7181,
 )
 
 
@@ -4092,6 +4507,13 @@ _RELIEVEBINDREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='childId', full_name='RelieveBindRequest.childId', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -4103,8 +4525,8 @@ _RELIEVEBINDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6693,
-  serialized_end=6731,
+  serialized_start=7183,
+  serialized_end=7238,
 )
 
 
@@ -4126,8 +4548,8 @@ _RELIEVEBINDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6733,
-  serialized_end=6754,
+  serialized_start=7240,
+  serialized_end=7261,
 )
 
 
@@ -4163,8 +4585,8 @@ _UPDATEMOBILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6756,
-  serialized_end=6807,
+  serialized_start=7263,
+  serialized_end=7314,
 )
 
 
@@ -4186,8 +4608,8 @@ _UPDATEMOBILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6809,
-  serialized_end=6831,
+  serialized_start=7316,
+  serialized_end=7338,
 )
 
 
@@ -4223,8 +4645,8 @@ _USERPROFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6833,
-  serialized_end=6877,
+  serialized_start=7340,
+  serialized_end=7384,
 )
 
 
@@ -4253,8 +4675,8 @@ _SAVEUSERPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6879,
-  serialized_end=6939,
+  serialized_start=7386,
+  serialized_end=7446,
 )
 
 
@@ -4276,8 +4698,8 @@ _SAVEUSERPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6941,
-  serialized_end=6966,
+  serialized_start=7448,
+  serialized_end=7473,
 )
 
 
@@ -4299,8 +4721,8 @@ _FETCHUSERPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6968,
-  serialized_end=6993,
+  serialized_start=7475,
+  serialized_end=7500,
 )
 
 
@@ -4329,8 +4751,8 @@ _FETCHUSERPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6995,
-  serialized_end=7057,
+  serialized_start=7502,
+  serialized_end=7564,
 )
 
 
@@ -4352,8 +4774,8 @@ _LOGOUTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7059,
-  serialized_end=7074,
+  serialized_start=7566,
+  serialized_end=7581,
 )
 
 
@@ -4375,8 +4797,8 @@ _LOGOUTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7076,
-  serialized_end=7092,
+  serialized_start=7583,
+  serialized_end=7599,
 )
 
 
@@ -4433,8 +4855,8 @@ _LIKE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7094,
-  serialized_end=7194,
+  serialized_start=7601,
+  serialized_end=7701,
 )
 
 
@@ -4533,8 +4955,8 @@ _FEED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7197,
-  serialized_end=7441,
+  serialized_start=7704,
+  serialized_end=7948,
 )
 
 
@@ -4584,8 +5006,8 @@ _SENDFEEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7443,
-  serialized_end=7556,
+  serialized_start=7950,
+  serialized_end=8063,
 )
 
 
@@ -4621,8 +5043,8 @@ _SENDFEEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7558,
-  serialized_end=7607,
+  serialized_start=8065,
+  serialized_end=8114,
 )
 
 
@@ -4693,8 +5115,8 @@ _ACTIVITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7609,
-  serialized_end=7730,
+  serialized_start=8116,
+  serialized_end=8237,
 )
 
 
@@ -4744,8 +5166,8 @@ _FETCHFEEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7732,
-  serialized_end=7821,
+  serialized_start=8239,
+  serialized_end=8328,
 )
 
 
@@ -4795,8 +5217,8 @@ _FETCHFEEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7823,
-  serialized_end=7933,
+  serialized_start=8330,
+  serialized_end=8440,
 )
 
 
@@ -4839,8 +5261,8 @@ _FETCHUSERFEEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7935,
-  serialized_end=8005,
+  serialized_start=8442,
+  serialized_end=8512,
 )
 
 
@@ -4876,8 +5298,8 @@ _FETCHUSERFEEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8007,
-  serialized_end=8069,
+  serialized_start=8514,
+  serialized_end=8576,
 )
 
 
@@ -4906,8 +5328,8 @@ _DELETEFEEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8071,
-  serialized_end=8106,
+  serialized_start=8578,
+  serialized_end=8613,
 )
 
 
@@ -4929,8 +5351,8 @@ _DELETEFEEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8108,
-  serialized_end=8128,
+  serialized_start=8615,
+  serialized_end=8635,
 )
 
 
@@ -4987,8 +5409,8 @@ _UPDATEDEVICETOKENREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8131,
-  serialized_end=8275,
+  serialized_start=8638,
+  serialized_end=8782,
 )
 
 
@@ -5010,8 +5432,8 @@ _UPDATEDEVICETOKENRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8277,
-  serialized_end=8304,
+  serialized_start=8784,
+  serialized_end=8811,
 )
 
 
@@ -5047,8 +5469,8 @@ _COUNTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8306,
-  serialized_end=8344,
+  serialized_start=8813,
+  serialized_end=8851,
 )
 
 
@@ -5070,8 +5492,8 @@ _FETCHCOUNTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8346,
-  serialized_end=8367,
+  serialized_start=8853,
+  serialized_end=8874,
 )
 
 
@@ -5100,8 +5522,8 @@ _FETCHCOUNTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8369,
-  serialized_end=8419,
+  serialized_start=8876,
+  serialized_end=8926,
 )
 
 
@@ -5196,6 +5618,20 @@ _COMMENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='userType', full_name='Comment.userType', index=12,
+      number=13, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=1,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='userTitle', full_name='Comment.userTitle', index=13,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -5207,8 +5643,8 @@ _COMMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8422,
-  serialized_end=8689,
+  serialized_start=8929,
+  serialized_end=9244,
 )
 
 
@@ -5265,8 +5701,8 @@ _SENDCOMMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8692,
-  serialized_end=8833,
+  serialized_start=9247,
+  serialized_end=9388,
 )
 
 
@@ -5302,8 +5738,8 @@ _SENDCOMMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8835,
-  serialized_end=8890,
+  serialized_start=9390,
+  serialized_end=9445,
 )
 
 
@@ -5332,8 +5768,8 @@ _DELETECOMMNETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8892,
-  serialized_end=8934,
+  serialized_start=9447,
+  serialized_end=9489,
 )
 
 
@@ -5383,8 +5819,8 @@ _SHOWCOMMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8936,
-  serialized_end=9039,
+  serialized_start=9491,
+  serialized_end=9594,
 )
 
 
@@ -5420,8 +5856,8 @@ _SHOWCOMMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9041,
-  serialized_end=9106,
+  serialized_start=9596,
+  serialized_end=9661,
 )
 
 
@@ -5457,8 +5893,8 @@ _FETCHCONCERNEDCOMMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9108,
-  serialized_end=9170,
+  serialized_start=9663,
+  serialized_end=9725,
 )
 
 
@@ -5494,8 +5930,8 @@ _FEEDCOMMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9172,
-  serialized_end=9233,
+  serialized_start=9727,
+  serialized_end=9788,
 )
 
 
@@ -5531,8 +5967,8 @@ _FETCHCONCERNEDCOMMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9235,
-  serialized_end=9318,
+  serialized_start=9790,
+  serialized_end=9873,
 )
 
 
@@ -5554,8 +5990,8 @@ _DELETECONCERNEDCOMMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9320,
-  serialized_end=9351,
+  serialized_start=9875,
+  serialized_end=9906,
 )
 
 
@@ -5577,8 +6013,8 @@ _DELETECONCERNEDCOMMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9353,
-  serialized_end=9385,
+  serialized_start=9908,
+  serialized_end=9940,
 )
 
 
@@ -5663,8 +6099,8 @@ _POST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9388,
-  serialized_end=9563,
+  serialized_start=9943,
+  serialized_end=10118,
 )
 
 
@@ -5714,8 +6150,8 @@ _FETCHPOSTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9565,
-  serialized_end=9662,
+  serialized_start=10120,
+  serialized_end=10217,
 )
 
 
@@ -5758,8 +6194,8 @@ _FETCHPOSTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9664,
-  serialized_end=9744,
+  serialized_start=10219,
+  serialized_end=10299,
 )
 
 
@@ -5795,8 +6231,8 @@ _FETCHPOSTDETAILREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9746,
-  serialized_end=9815,
+  serialized_start=10301,
+  serialized_end=10370,
 )
 
 
@@ -5839,8 +6275,8 @@ _FETCHPOSTDETAILRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9817,
-  serialized_end=9898,
+  serialized_start=10372,
+  serialized_end=10453,
 )
 
 
@@ -5862,8 +6298,8 @@ _FETCHGARDENINTROREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9900,
-  serialized_end=9925,
+  serialized_start=10455,
+  serialized_end=10480,
 )
 
 
@@ -5906,8 +6342,8 @@ _FETCHGARDENINTRORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9927,
-  serialized_end=10009,
+  serialized_start=10482,
+  serialized_end=10564,
 )
 
 
@@ -5929,8 +6365,8 @@ _FETCHAGREEMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10011,
-  serialized_end=10034,
+  serialized_start=10566,
+  serialized_end=10589,
 )
 
 
@@ -5973,8 +6409,8 @@ _FETCHAGREEMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10036,
-  serialized_end=10116,
+  serialized_start=10591,
+  serialized_end=10671,
 )
 
 
@@ -6010,8 +6446,8 @@ _POSTGROUP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10118,
-  serialized_end=10162,
+  serialized_start=10673,
+  serialized_end=10717,
 )
 
 
@@ -6054,8 +6490,8 @@ _FETCHPOSTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10164,
-  serialized_end=10237,
+  serialized_start=10719,
+  serialized_end=10792,
 )
 
 
@@ -6098,8 +6534,8 @@ _FETCHPOSTGROUPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10239,
-  serialized_end=10334,
+  serialized_start=10794,
+  serialized_end=10889,
 )
 
 
@@ -6149,8 +6585,8 @@ _MUTEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10336,
-  serialized_end=10433,
+  serialized_start=10891,
+  serialized_end=10988,
 )
 
 
@@ -6172,8 +6608,8 @@ _MUTERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10435,
-  serialized_end=10449,
+  serialized_start=10990,
+  serialized_end=11004,
 )
 
 
@@ -6216,8 +6652,8 @@ _UNMUTEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10451,
-  serialized_end=10535,
+  serialized_start=11006,
+  serialized_end=11090,
 )
 
 
@@ -6239,8 +6675,8 @@ _UNMUTERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10537,
-  serialized_end=10553,
+  serialized_start=11092,
+  serialized_end=11108,
 )
 
 
@@ -6276,8 +6712,8 @@ _FETCHMUTEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10555,
-  serialized_end=10620,
+  serialized_start=11110,
+  serialized_end=11175,
 )
 
 
@@ -6306,8 +6742,8 @@ _FETCHMUTERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10622,
-  serialized_end=10663,
+  serialized_start=11177,
+  serialized_end=11218,
 )
 
 
@@ -6336,8 +6772,8 @@ _READGARDENMAILREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10665,
-  serialized_end=10700,
+  serialized_start=11220,
+  serialized_end=11255,
 )
 
 
@@ -6359,8 +6795,8 @@ _READGARDENMAILRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10702,
-  serialized_end=10726,
+  serialized_start=11257,
+  serialized_end=11281,
 )
 
 
@@ -6389,8 +6825,8 @@ _READFEEDMEDICINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10728,
-  serialized_end=10765,
+  serialized_start=11283,
+  serialized_end=11320,
 )
 
 
@@ -6412,8 +6848,8 @@ _READFEEDMEDICINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10767,
-  serialized_end=10793,
+  serialized_start=11322,
+  serialized_end=11348,
 )
 
 
@@ -6442,8 +6878,8 @@ _COLLECTLOGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10795,
-  serialized_end=10831,
+  serialized_start=11350,
+  serialized_end=11386,
 )
 
 
@@ -6465,8 +6901,8 @@ _COLLECTLOGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10833,
-  serialized_end=10853,
+  serialized_start=11388,
+  serialized_end=11408,
 )
 
 
@@ -6502,8 +6938,8 @@ _MACHINELOGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10855,
-  serialized_end=10909,
+  serialized_start=11410,
+  serialized_end=11464,
 )
 
 
@@ -6525,8 +6961,8 @@ _MACHINELOGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10911,
-  serialized_end=10931,
+  serialized_start=11466,
+  serialized_end=11486,
 )
 
 
@@ -6597,8 +7033,8 @@ _UPGRADE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10934,
-  serialized_end=11077,
+  serialized_start=11489,
+  serialized_end=11632,
 )
 
 
@@ -6627,8 +7063,8 @@ _UPGRADEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11079,
-  serialized_end=11132,
+  serialized_start=11634,
+  serialized_end=11687,
 )
 
 
@@ -6664,8 +7100,8 @@ _MACHINEUPGRADEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11134,
-  serialized_end=11192,
+  serialized_start=11689,
+  serialized_end=11747,
 )
 
 
@@ -6694,8 +7130,8 @@ _UPGRADERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11194,
-  serialized_end=11238,
+  serialized_start=11749,
+  serialized_end=11793,
 )
 
 
@@ -6727,6 +7163,13 @@ _SCANCODECHECKINREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='childId', full_name='ScanCodeCheckinRequest.childId', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -6738,8 +7181,8 @@ _SCANCODECHECKINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11240,
-  serialized_end=11319,
+  serialized_start=11795,
+  serialized_end=11891,
 )
 
 
@@ -6761,8 +7204,8 @@ _SCANCODECHECKINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11321,
-  serialized_end=11346,
+  serialized_start=11893,
+  serialized_end=11918,
 )
 
 
@@ -6791,8 +7234,8 @@ _GETGARDENNAMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11348,
-  serialized_end=11388,
+  serialized_start=11920,
+  serialized_end=11960,
 )
 
 
@@ -6821,8 +7264,8 @@ _GETGARDENNAMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11390,
-  serialized_end=11433,
+  serialized_start=11962,
+  serialized_end=12005,
 )
 
 
@@ -6851,8 +7294,8 @@ _CLEARCHECKINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11435,
-  serialized_end=11471,
+  serialized_start=12007,
+  serialized_end=12043,
 )
 
 
@@ -6888,8 +7331,8 @@ _CLEARNOTICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11473,
-  serialized_end=11525,
+  serialized_start=12045,
+  serialized_end=12097,
 )
 
 
@@ -6932,8 +7375,8 @@ _FETCHDEPARTMENTPHOTOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11527,
-  serialized_end=11610,
+  serialized_start=12099,
+  serialized_end=12182,
 )
 
 
@@ -6976,8 +7419,8 @@ _DEPARTMENTPHOTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11612,
-  serialized_end=11676,
+  serialized_start=12184,
+  serialized_end=12248,
 )
 
 
@@ -7020,8 +7463,8 @@ _FETCHDEPARTMENTPHOTORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11678,
-  serialized_end=11777,
+  serialized_start=12250,
+  serialized_end=12349,
 )
 
 
@@ -7043,8 +7486,8 @@ _USERCHECKINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11779,
-  serialized_end=11799,
+  serialized_start=12351,
+  serialized_end=12371,
 )
 
 
@@ -7073,14 +7516,956 @@ _USERCHECKINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11801,
-  serialized_end=11837,
+  serialized_start=12373,
+  serialized_end=12409,
+)
+
+
+_FETCHATTENDANCEREQUEST = _descriptor.Descriptor(
+  name='FetchAttendanceRequest',
+  full_name='FetchAttendanceRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='maxId', full_name='FetchAttendanceRequest.maxId', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='sinceId', full_name='FetchAttendanceRequest.sinceId', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12411,
+  serialized_end=12467,
+)
+
+
+_FETCHATTENDANCERESPONSE = _descriptor.Descriptor(
+  name='FetchAttendanceResponse',
+  full_name='FetchAttendanceResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='checkins', full_name='FetchAttendanceResponse.checkins', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hasMore', full_name='FetchAttendanceResponse.hasMore', index=1,
+      number=2, type=8, cpp_type=7, label=2,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12469,
+  serialized_end=12539,
+)
+
+
+_CLASSATTENDANCEREQUEST = _descriptor.Descriptor(
+  name='ClassAttendanceRequest',
+  full_name='ClassAttendanceRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='classId', full_name='ClassAttendanceRequest.classId', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='date', full_name='ClassAttendanceRequest.date', index=1,
+      number=2, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12541,
+  serialized_end=12596,
+)
+
+
+_CLASSATTENDANCERESPONSE = _descriptor.Descriptor(
+  name='ClassAttendanceResponse',
+  full_name='ClassAttendanceResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='present', full_name='ClassAttendanceResponse.present', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='absence', full_name='ClassAttendanceResponse.absence', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='leave', full_name='ClassAttendanceResponse.leave', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='isRestDay', full_name='ClassAttendanceResponse.isRestDay', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12598,
+  serialized_end=12712,
+)
+
+
+_CHILDATTENDANCEREQUEST = _descriptor.Descriptor(
+  name='ChildAttendanceRequest',
+  full_name='ChildAttendanceRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='month', full_name='ChildAttendanceRequest.month', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='childId', full_name='ChildAttendanceRequest.childId', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12714,
+  serialized_end=12770,
+)
+
+
+_CHILDATTENDANCERESPONSE = _descriptor.Descriptor(
+  name='ChildAttendanceResponse',
+  full_name='ChildAttendanceResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='present', full_name='ChildAttendanceResponse.present', index=0,
+      number=1, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='absence', full_name='ChildAttendanceResponse.absence', index=1,
+      number=2, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='leave', full_name='ChildAttendanceResponse.leave', index=2,
+      number=3, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='rest', full_name='ChildAttendanceResponse.rest', index=3,
+      number=4, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12772,
+  serialized_end=12860,
+)
+
+
+_UPDATEATTENDANCEREQUEST = _descriptor.Descriptor(
+  name='UpdateAttendanceRequest',
+  full_name='UpdateAttendanceRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='present', full_name='UpdateAttendanceRequest.present', index=0,
+      number=1, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='absence', full_name='UpdateAttendanceRequest.absence', index=1,
+      number=2, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='leave', full_name='UpdateAttendanceRequest.leave', index=2,
+      number=3, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='date', full_name='UpdateAttendanceRequest.date', index=3,
+      number=4, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12862,
+  serialized_end=12950,
+)
+
+
+_UPDATEATTENDANCERESPONSE = _descriptor.Descriptor(
+  name='UpdateAttendanceResponse',
+  full_name='UpdateAttendanceResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12952,
+  serialized_end=12978,
+)
+
+
+_LEAVE = _descriptor.Descriptor(
+  name='Leave',
+  full_name='Leave',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='Leave.id', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='applyUserId', full_name='Leave.applyUserId', index=1,
+      number=2, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='applyUserName', full_name='Leave.applyUserName', index=2,
+      number=3, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='applyUserAvatar', full_name='Leave.applyUserAvatar', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='userId', full_name='Leave.userId', index=4,
+      number=5, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='userAvatar', full_name='Leave.userAvatar', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='userName', full_name='Leave.userName', index=6,
+      number=7, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='Leave.reason', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='beginDate', full_name='Leave.beginDate', index=8,
+      number=9, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='endDate', full_name='Leave.endDate', index=9,
+      number=10, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='days', full_name='Leave.days', index=10,
+      number=11, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='leaveType', full_name='Leave.leaveType', index=11,
+      number=12, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=2,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='replyUserId', full_name='Leave.replyUserId', index=12,
+      number=13, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='replyUserName', full_name='Leave.replyUserName', index=13,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='reply', full_name='Leave.reply', index=14,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='Leave.status', index=15,
+      number=16, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='createdOn', full_name='Leave.createdOn', index=16,
+      number=17, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='dates', full_name='Leave.dates', index=17,
+      number=18, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12981,
+  serialized_end=13343,
+)
+
+
+_FETCHLEAVEREQUEST = _descriptor.Descriptor(
+  name='FetchLeaveRequest',
+  full_name='FetchLeaveRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='sinceId', full_name='FetchLeaveRequest.sinceId', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='maxId', full_name='FetchLeaveRequest.maxId', index=1,
+      number=2, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='userId', full_name='FetchLeaveRequest.userId', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13345,
+  serialized_end=13412,
+)
+
+
+_FETCHLEAVERESPONSE = _descriptor.Descriptor(
+  name='FetchLeaveResponse',
+  full_name='FetchLeaveResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='leaves', full_name='FetchLeaveResponse.leaves', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hasMore', full_name='FetchLeaveResponse.hasMore', index=1,
+      number=2, type=8, cpp_type=7, label=2,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13414,
+  serialized_end=13475,
+)
+
+
+_APPLYLEAVEREQUEST = _descriptor.Descriptor(
+  name='ApplyLeaveRequest',
+  full_name='ApplyLeaveRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='ApplyLeaveRequest.reason', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='beginDate', full_name='ApplyLeaveRequest.beginDate', index=1,
+      number=2, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='endDate', full_name='ApplyLeaveRequest.endDate', index=2,
+      number=3, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='leaveType', full_name='ApplyLeaveRequest.leaveType', index=3,
+      number=4, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=2,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='userId', full_name='ApplyLeaveRequest.userId', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13477,
+  serialized_end=13595,
+)
+
+
+_APPLYLEAVERESPONSE = _descriptor.Descriptor(
+  name='ApplyLeaveResponse',
+  full_name='ApplyLeaveResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13597,
+  serialized_end=13617,
+)
+
+
+_APPROVELEAVEREQUEST = _descriptor.Descriptor(
+  name='ApproveLeaveRequest',
+  full_name='ApproveLeaveRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='leaveId', full_name='ApproveLeaveRequest.leaveId', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='reply', full_name='ApproveLeaveRequest.reply', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13619,
+  serialized_end=13672,
+)
+
+
+_APPROVELEAVERESPONSE = _descriptor.Descriptor(
+  name='ApproveLeaveResponse',
+  full_name='ApproveLeaveResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13674,
+  serialized_end=13696,
+)
+
+
+_TEACHERINVITATIONPARENTREQUEST = _descriptor.Descriptor(
+  name='TeacherInvitationParentRequest',
+  full_name='TeacherInvitationParentRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='parentId', full_name='TeacherInvitationParentRequest.parentId', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13698,
+  serialized_end=13748,
+)
+
+
+_TEACHERINVITATIONPARENTRESPONSE = _descriptor.Descriptor(
+  name='TeacherInvitationParentResponse',
+  full_name='TeacherInvitationParentResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13750,
+  serialized_end=13783,
+)
+
+
+_FETCHRESTDAYREQUEST = _descriptor.Descriptor(
+  name='FetchRestDayRequest',
+  full_name='FetchRestDayRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='date', full_name='FetchRestDayRequest.date', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13785,
+  serialized_end=13820,
+)
+
+
+_FETCHRESTDAYRESPONSE = _descriptor.Descriptor(
+  name='FetchRestDayResponse',
+  full_name='FetchRestDayResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='restDay', full_name='FetchRestDayResponse.restDay', index=0,
+      number=1, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13822,
+  serialized_end=13861,
+)
+
+
+_APP = _descriptor.Descriptor(
+  name='App',
+  full_name='App',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='App.name', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='sign', full_name='App.sign', index=1,
+      number=2, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='icon', full_name='App.icon', index=2,
+      number=3, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='appType', full_name='App.appType', index=3,
+      number=4, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=1,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='url', full_name='App.url', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='counterName', full_name='App.counterName', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='counterType', full_name='App.counterType', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=1,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='isNewApp', full_name='App.isNewApp', index=7,
+      number=8, type=8, cpp_type=7, label=2,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13864,
+  serialized_end=14028,
+)
+
+
+_FETCHAPPREQUEST = _descriptor.Descriptor(
+  name='FetchAppRequest',
+  full_name='FetchAppRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14030,
+  serialized_end=14047,
+)
+
+
+_FETCHAPPRESPONSE = _descriptor.Descriptor(
+  name='FetchAppResponse',
+  full_name='FetchAppResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='homeApps', full_name='FetchAppResponse.homeApps', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14049,
+  serialized_end=14091,
 )
 
 _USER.fields_by_name['userType'].enum_type = _USERTYPE
 _USER.fields_by_name['actionType'].enum_type = _ACTIONTYPE
 _USER.fields_by_name['sexType'].enum_type = _SEXTYPE
 _USER.fields_by_name['ParentType'].enum_type = _PARENTTYPE
+_USER.fields_by_name['childs'].message_type = _CHILD
+_CHILD.fields_by_name['ParentType'].enum_type = _PARENTTYPE
 _DEPARTMENT.fields_by_name['type'].enum_type = _DEPARTMENTTYPE
 _DEPARTMENT.fields_by_name['actionType'].enum_type = _ACTIONTYPE
 _NOTICE.fields_by_name['attaches'].message_type = _ATTACH
@@ -7100,9 +8485,9 @@ _SENDNOTICEREQUEST.fields_by_name['noticeDepartments'].message_type = _NOTICEDEP
 _FETCHNOTICERESPONSE.fields_by_name['notices'].message_type = _NOTICE
 _FETCHNOTICEDEPARTMENTSRESPONSE.fields_by_name['noticeDepartments'].message_type = _NOTICEDEPARTMENT
 _FETCHNOTICEMEMBERSRESPONSE.fields_by_name['noticeMembers'].message_type = _NOTICEMEMBER
-_FETCHCHILDBINDCARDREQUEST.fields_by_name['userCards'].message_type = _USERCARD
 _CHECKINREQUEST.fields_by_name['checkin'].message_type = _CHECKIN
 _FETCHCARDRESPONSE.fields_by_name['card'].message_type = _USERCARD
+_FETCHOLDMACHINECARDRESPONSE.fields_by_name['card'].message_type = _USERCARD
 _FETCHCHECKINRESPONSE.fields_by_name['checkins'].message_type = _CHECKIN
 _BINDCARDINFO.fields_by_name['parentType'].enum_type = _PARENTTYPE
 _FETCHUSERCARDRESPONSE.fields_by_name['biandCardInfo'].message_type = _BINDCARDINFO
@@ -7115,6 +8500,7 @@ _ACTIVEUSERRESPONSE.fields_by_name['user'].message_type = _USER
 _ACTIVEUSERRESPONSE.fields_by_name['userProfiles'].message_type = _USERPROFILE
 _FETCHCHILDRESPONSE.fields_by_name['children'].message_type = _USER
 _BINDCHILDREQUEST.fields_by_name['parentType'].enum_type = _PARENTTYPE
+_BINDCHILDREQUEST.fields_by_name['sexType'].enum_type = _SEXTYPE
 _BINDCHILDRESPONSE.fields_by_name['parent'].message_type = _USER
 _BINDCHILDRESPONSE.fields_by_name['child'].message_type = _USER
 _BINDINGPARENTINFO.fields_by_name['user'].message_type = _USER
@@ -7139,6 +8525,7 @@ _UPDATEDEVICETOKENREQUEST.fields_by_name['platformType'].enum_type = _PLATFORMTY
 _FETCHCOUNTERRESPONSE.fields_by_name['counters'].message_type = _COUNTER
 _COMMENT.fields_by_name['commentType'].enum_type = _COMMENTTYPE
 _COMMENT.fields_by_name['targetType'].enum_type = _TARGETTYPE
+_COMMENT.fields_by_name['userType'].enum_type = _USERTYPE
 _SENDCOMMENTREQUEST.fields_by_name['commentType'].enum_type = _COMMENTTYPE
 _SENDCOMMENTREQUEST.fields_by_name['targetType'].enum_type = _TARGETTYPE
 _SHOWCOMMENTREQUEST.fields_by_name['targetType'].enum_type = _TARGETTYPE
@@ -7161,7 +8548,19 @@ _FETCHMUTEREQUEST.fields_by_name['type'].enum_type = _MUTETYPE
 _UPGRADEREQUEST.fields_by_name['platformType'].enum_type = _PLATFORMTYPE
 _UPGRADERESPONSE.fields_by_name['upgrade'].message_type = _UPGRADE
 _FETCHDEPARTMENTPHOTORESPONSE.fields_by_name['photos'].message_type = _DEPARTMENTPHOTO
+_FETCHATTENDANCERESPONSE.fields_by_name['checkins'].message_type = _CHECKIN
+_CLASSATTENDANCERESPONSE.fields_by_name['present'].message_type = _USER
+_CLASSATTENDANCERESPONSE.fields_by_name['absence'].message_type = _USER
+_CLASSATTENDANCERESPONSE.fields_by_name['leave'].message_type = _USER
+_LEAVE.fields_by_name['leaveType'].enum_type = _LEAVETYPE
+_LEAVE.fields_by_name['status'].enum_type = _LEAVESTATUS
+_FETCHLEAVERESPONSE.fields_by_name['leaves'].message_type = _LEAVE
+_APPLYLEAVEREQUEST.fields_by_name['leaveType'].enum_type = _LEAVETYPE
+_APP.fields_by_name['appType'].enum_type = _APPTYPE
+_APP.fields_by_name['counterType'].enum_type = _APPCOUNTERTYPE
+_FETCHAPPRESPONSE.fields_by_name['homeApps'].message_type = _APP
 DESCRIPTOR.message_types_by_name['User'] = _USER
+DESCRIPTOR.message_types_by_name['Child'] = _CHILD
 DESCRIPTOR.message_types_by_name['Department'] = _DEPARTMENT
 DESCRIPTOR.message_types_by_name['Notice'] = _NOTICE
 DESCRIPTOR.message_types_by_name['Attach'] = _ATTACH
@@ -7194,7 +8593,6 @@ DESCRIPTOR.message_types_by_name['ReadNoticeResponse'] = _READNOTICERESPONSE
 DESCRIPTOR.message_types_by_name['GetUserUnreadNoticeCntRequest'] = _GETUSERUNREADNOTICECNTREQUEST
 DESCRIPTOR.message_types_by_name['GetUserUnreadNoticeCntResponse'] = _GETUSERUNREADNOTICECNTRESPONSE
 DESCRIPTOR.message_types_by_name['BindCardRequest'] = _BINDCARDREQUEST
-DESCRIPTOR.message_types_by_name['FetchChildBindCardRequest'] = _FETCHCHILDBINDCARDREQUEST
 DESCRIPTOR.message_types_by_name['ReportLossCardRequest'] = _REPORTLOSSCARDREQUEST
 DESCRIPTOR.message_types_by_name['CheckinRequest'] = _CHECKINREQUEST
 DESCRIPTOR.message_types_by_name['CheckinResponse'] = _CHECKINRESPONSE
@@ -7204,6 +8602,8 @@ DESCRIPTOR.message_types_by_name['CheckPermissionRequest'] = _CHECKPERMISSIONREQ
 DESCRIPTOR.message_types_by_name['CheckPermissionResponse'] = _CHECKPERMISSIONRESPONSE
 DESCRIPTOR.message_types_by_name['FetchCardRequest'] = _FETCHCARDREQUEST
 DESCRIPTOR.message_types_by_name['FetchCardResponse'] = _FETCHCARDRESPONSE
+DESCRIPTOR.message_types_by_name['FetchOldMachineCardRequest'] = _FETCHOLDMACHINECARDREQUEST
+DESCRIPTOR.message_types_by_name['FetchOldMachineCardResponse'] = _FETCHOLDMACHINECARDRESPONSE
 DESCRIPTOR.message_types_by_name['FetchVoiceRequest'] = _FETCHVOICEREQUEST
 DESCRIPTOR.message_types_by_name['FetchVoiceResponse'] = _FETCHVOICERESPONSE
 DESCRIPTOR.message_types_by_name['FetchCheckinRequest'] = _FETCHCHECKINREQUEST
@@ -7325,6 +8725,28 @@ DESCRIPTOR.message_types_by_name['DepartmentPhoto'] = _DEPARTMENTPHOTO
 DESCRIPTOR.message_types_by_name['FetchDepartmentPhotoResponse'] = _FETCHDEPARTMENTPHOTORESPONSE
 DESCRIPTOR.message_types_by_name['UserCheckInRequest'] = _USERCHECKINREQUEST
 DESCRIPTOR.message_types_by_name['UserCheckInResponse'] = _USERCHECKINRESPONSE
+DESCRIPTOR.message_types_by_name['FetchAttendanceRequest'] = _FETCHATTENDANCEREQUEST
+DESCRIPTOR.message_types_by_name['FetchAttendanceResponse'] = _FETCHATTENDANCERESPONSE
+DESCRIPTOR.message_types_by_name['ClassAttendanceRequest'] = _CLASSATTENDANCEREQUEST
+DESCRIPTOR.message_types_by_name['ClassAttendanceResponse'] = _CLASSATTENDANCERESPONSE
+DESCRIPTOR.message_types_by_name['ChildAttendanceRequest'] = _CHILDATTENDANCEREQUEST
+DESCRIPTOR.message_types_by_name['ChildAttendanceResponse'] = _CHILDATTENDANCERESPONSE
+DESCRIPTOR.message_types_by_name['UpdateAttendanceRequest'] = _UPDATEATTENDANCEREQUEST
+DESCRIPTOR.message_types_by_name['UpdateAttendanceResponse'] = _UPDATEATTENDANCERESPONSE
+DESCRIPTOR.message_types_by_name['Leave'] = _LEAVE
+DESCRIPTOR.message_types_by_name['FetchLeaveRequest'] = _FETCHLEAVEREQUEST
+DESCRIPTOR.message_types_by_name['FetchLeaveResponse'] = _FETCHLEAVERESPONSE
+DESCRIPTOR.message_types_by_name['ApplyLeaveRequest'] = _APPLYLEAVEREQUEST
+DESCRIPTOR.message_types_by_name['ApplyLeaveResponse'] = _APPLYLEAVERESPONSE
+DESCRIPTOR.message_types_by_name['ApproveLeaveRequest'] = _APPROVELEAVEREQUEST
+DESCRIPTOR.message_types_by_name['ApproveLeaveResponse'] = _APPROVELEAVERESPONSE
+DESCRIPTOR.message_types_by_name['TeacherInvitationParentRequest'] = _TEACHERINVITATIONPARENTREQUEST
+DESCRIPTOR.message_types_by_name['TeacherInvitationParentResponse'] = _TEACHERINVITATIONPARENTRESPONSE
+DESCRIPTOR.message_types_by_name['FetchRestDayRequest'] = _FETCHRESTDAYREQUEST
+DESCRIPTOR.message_types_by_name['FetchRestDayResponse'] = _FETCHRESTDAYRESPONSE
+DESCRIPTOR.message_types_by_name['App'] = _APP
+DESCRIPTOR.message_types_by_name['FetchAppRequest'] = _FETCHAPPREQUEST
+DESCRIPTOR.message_types_by_name['FetchAppResponse'] = _FETCHAPPRESPONSE
 DESCRIPTOR.enum_types_by_name['ParentType'] = _PARENTTYPE
 DESCRIPTOR.enum_types_by_name['UserType'] = _USERTYPE
 DESCRIPTOR.enum_types_by_name['DepartmentType'] = _DEPARTMENTTYPE
@@ -7337,10 +8759,15 @@ DESCRIPTOR.enum_types_by_name['ErrorCode'] = _ERRORCODE
 DESCRIPTOR.enum_types_by_name['PushType'] = _PUSHTYPE
 DESCRIPTOR.enum_types_by_name['PlatformType'] = _PLATFORMTYPE
 DESCRIPTOR.enum_types_by_name['SendSmsCodeType'] = _SENDSMSCODETYPE
+DESCRIPTOR.enum_types_by_name['AttendanceStatus'] = _ATTENDANCESTATUS
+DESCRIPTOR.enum_types_by_name['AppType'] = _APPTYPE
+DESCRIPTOR.enum_types_by_name['AppCounterType'] = _APPCOUNTERTYPE
 DESCRIPTOR.enum_types_by_name['CommentType'] = _COMMENTTYPE
 DESCRIPTOR.enum_types_by_name['TargetType'] = _TARGETTYPE
 DESCRIPTOR.enum_types_by_name['PostType'] = _POSTTYPE
 DESCRIPTOR.enum_types_by_name['MuteType'] = _MUTETYPE
+DESCRIPTOR.enum_types_by_name['LeaveStatus'] = _LEAVESTATUS
+DESCRIPTOR.enum_types_by_name['LeaveType'] = _LEAVETYPE
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), dict(
   DESCRIPTOR = _USER,
@@ -7348,6 +8775,13 @@ User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), dic
   # @@protoc_insertion_point(class_scope:User)
   ))
 _sym_db.RegisterMessage(User)
+
+Child = _reflection.GeneratedProtocolMessageType('Child', (_message.Message,), dict(
+  DESCRIPTOR = _CHILD,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:Child)
+  ))
+_sym_db.RegisterMessage(Child)
 
 Department = _reflection.GeneratedProtocolMessageType('Department', (_message.Message,), dict(
   DESCRIPTOR = _DEPARTMENT,
@@ -7573,13 +9007,6 @@ BindCardRequest = _reflection.GeneratedProtocolMessageType('BindCardRequest', (_
   ))
 _sym_db.RegisterMessage(BindCardRequest)
 
-FetchChildBindCardRequest = _reflection.GeneratedProtocolMessageType('FetchChildBindCardRequest', (_message.Message,), dict(
-  DESCRIPTOR = _FETCHCHILDBINDCARDREQUEST,
-  __module__ = 'wjy_pb2'
-  # @@protoc_insertion_point(class_scope:FetchChildBindCardRequest)
-  ))
-_sym_db.RegisterMessage(FetchChildBindCardRequest)
-
 ReportLossCardRequest = _reflection.GeneratedProtocolMessageType('ReportLossCardRequest', (_message.Message,), dict(
   DESCRIPTOR = _REPORTLOSSCARDREQUEST,
   __module__ = 'wjy_pb2'
@@ -7642,6 +9069,20 @@ FetchCardResponse = _reflection.GeneratedProtocolMessageType('FetchCardResponse'
   # @@protoc_insertion_point(class_scope:FetchCardResponse)
   ))
 _sym_db.RegisterMessage(FetchCardResponse)
+
+FetchOldMachineCardRequest = _reflection.GeneratedProtocolMessageType('FetchOldMachineCardRequest', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHOLDMACHINECARDREQUEST,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:FetchOldMachineCardRequest)
+  ))
+_sym_db.RegisterMessage(FetchOldMachineCardRequest)
+
+FetchOldMachineCardResponse = _reflection.GeneratedProtocolMessageType('FetchOldMachineCardResponse', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHOLDMACHINECARDRESPONSE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:FetchOldMachineCardResponse)
+  ))
+_sym_db.RegisterMessage(FetchOldMachineCardResponse)
 
 FetchVoiceRequest = _reflection.GeneratedProtocolMessageType('FetchVoiceRequest', (_message.Message,), dict(
   DESCRIPTOR = _FETCHVOICEREQUEST,
@@ -8489,6 +9930,160 @@ UserCheckInResponse = _reflection.GeneratedProtocolMessageType('UserCheckInRespo
   # @@protoc_insertion_point(class_scope:UserCheckInResponse)
   ))
 _sym_db.RegisterMessage(UserCheckInResponse)
+
+FetchAttendanceRequest = _reflection.GeneratedProtocolMessageType('FetchAttendanceRequest', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHATTENDANCEREQUEST,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:FetchAttendanceRequest)
+  ))
+_sym_db.RegisterMessage(FetchAttendanceRequest)
+
+FetchAttendanceResponse = _reflection.GeneratedProtocolMessageType('FetchAttendanceResponse', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHATTENDANCERESPONSE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:FetchAttendanceResponse)
+  ))
+_sym_db.RegisterMessage(FetchAttendanceResponse)
+
+ClassAttendanceRequest = _reflection.GeneratedProtocolMessageType('ClassAttendanceRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CLASSATTENDANCEREQUEST,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:ClassAttendanceRequest)
+  ))
+_sym_db.RegisterMessage(ClassAttendanceRequest)
+
+ClassAttendanceResponse = _reflection.GeneratedProtocolMessageType('ClassAttendanceResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CLASSATTENDANCERESPONSE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:ClassAttendanceResponse)
+  ))
+_sym_db.RegisterMessage(ClassAttendanceResponse)
+
+ChildAttendanceRequest = _reflection.GeneratedProtocolMessageType('ChildAttendanceRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CHILDATTENDANCEREQUEST,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:ChildAttendanceRequest)
+  ))
+_sym_db.RegisterMessage(ChildAttendanceRequest)
+
+ChildAttendanceResponse = _reflection.GeneratedProtocolMessageType('ChildAttendanceResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CHILDATTENDANCERESPONSE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:ChildAttendanceResponse)
+  ))
+_sym_db.RegisterMessage(ChildAttendanceResponse)
+
+UpdateAttendanceRequest = _reflection.GeneratedProtocolMessageType('UpdateAttendanceRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEATTENDANCEREQUEST,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:UpdateAttendanceRequest)
+  ))
+_sym_db.RegisterMessage(UpdateAttendanceRequest)
+
+UpdateAttendanceResponse = _reflection.GeneratedProtocolMessageType('UpdateAttendanceResponse', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEATTENDANCERESPONSE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:UpdateAttendanceResponse)
+  ))
+_sym_db.RegisterMessage(UpdateAttendanceResponse)
+
+Leave = _reflection.GeneratedProtocolMessageType('Leave', (_message.Message,), dict(
+  DESCRIPTOR = _LEAVE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:Leave)
+  ))
+_sym_db.RegisterMessage(Leave)
+
+FetchLeaveRequest = _reflection.GeneratedProtocolMessageType('FetchLeaveRequest', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHLEAVEREQUEST,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:FetchLeaveRequest)
+  ))
+_sym_db.RegisterMessage(FetchLeaveRequest)
+
+FetchLeaveResponse = _reflection.GeneratedProtocolMessageType('FetchLeaveResponse', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHLEAVERESPONSE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:FetchLeaveResponse)
+  ))
+_sym_db.RegisterMessage(FetchLeaveResponse)
+
+ApplyLeaveRequest = _reflection.GeneratedProtocolMessageType('ApplyLeaveRequest', (_message.Message,), dict(
+  DESCRIPTOR = _APPLYLEAVEREQUEST,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:ApplyLeaveRequest)
+  ))
+_sym_db.RegisterMessage(ApplyLeaveRequest)
+
+ApplyLeaveResponse = _reflection.GeneratedProtocolMessageType('ApplyLeaveResponse', (_message.Message,), dict(
+  DESCRIPTOR = _APPLYLEAVERESPONSE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:ApplyLeaveResponse)
+  ))
+_sym_db.RegisterMessage(ApplyLeaveResponse)
+
+ApproveLeaveRequest = _reflection.GeneratedProtocolMessageType('ApproveLeaveRequest', (_message.Message,), dict(
+  DESCRIPTOR = _APPROVELEAVEREQUEST,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:ApproveLeaveRequest)
+  ))
+_sym_db.RegisterMessage(ApproveLeaveRequest)
+
+ApproveLeaveResponse = _reflection.GeneratedProtocolMessageType('ApproveLeaveResponse', (_message.Message,), dict(
+  DESCRIPTOR = _APPROVELEAVERESPONSE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:ApproveLeaveResponse)
+  ))
+_sym_db.RegisterMessage(ApproveLeaveResponse)
+
+TeacherInvitationParentRequest = _reflection.GeneratedProtocolMessageType('TeacherInvitationParentRequest', (_message.Message,), dict(
+  DESCRIPTOR = _TEACHERINVITATIONPARENTREQUEST,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:TeacherInvitationParentRequest)
+  ))
+_sym_db.RegisterMessage(TeacherInvitationParentRequest)
+
+TeacherInvitationParentResponse = _reflection.GeneratedProtocolMessageType('TeacherInvitationParentResponse', (_message.Message,), dict(
+  DESCRIPTOR = _TEACHERINVITATIONPARENTRESPONSE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:TeacherInvitationParentResponse)
+  ))
+_sym_db.RegisterMessage(TeacherInvitationParentResponse)
+
+FetchRestDayRequest = _reflection.GeneratedProtocolMessageType('FetchRestDayRequest', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHRESTDAYREQUEST,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:FetchRestDayRequest)
+  ))
+_sym_db.RegisterMessage(FetchRestDayRequest)
+
+FetchRestDayResponse = _reflection.GeneratedProtocolMessageType('FetchRestDayResponse', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHRESTDAYRESPONSE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:FetchRestDayResponse)
+  ))
+_sym_db.RegisterMessage(FetchRestDayResponse)
+
+App = _reflection.GeneratedProtocolMessageType('App', (_message.Message,), dict(
+  DESCRIPTOR = _APP,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:App)
+  ))
+_sym_db.RegisterMessage(App)
+
+FetchAppRequest = _reflection.GeneratedProtocolMessageType('FetchAppRequest', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHAPPREQUEST,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:FetchAppRequest)
+  ))
+_sym_db.RegisterMessage(FetchAppRequest)
+
+FetchAppResponse = _reflection.GeneratedProtocolMessageType('FetchAppResponse', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHAPPRESPONSE,
+  __module__ = 'wjy_pb2'
+  # @@protoc_insertion_point(class_scope:FetchAppResponse)
+  ))
+_sym_db.RegisterMessage(FetchAppResponse)
 
 
 DESCRIPTOR.has_options = True

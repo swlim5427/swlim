@@ -1,5 +1,30 @@
 option java_package = "com.tuxing.rpc.card";
 
+option java_outer_classname = "TxCard";
+
+//上报园下的机器
+//url:/report_garden_machine
+message ReportGardenMachineRequest {
+    required int64 gardenId = 1; //园id
+    required string macAddress = 2; //mac地址
+}
+
+message ReportGardenMachineResponse {
+}
+
+
+//注册车载刷卡机
+//url:/register_car_machine
+message RegisterCarMachineRequest {
+    required string macAddress = 1;
+}
+
+message RegisterCarMachineResponse {
+    required int64 gardenId = 1;
+    required string gardenName = 2;
+}
+
+
 //刷卡机升级请求
 //url:/card_machine_upgrade
 /*
@@ -110,6 +135,8 @@ message UserCard {
     optional UserType usertype = 8;
     optional string positionName = 9;
     optional string departmentName = 10;
+    optional string userNameUnison = 11; //小孩同音字姓名
+
 }
 
 message Checkin {

@@ -9,6 +9,8 @@ message Request {
     optional bytes body = 2;
     optional string token = 3;
     optional string version = 4;
+    optional string osName = 5;//ios，android
+    optional string osVersion = 6;
 }
 
 message Response {

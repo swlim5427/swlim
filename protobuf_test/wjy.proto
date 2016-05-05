@@ -22,6 +22,9 @@ enum UserType {
     PARENT = 2;
     TEACHER = 3;
     PARTNER = 4;
+    EXPERT = 5;
+    RESOURCE_PARTNER = 6;
+    COURSE_TEACHER = 7;
 }
 
 //用户类型
@@ -31,6 +34,10 @@ enum DepartmentType {
     GROUP_GARDEN = 3; //集团园
     EDUCATION = 4; //教委
     OTHERDEPARTMENTTYPE = 100;
+    DEPARTMENT = 5; //部门
+    INTEREST_CLAZZ = 6; //兴趣班
+    SCHOOL = 11; //携成尚德甄真 小学
+    GRADE=12;//年级
 }
 
 //操作类型
@@ -85,6 +92,10 @@ enum PushType {
     MEDICINE = 4;
     VOICECODE = 5;
     PUSH_LERNGARDEN = 6;
+    PUSH_REST = 7;
+    PUSH_APPROVE = 8;
+    PUSH_COMMUNION = 9;
+    PUSH_FEED = 10;
 }
 
 enum PlatformType {
@@ -97,6 +108,24 @@ enum SendSmsCodeType {
     ACTIVATE = 2; //激活
     INVITATION_ACTIVATE = 3; //邀请激活
     UPDATE_MOBILE = 4; //修改手机号
+}
+
+//考勤状态
+enum AttendanceStatus {
+    ABSENCE = 0; //缺勤
+    PRESENT = 1; //出勤
+    LEAVE = 2; //请假
+}
+
+//app类型
+enum AppType {
+    NATIVE = 1;
+    H5 = 2;
+}
+//app计数方式
+enum AppCounterType {
+    SUBTRACT = 1;
+    RESET = 2;
 }
 
 //BaseObject
@@ -125,6 +154,15 @@ message User {
     optional string positionName = 21; //职位名字
     optional string guarder = 22; //监护人
     optional bool activated = 23; //已经激活
+    optional string customName = 24; //自定义名
+    repeated Child childs = 25; //家长下多个小孩（支持1个家长多个小孩的需求）
+    optional string combinedNickname = 26;//组合昵称
+}
+
+message Child {
+    required int64 userId = 1; //小孩id
+    optional ParentType ParentType = 2; //家长类型
+    optional bool isMaster = 3 [default = false];
 }
 
 //部门，包括园，班级
@@ -184,6 +222,7 @@ message UserCard {
     optional UserType usertype = 8;
     optional string positionName = 9;
     optional string departmentName = 10;
+    optional string userNameUnison = 11; //小孩同音字姓名
 }
 
 message Checkin {
@@ -192,7 +231,6 @@ message Checkin {
     required Attach attach = 3;
     optional int64 userId = 4;
     required int64 checkinTime = 5;
-
     optional int64 gardenId = 6;
     optional string userName = 7;
     optional string parentName = 8;
@@ -338,11 +376,8 @@ message GetUserUnreadNoticeCntResponse {
 //URL:/bind_card
 message BindCardRequest {
     required string cardCode = 1;
-    required int64 userId = 2; //如果是小孩，就是小孩的用户ID，如果是老师，就是老师的ID
-}
-
-message FetchChildBindCardRequest {
-    repeated UserCard userCards = 1;
+    required int64 userId = 2;
+    optional int64 childId =3;//小孩id
 }
 
 //挂失卡
@@ -368,6 +403,7 @@ message RegisterCheckinMachineRequest {
     optional int64 oaId = 1;
     optional int64 gardenId = 2;
     required string machineId = 3;
+    optional string macAddress = 4;
 }
 
 message RegisterCheckinMachineResponse {
@@ -397,6 +433,19 @@ message FetchCardResponse {
     repeated UserCard card = 1; //卡号列表
     required int64 fetchTime = 2; //同步时间
     required bool hasMore = 3;
+}
+
+
+//同步老刷卡机卡号列表
+//URL:/fetch_old_machine_card
+message FetchOldMachineCardRequest {
+    required int64 gardenId = 1; //园ID
+    required int64 syncVersion = 2; //同步version
+}
+
+message FetchOldMachineCardResponse {
+    repeated UserCard card = 1; //卡号列表
+    optional int64 syncVersion = 2; //同步version
 }
 
 //URL:/fetch_voice
@@ -441,10 +490,10 @@ message GetCheckinUploadTokenResponse {
 message BindCardInfo {
     optional string cardCode = 1;
     optional string nickName = 2;
-    optional ParentType parentType = 3; //家长类型
+    optional ParentType parentType = 3;
     optional string avatar = 4;
     optional int64 parentId = 5;
-
+    optional int64 childId = 6;
 }
 
 message FetchUserCardResponse {
@@ -466,6 +515,9 @@ message FeedMedicineTask {
     optional int32 status = 12;
     optional int64 updateOn = 13;
     optional bool hasRead = 14;
+    optional int64 childId = 15; //支持多小孩
+    optional string childName = 16;//小孩名
+    optional string childAvatar = 17;//小孩形象照
 }
 
 //喂药
@@ -491,6 +543,7 @@ message SendFeedMedicineTaskRequest {
     required int64 beginDate = 1; //开始日期
     required string desc = 2; //喂药描述
     repeated Attach attaches = 3; //图片
+    optional int64 childId = 4; //支持多小孩
 }
 //url:/send_feed_medicine_task
 message SendFeedMedicineTaskResponse {
@@ -537,13 +590,6 @@ message SendGardenMailResponse {
     required int64 id = 1;
 }
 
-
-
-
-
-
-
-
 //发送短信
 //URL:/send_sms_code
 message SendSmsCodeRequest {
@@ -553,6 +599,7 @@ message SendSmsCodeRequest {
 }
 
 message SendSmsCodeResponse {
+    optional bool isActive = 1;// 激活、邀请激活， 请求的手机号是否已经激活可用
 }
 
 //根据手机号激活用户
@@ -588,6 +635,7 @@ message BindChildRequest {
     required int64 childUserId = 2;
     required int64 birthday = 3;
     required string guarder = 4;
+    optional SexType sexType = 5;
 }
 
 message BindChildResponse {
@@ -632,6 +680,7 @@ message BindingParentInfo {
 //获取已经绑定的parent的列表
 //URL:/get_binding_parent_list
 message GetBindingParentListRequest {
+    optional int64 childId = 1;
 }
 
 message GetBindingParentListResponse {
@@ -643,6 +692,7 @@ message GetBindingParentListResponse {
 message UpdateBindRequest {
     required int64 parentId = 1;
     required ParentType parentType = 2;
+    optional int64 childId = 3;
 }
 
 message UpdateBindResponse {
@@ -669,6 +719,7 @@ message ActiveInviteUserRequest {
     required string code = 2;
     required ParentType parentType = 3; //家长类型
     required string password = 4;
+    optional int64 childId = 5;
 }
 
 message ActiveInviteUserResponse {
@@ -680,6 +731,7 @@ message ActiveInviteUserResponse {
 //URL:/relieve_bind
 message RelieveBindRequest {
     required int64 parentId = 1;
+    optional int64 childId = 2;
 }
 
 message RelieveBindResponse {
@@ -722,7 +774,6 @@ message FetchUserProfileRequest {
 message FetchUserProfileResponse {
     repeated UserProfile userProfiles = 1;
 }
-
 
 //退出登錄
 //URL:/logout
@@ -856,8 +907,12 @@ enum TargetType {
     FEED = 1; //
     GARDEN_MAIL = 2; //园长信箱
     FEED_MEDICIN_TASK = 3; //喂药
+    ANSWER = 4; //回答
+    KNOWLEDGE = 5; //宝典
+    RESOURCE = 6; //资源
+    COURSE_SCORE = 7; // 微课堂教程评分
+    COURSE_LESSON_QUESTION = 8; // 微课堂课时提问
 }
-
 
 
 message Comment {
@@ -873,6 +928,8 @@ message Comment {
     required int64 userId = 10; //回复人id
     optional string userNickName = 11; //回复人名称
     optional string userAvatarUrl = 12;
+    optional UserType userType = 13;
+    optional string userTitle = 14;
 }
 //增加一条评论
 //url:/send_comment
@@ -943,6 +1000,7 @@ enum PostType {
     INTRO = 4; // 园介绍
     RECIPES = 5; //食谱
     AGREEMENT = 6; //服务协议
+    SYLLABUS = 50; //班级周计划
 }
 
 message Post {
@@ -952,14 +1010,14 @@ message Post {
     optional string content = 4; //内容，园介绍及食谱需要有内容
     optional string coverImageUrl = 5; //标题图片
     optional int64 createdOn = 6; //创建时间
-    optional PostType postType = 7; //公告 活动  园介绍 食谱
+    optional PostType postType = 7; //公告 活动  园介绍 食谱 服务协议 班级周计划
     optional int64 orderValue = 8; //排序值
     optional string postUrl = 9; //文章详细页地址
 }
 
 //url:/fetch_post
 message FetchPostRequest {
-    required int64 gardenId = 1;
+    required int64 gardenId = 1; //当postType为SYLLABUS时传班级id
     optional int64 maxId = 2;
     optional int64 sinceId = 3;
     required PostType postType = 4;
@@ -1142,6 +1200,7 @@ message ScanCodeCheckinRequest {
     optional string cardCode = 1;
     optional int64 userId = 2;
     required int64 checkinTime = 3;
+    optional int64 childId = 4;
 }
 
 message ScanCodeCheckinResponse {
@@ -1190,7 +1249,6 @@ message FetchDepartmentPhotoResponse {
     required bool hasMore = 2;
     optional int64 totalCnt = 3;
     //    required int64 lastFetchTime = 3;
-
 }
 // 2015-09-21 add by phz 班级相册 end
 
@@ -1202,4 +1260,166 @@ message UserCheckInRequest {
 
 message UserCheckInResponse {
     optional int32 bonus = 1;
+}
+
+
+//fetch_attendance
+message FetchAttendanceRequest {
+    optional int64 maxId = 1;
+    optional int64 sinceId = 2;
+}
+
+message FetchAttendanceResponse {
+    repeated Checkin checkins = 1;
+    required bool hasMore = 2;
+}
+
+
+//考勤
+//url: /class_attendance
+message ClassAttendanceRequest {
+    required int64 classId = 1; //班级ID
+    required int64 date = 2; //日期,格式yyyyMMdd
+}
+
+
+message ClassAttendanceResponse {
+    repeated User present = 1; //出席
+    repeated User absence = 2; //缺席
+    repeated User leave = 3; //请假
+    optional bool isRestDay = 4; //是否是节假日
+}
+
+//url: /child_attendance
+
+message ChildAttendanceRequest {
+    required int64 month = 1; //日期,格式yyyyMM
+    optional int64 childId = 2;
+}
+
+
+message ChildAttendanceResponse {
+    repeated int64 present = 1; //本月出席的日期
+    repeated int64 absence = 2; //本月缺席的日期
+    repeated int64 leave = 3; //本月请假的日期
+    repeated int64 rest = 4; //本月的假期
+}
+
+//url: /update_attendance
+
+message UpdateAttendanceRequest {
+    repeated int64 present = 1; //补签为出勤的幼儿ID出席
+    repeated int64 absence = 2; //补签为缺席
+    repeated int64 leave = 3; //补签为请假
+    required int64 date = 4; //补签日期 (时间戳)
+}
+
+
+message UpdateAttendanceResponse {
+}
+
+//url: /fetch_leave
+
+enum LeaveStatus {
+    APPLIED = 0;
+    APPROVED = 1;
+}
+
+enum LeaveType {
+    SCK = 2; // 病假
+    UNP = 3; // 事假
+}
+
+message Leave {
+    required int64 id = 1;
+    required int64 applyUserId = 2; // 申请人
+    required string applyUserName = 3; // 申请人名称
+    optional string applyUserAvatar = 4; // 申请人头像
+    required int64 userId = 5; // 请假人
+    optional string userAvatar = 6; // 请假人
+    required string userName = 7; // 请假人
+    optional string reason = 8; // 理由
+    required int64 beginDate = 9; // 开始时间
+    required int64 endDate = 10; // 结束时间
+    required double days = 11; // 天数
+    required LeaveType leaveType = 12; // 请假类型
+    optional int64 replyUserId = 13; // 审批人
+    optional string replyUserName = 14; // 审批人名称
+    optional string reply = 15; // 审批理由
+    required LeaveStatus status = 16; // 审批状态
+    required int64 createdOn = 17; // 创建时间
+    repeated int64 dates = 18; // 详细时间列表
+}
+
+message FetchLeaveRequest {
+    required int64 sinceId = 1;
+    required int64 maxId = 2;
+    optional int64 userId = 3; // 请假人.
+}
+
+message FetchLeaveResponse {
+    repeated Leave leaves = 1;
+    required bool hasMore = 2;
+}
+
+//url: /apply_leave
+
+message ApplyLeaveRequest {
+    optional string reason = 1; // 理由
+    required int64 beginDate = 2; // 开始时间
+    required int64 endDate = 3; // 结束时间
+    required LeaveType leaveType = 4; // 假期类型
+    optional int64 userId = 5; // 请假人
+}
+
+message ApplyLeaveResponse {
+}
+
+//url: /approve_leave
+
+message ApproveLeaveRequest {
+    required int64 leaveId = 1;
+    optional string reply = 2;
+}
+
+message ApproveLeaveResponse {
+}
+
+
+//老师邀请家长激活
+//URL:/teacher_invitation_parent
+message TeacherInvitationParentRequest {
+    required int64 parentId = 1;
+}
+
+message TeacherInvitationParentResponse {
+}
+//获取某一年的休息日
+//url:/fetch_rest_day
+message FetchRestDayRequest {
+    required int64 date = 1; //年 时间戳
+}
+
+message FetchRestDayResponse {
+    repeated int64 restDay = 1; //休息日期的时间戳
+}
+
+
+message App {
+    required string name = 1;
+    required string sign = 2;
+    required string icon = 3;
+    required AppType appType = 4;
+    optional string url = 5;
+    optional string counterName = 6;
+    optional AppCounterType counterType = 7;
+    required bool isNewApp = 8;
+}
+
+//url:/fetch_app
+message FetchAppRequest {
+}
+
+message FetchAppResponse {
+    repeated App homeApps = 1;
 }

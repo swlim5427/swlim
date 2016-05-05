@@ -18,14 +18,173 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='card.proto',
   package='',
-  serialized_pb=_b('\n\ncard.protoB\x15\n\x13\x63om.tuxing.rpc.card')
+  serialized_pb=_b('\n\ncard.proto\"B\n\x1aReportGardenMachineRequest\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\x12\x12\n\nmacAddress\x18\x02 \x02(\t\"\x1d\n\x1bReportGardenMachineResponse\"/\n\x19RegisterCarMachineRequest\x12\x12\n\nmacAddress\x18\x01 \x02(\t\"B\n\x1aRegisterCarMachineResponse\x12\x10\n\x08gardenId\x18\x01 \x02(\x03\x12\x12\n\ngardenName\x18\x02 \x02(\tB\x1d\n\x13\x63om.tuxing.rpc.cardB\x06TxCard')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
 
+_REPORTGARDENMACHINEREQUEST = _descriptor.Descriptor(
+  name='ReportGardenMachineRequest',
+  full_name='ReportGardenMachineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='gardenId', full_name='ReportGardenMachineRequest.gardenId', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='macAddress', full_name='ReportGardenMachineRequest.macAddress', index=1,
+      number=2, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14,
+  serialized_end=80,
+)
+
+
+_REPORTGARDENMACHINERESPONSE = _descriptor.Descriptor(
+  name='ReportGardenMachineResponse',
+  full_name='ReportGardenMachineResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=82,
+  serialized_end=111,
+)
+
+
+_REGISTERCARMACHINEREQUEST = _descriptor.Descriptor(
+  name='RegisterCarMachineRequest',
+  full_name='RegisterCarMachineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='macAddress', full_name='RegisterCarMachineRequest.macAddress', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=113,
+  serialized_end=160,
+)
+
+
+_REGISTERCARMACHINERESPONSE = _descriptor.Descriptor(
+  name='RegisterCarMachineResponse',
+  full_name='RegisterCarMachineResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='gardenId', full_name='RegisterCarMachineResponse.gardenId', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gardenName', full_name='RegisterCarMachineResponse.gardenName', index=1,
+      number=2, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=162,
+  serialized_end=228,
+)
+
+DESCRIPTOR.message_types_by_name['ReportGardenMachineRequest'] = _REPORTGARDENMACHINEREQUEST
+DESCRIPTOR.message_types_by_name['ReportGardenMachineResponse'] = _REPORTGARDENMACHINERESPONSE
+DESCRIPTOR.message_types_by_name['RegisterCarMachineRequest'] = _REGISTERCARMACHINEREQUEST
+DESCRIPTOR.message_types_by_name['RegisterCarMachineResponse'] = _REGISTERCARMACHINERESPONSE
+
+ReportGardenMachineRequest = _reflection.GeneratedProtocolMessageType('ReportGardenMachineRequest', (_message.Message,), dict(
+  DESCRIPTOR = _REPORTGARDENMACHINEREQUEST,
+  __module__ = 'card_pb2'
+  # @@protoc_insertion_point(class_scope:ReportGardenMachineRequest)
+  ))
+_sym_db.RegisterMessage(ReportGardenMachineRequest)
+
+ReportGardenMachineResponse = _reflection.GeneratedProtocolMessageType('ReportGardenMachineResponse', (_message.Message,), dict(
+  DESCRIPTOR = _REPORTGARDENMACHINERESPONSE,
+  __module__ = 'card_pb2'
+  # @@protoc_insertion_point(class_scope:ReportGardenMachineResponse)
+  ))
+_sym_db.RegisterMessage(ReportGardenMachineResponse)
+
+RegisterCarMachineRequest = _reflection.GeneratedProtocolMessageType('RegisterCarMachineRequest', (_message.Message,), dict(
+  DESCRIPTOR = _REGISTERCARMACHINEREQUEST,
+  __module__ = 'card_pb2'
+  # @@protoc_insertion_point(class_scope:RegisterCarMachineRequest)
+  ))
+_sym_db.RegisterMessage(RegisterCarMachineRequest)
+
+RegisterCarMachineResponse = _reflection.GeneratedProtocolMessageType('RegisterCarMachineResponse', (_message.Message,), dict(
+  DESCRIPTOR = _REGISTERCARMACHINERESPONSE,
+  __module__ = 'card_pb2'
+  # @@protoc_insertion_point(class_scope:RegisterCarMachineResponse)
+  ))
+_sym_db.RegisterMessage(RegisterCarMachineResponse)
+
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\023com.tuxing.rpc.card'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\023com.tuxing.rpc.cardB\006TxCard'))
 # @@protoc_insertion_point(module_scope)

@@ -18,7 +18,7 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='Message.proto',
   package='',
-  serialized_pb=_b('\n\rMessage.proto\"D\n\x07Request\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\x0c\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\";\n\x08Response\x12\x0e\n\x06status\x18\x01 \x02(\x05\x12\x11\n\tstatusTxt\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\x0c\x42!\n\x14\x63om.tuxing.rpc.protoB\tMessagePb')
+  serialized_pb=_b('\n\rMessage.proto\"g\n\x07Request\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\x0c\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\x12\x0e\n\x06osName\x18\x05 \x01(\t\x12\x11\n\tosVersion\x18\x06 \x01(\t\";\n\x08Response\x12\x0e\n\x06status\x18\x01 \x02(\x05\x12\x11\n\tstatusTxt\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\x0c\x42!\n\x14\x63om.tuxing.rpc.protoB\tMessagePb')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -60,6 +60,20 @@ _REQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='osName', full_name='Request.osName', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='osVersion', full_name='Request.osVersion', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -72,7 +86,7 @@ _REQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=17,
-  serialized_end=85,
+  serialized_end=120,
 )
 
 
@@ -115,8 +129,8 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=87,
-  serialized_end=146,
+  serialized_start=122,
+  serialized_end=181,
 )
 
 DESCRIPTOR.message_types_by_name['Request'] = _REQUEST

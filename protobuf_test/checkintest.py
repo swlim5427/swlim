@@ -10,8 +10,8 @@ import wjy_pb2
 import Message_pb2
 import eventlet
 
-conTimes = 10
-checkInCount = 30
+conTimes = 1
+checkInCount = 1
 
 ip = "123.57.150.40:8080"  #service ip
 url = "http://123.57.43.111:8080/http_invoke" # pb url
@@ -113,8 +113,8 @@ class checkIn():
             if inputSecond == "" :
                 inputSecond = datetime.datetime.now().second
 
-            cardCode = "10000035"
-            userId = "2293831"
+            cardCode = "10000036"
+            userId = "2290864"
             gardenId = "1026510"
             timeList.extend([inputYear,inputMonth,inputDay,inputHour,inputMinute,inputSecond])
             checkInTime = self.timeForamt(timeList)
