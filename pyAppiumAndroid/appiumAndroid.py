@@ -155,4 +155,4 @@ for times in range(1,2):
 
 
 # actionTypeMessage = {"driver":driver,"picFlile":picFlile,"homeIconType":[0,1,2,3,4,5,6,7,8,9],"appType":[0,1]}
-# actionTypeMessage   0:公告，1：活动，2：食谱，3：幼儿考勤，4：我的考勤，5：语音播报,6:通知，7：喂药，8：通讯录，9：园长信箱
+# actionTypeMessage   0:公告，1：活动，2：食谱，3：幼儿考勤，4：我的考勤，5：语音播报,6:通知，7：喂药，8：通讯录，9：园长信箱111111
