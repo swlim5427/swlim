@@ -201,8 +201,8 @@ import logging
 
 
 # ip = "101.200.139.197:80"
-ip = "192.168.10.202:8080"
-#ip = "123.57.150.40:8080"
+#ip = "192.168.10.202:8080"
+ip = "123.57.150.40:8080"
 #url = "http://123.57.43.111:8080/http_invoke"
 url = "http://"+ip+"/http_invoke"
 dbName = "wjy_test"
@@ -254,14 +254,14 @@ fetchAgreementRequest = wjy_pb2.FetchAgreementRequest()
 ##########Checkin
 messageCheckin = wjy_pb2.Checkin()
 messageCheckin.id = long("12313131321")
-messageCheckin.cardCode = str("08217736")
+messageCheckin.cardCode = str("11616555")
 #10000004
 messageCheckin.attach.fileurl= messageAttach.fileurl
 messageCheckin.attach.attachType = messageAttach.attachType
-messageCheckin.userId = long("2294767")
+messageCheckin.userId = long("2303191")
 #2290987
 messageCheckin.checkinTime = long(nowTime)
-messageCheckin.gardenId = long("1027094")
+messageCheckin.gardenId = long("1027509")
 
 ##########CheckinRequest
 machineCheckin = wjy_pb2.CheckinRequest()

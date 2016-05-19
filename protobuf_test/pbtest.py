@@ -35,15 +35,16 @@ def logIn(getConPara):
 
     postMessage = s.post(url,data=mainPostMessage)
     resMessage = Message_pb2.Response()
-    resMessage.ParseFromString(postMessage.text)
-    #print resMessage
+    try:
+        resMessage.ParseFromString(postMessage.text)
+    except:
+        resMessage.ParseFromString(postMessage.text.encode('utf8','ignore'))
+        print resMessage.statusTxt.encode('gbk','ignore')
     logInResponse = wjy_pb2.LoginResponse()
 #    print logInResponse
 #    print resMessage.body.encode('gbk','ignore')
-    #logInResponse.ParseFromString(resMessage.body.encode('gbk'))
 
-    logInResponse.ParseFromString(resMessage.body)
-    #logInResponse.ParseFromString(bytearray(resMessage.body))
+    logInResponse.ParseFromString(resMessage.body.encode('utf8'))
 
 
 

@@ -8,65 +8,79 @@ import datetime
 import requests
 import wjy_pb2
 import Message_pb2
+import csv
 import eventlet
 
-conTimes = 1
-checkInCount = 1
+# conTimes = 2
+# checkInCount = 2
+conTimes = raw_input("loop time:")
+checkInCount = raw_input("count:")
 
-ip = "123.57.150.40:8080"  #service ip
-url = "http://123.57.43.111:8080/http_invoke" # pb url
+#ip = "123.57.150.40:8080"  #service ip
+ip = "123.56.200.12:8080"  #service ip
+url = "http://"+ip+"/http_invoke" # pb url
 
-sshUrl = "ssh -L 3306:tuxingdb.mysql.rds.aliyuncs.com:3306 -tt root@123.57.43.111"
-dbName = "wjy_test"
-dbUrl = "tuxingdb.mysql.rds.aliyuncs.com"
-sql = "SELECT card_code,garden_id,user_id FROM tx_user_card WHERE id >=(" \
-      "SELECT FLOOR(RAND() * (SELECT MAX(id) FROM tx_user_card))) AND card_code>1 ORDER BY id LIMIT "+str(checkInCount);
-#host = 'tuxingdb.mysql.rds.aliyuncs.com'
-host = '127.0.0.1'
+# sshUrl = "ssh -L 3306:tuxingdb.mysql.rds.aliyuncs.com:3306 -tt root@123.57.43.111"
+# #dbName = "wjy_test"
+# dbName = "wjy"
+# dbUrl = "rds0brggy02in39oo153o.mysql.rds.aliyuncs.com"
+# #dbUrl = "rdsmzybjb2izzmjo.mysql.rds.aliyuncs.com"
+# sql = "SELECT card_code,garden_id,user_id FROM tx_user_card WHERE garden_id = 1029881 and id >=(" \
+#       "SELECT FLOOR(RAND() * (SELECT MAX(id) FROM tx_user_card))) AND card_code>1 ORDER BY id LIMIT "+str(checkInCount);
+# #host = 'tuxingdb.mysql.rds.aliyuncs.com'
+# host = 'rds0brggy02in39oo153o.mysql.rds.aliyuncs.com'
 
 s = requests.session()
 headers ={"Content-type": "application/x-protobuf;charset=utf-8","Connection":"Keep-Alive"}
 s.headers.update(headers)
 s.get(url)
-
+testlist = []
 class checkinTest():
     def checkMysqlPort(self):
-        findPort = os.popen("netstat -nao|findstr 3306")
-        findPortR = findPort.read()
-        retList = findPortR.split(' ')
-        processPid = retList[len(retList)-1]
-        return processPid
+    #     findPort = os.popen("netstat -nao|findstr 3306")
+    #     findPortR = findPort.read()
+    #     retList = findPortR.split(' ')
+    #     processPid = retList[len(retList)-1]
+         return "1"
 
-    def mysqlAction(self):
-        conn = MySQLdb.connect(host=host, user='tuxingadmin', passwd='Tx2010_Tuxing', db=dbName, port=3306)
-        cur = conn.cursor()
-        sqlResult = cur.execute(sql)
-        rList = cur.fetchmany(sqlResult)
- #       print rList
-        conn.close()
-        return rList
+    def csvAction(self):
+        csvfile = file('checkin_test.csv', 'rb')
+        csvReader = csv.reader(csvfile)
+        for line in csvReader:
+            testlist.append(line)
+        csvfile.close()
+        return testlist
 
-    def ssh(self):
-        os.system(sshUrl)
+ #    def mysqlAction(self):
+ #        conn = MySQLdb.connect(host=host, user='tuxingadmin', passwd='Tx2010_Tuxing', db=dbName, port=3306)
+ #        cur = conn.cursor()
+ #        sqlResult = cur.execute(sql)
+ #        rList = cur.fetchmany(sqlResult)
+ # #       print rList
+ #        conn.close()
+ #        return rList
+ #
+ #    def ssh(self):
+ #        os.system(sshUrl)
 
     def threadingAction(self,activation):
         threadsCur = []
         if activation == "ssh":
-            sshT = threading.Thread(target=self.ssh)
-            sshT.start()
-            sshT.join(timeout = 2)
+            # sshT = threading.Thread(target=self.ssh)
+            # sshT.start()
+            # sshT.join(timeout = 2)
             self.threadingAction("checkAction")
         elif activation == "checkAction":
             con = 1
             print "start"
             while (con <= conTimes):
-                checkPara = self.mysqlAction()
- #               print checkPara
+                checkPara = self.csvAction()
+#                print checkPara
                 checkInCur = checkIn()
                 checkInTime = checkInCur.checkIn(checkInCount)
                 for i in range(0,int(checkInCount)):
                     checkInT = threading.Thread(target=checkInCur.doCheckin,
-                                                args=(checkInTime,checkPara[i][0],checkPara[i][1],checkPara[i][2]))
+                                                args=(checkInTime,checkPara[i+1][0],checkPara[i+1][1],checkPara[i+1][2]))
                     threadsCur.append(checkInT)
                 for i in range(0,int(checkInCount)):
                     checkInT.setDaemon(True)
@@ -77,10 +91,9 @@ class checkinTest():
                 print len(threadsCur),":",con
                 con += 1
                 del threadsCur[:]
-                if con > conTimes:
-                    print "end"
+                if int(con) > int(conTimes):
                     break
-
+            print "end"
 class checkIn():
 
     def timeForamt(self,timeList):
@@ -135,13 +148,15 @@ class checkIn():
     def doCheckin(self,checkInTime,cardCode,gardenId,userId):
 
         messageAttach = wjy_pb2.Attach()
-        messageAttach.fileurl = "b8a36af2-b151-4a62-8b44-839b3bfd4f4c"
+        messageAttach.fileurl = "7bdd56cd-29f1-40fb-a9d3-ac0d722fb01e"
         messageAttach.attachType = long("1")
 
         ##########Checkin
+        print "cardCode: "+cardCode+",userId: "+userId
         messageCheckin = wjy_pb2.Checkin()
         messageCheckin.id = long("12313131321")
         messageCheckin.cardCode = str(cardCode)
+
         messageCheckin.attach.fileurl= messageAttach.fileurl
         messageCheckin.attach.attachType = messageAttach.attachType
         messageCheckin.userId = long(userId)
@@ -150,7 +165,7 @@ class checkIn():
 
         ##########CheckinRequest
         machineCheckin = wjy_pb2.CheckinRequest()
-        machineCheckin.machineId = "m00000000000002"
+        machineCheckin.machineId = "wlm000test00001"
 
         checkIn = machineCheckin.checkin.add()
         checkIn.id = messageCheckin.id
@@ -163,24 +178,22 @@ class checkIn():
 
         ##########MessageRequest
         bodyMessageString = machineCheckin.SerializeToString()
-
         mainMessage = Message_pb2.Request()
         mainMessage.url="/checkin"
         mainMessage.body = bodyMessageString
  #       print(mainMessage)
         mainPostMessage = mainMessage.SerializeToString()
-
         postMessage = s.post(url,data=mainPostMessage)
-#        print postMessage
 
 if __name__ == '__main__':
     if checkInCount > 1:
         checkintest = checkinTest()
         if  checkintest.checkMysqlPort() != "":
-            os.system("taskkill /F /pid "+str(checkintest.checkMysqlPort()))
+            # os.system("taskkill /F /pid "+str(checkintest.checkMysqlPort()))
             checkintest.threadingAction("ssh")
         else:
             checkintest.threadingAction("ssh")
+
     else:
         checkInSigTest = checkIn()
         checkInSigTest.checkIn(1)

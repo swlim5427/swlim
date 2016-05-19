@@ -5,7 +5,7 @@ import StringIO
 def tagHomeNotice(actionTypeMessage):
     driver = actionTypeMessage["driver"]
     picFlile = actionTypeMessage["picFlile"]
-#    homeIconType = int(actionTypeMessage["homeIconType"])
+    homeIconType = int(actionTypeMessage["homeIconType"])
     appType = actionTypeMessage["appType"]
     funcName = "通知_"
     if checkTag(driver) == "home":
