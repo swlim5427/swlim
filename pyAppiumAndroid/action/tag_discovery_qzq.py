@@ -220,7 +220,7 @@ def tagDiscoveryQzq(actionTypeMessage):
                         time.sleep(1)
 
                 except:
-                    logging.error(u"详情拖动失败")
+                    logging.error(u"详情拖动失败!")
 
                 try:
                     driver.find_elements_by_id("com.tuxing.app.teacher:id/iv")[2].click()
