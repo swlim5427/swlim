@@ -1,0 +1,2 @@
+create table checktable (id int,lasttime double);
+create table fetchcard (id int primary key,userid double,parentuserid double,cardcode text,username text,parentname text,actiontype text,usertype text,positionname text,departmentname text,usernameunison text);

@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
-import requests
-import Message_pb2
+
 import wjy_pb2
 import time
 import datetime
 import wx
 import logging
+import pubAction
 
 #
 class myFrame (wx.Frame):
 
     messageApptoken = ""
+
     def __init__(self,parent,id,title):
         wx.Frame.__init__(self, parent, id, title, wx.DefaultPosition, wx.Size(450, 350))
         hbox = wx.BoxSizer(wx.HORIZONTAL)
@@ -30,19 +31,18 @@ class myFrame (wx.Frame):
         self.SetMinSize((800, 320))
         self.SetMaxSize((800, 320))
 
-    def dialog(self,dialog):
-        dlg = wx.MessageDialog(None,dialog,'messge',wx.YES_NO|wx.ICON_QUESTION)
-        result = dlg.ShowModal()
-#        if (result == wx.ID_YES):
-#            self.OnQuit2("yes")
-#        elif (result == wx.ID_NO):
-#            self.OnQuit2("no")
-        dlg.Destroy()
 
     def action (self,event):
         item = event.GetItem()
         self.messageItem = self.leftTree.GetItemText(item)
-#        print self.messageItem
+
+
+        sql = "select * from checktable"
+        res = pubAction.sqliteConnect(sql)
+        if not res:
+            for sql in open("testSql.txt"):
+                pubAction.sqliteConnect(sql)
+
         if self.messageItem ==  u"刷卡":
             try:
                 self.panelRight.DestroyChildren()
@@ -69,18 +69,20 @@ class myFrame (wx.Frame):
                 self.messageDateHour = wx.TextCtrl(self.panelRight,-1,"",(220,155),size=(40,25))
                 self.messageDateMinute = wx.TextCtrl(self.panelRight,-1,"",(290,155),size=(40,25))
                 self.messageDateSecond = wx.TextCtrl(self.panelRight,-1,"",(360,155),size=(40,25))
-                self.messageResoult = wx.TextCtrl(self.panelRight,-1,u"",(155,215),size=(60,25))
+                self.messageResoult = wx.TextCtrl(self.panelRight,-1,u"",(155,219),size=(50,22))
 
 
                 self.buttonSendMessage = wx.Button(self.panelRight,201,u"确认",(60,218))
                 self.buttonSendMessage.Bind(wx.EVT_BUTTON,self.checkIn,self.buttonSendMessage)
-                # self.buttonlogin.Bind(wx.EVT_BUTTON,self.login,self.buttonlogin)
-                # self.buttonLoginRun.Bind(wx.EVT_BUTTON,self.loginAction,self.buttonLoginRun)
+                self.buttonFetchCard = wx.Button(self.panelRight,202,u"同步卡号",(262,218))
+                self.buttonFetchCard.Bind(wx.EVT_BUTTON,self.fetchCard,self.buttonFetchCard)
+
             except Exception as e:
                 print(e)
                 logging.warning("error when close")
 
     def checkIn(self,event):
+
         messageIp = self.messageIp.GetValue()
         messageGardenId = self.messageGardenId.GetValue()
         messageCustId = self.messageCustId.GetValue()
@@ -105,17 +107,17 @@ class myFrame (wx.Frame):
             self.dialog(u"没输入卡号")
             return
         if messageDateYear == "" :
-            messageDateYear = datetime.datetime.now().year
+            messageDateYear = pubAction.getTime()[1]
         if messageDateMonth == "" :
-            messageDateMonth = datetime.datetime.now().month
+            messageDateYear = pubAction.getTime()[2]
         if messageDateDay == "" :
-            messageDateDay = datetime.datetime.now().day
+            messageDateYear = pubAction.getTime()[3]
         if messageDateHour == "" :
-            messageDateHour = datetime.datetime.now().hour
+            messageDateYear = pubAction.getTime()[4]
         if messageDateMinute == "" :
-            messageDateMinute = datetime.datetime.now().minute
+            messageDateYear = pubAction.getTime()[5]
         if messageDateSecond == "" :
-            messageDateSecond = datetime.datetime.now().second
+            messageDateYear = pubAction.getTime()[6]
 
         mTime = datetime.datetime.now().microsecond
         imputDateTime = datetime.datetime(year=int(messageDateYear),month=int(messageDateMonth),day=int(messageDateDay),
@@ -125,20 +127,14 @@ class myFrame (wx.Frame):
         #nowTime = long(round(time.time()*1000))
 
         url = "http://"+messageIp+"/http_invoke"
-#        print(url)
-        s = requests.session()
-        headers ={"Content-type": "application/x-protobuf;charset=utf-8","Connection":"Keep-Alive"}
+        s = pubAction.SysConstants()[2]
+        headers =pubAction.SysConstants()[3]
         s.headers.update(headers)
         s.get(url)
 
-        ##########AttachType
-        #messageAttachType = wjy_pb2.AttachType()
-        ##########Attach
         messageAttach = wjy_pb2.Attach()
-        messageAttach.fileurl = "D:/Camera_20151102160429520.jpg"
+        messageAttach.fileurl = "0998c950-93d5-4ad5-8590-518dec6d1f57"
         messageAttach.attachType = long("1")
-
-        fetchAgreementRequest = wjy_pb2.FetchAgreementRequest()
 
         ##########Checkin
         messageCheckin = wjy_pb2.Checkin()
@@ -160,32 +156,67 @@ class myFrame (wx.Frame):
         checkIn.id = messageCheckin.id
         checkIn.cardCode = messageCheckin.cardCode
         checkIn.attach.fileurl = messageCheckin.attach.fileurl
-        checkIn.attach.attachType = messageCheckin.attach.attachType
         checkIn.userId = messageCheckin.userId
+        checkIn.attach.attachType = messageCheckin.attach.attachType
         checkIn.checkinTime = messageCheckin.checkinTime
         checkIn.gardenId = messageCheckin.gardenId
         #print machineCheckin
 
         ##########MessageRequest
         bodyMessageString = machineCheckin.SerializeToString()
-        #bodyMessageString = fetchAgreementRequest.SerializeToString()
 
-        mainMessage = Message_pb2.Request()
-        mainMessage.url="/checkin"
-        #mainMessage.url="/fetch_postgroup"
-        mainMessage.body = bodyMessageString
-        #print(mainMessage)
-        mainPostMessage = mainMessage.SerializeToString()
+        postMessage = pubAction.mainMessageRequest(["/checkin","","",bodyMessageString,url,s,""])
+        invoke = pubAction.mainMessageResponse(postMessage)
 
-        postMessage = s.post(url,data=mainPostMessage)
-        #print postMessage
-        rMessage = Message_pb2.Response()
-        #rMessage = wjy_pb2.FetchAgreementResponse()
-        localprint = postMessage.text.encode('gbk','ignore')
         if postMessage.status_code == 200:
             self.messageResoult.SetValue(u"success")
         else:
             self.messageResoult.SetValue(u"error:"+str(postMessage.status_code))
+
+    def chackMoreAction(self,checkParemeter):
+
+        messageFetchCardRequest = wjy_pb2.FetchCardRequest()
+
+        gardenId = self.messageGardenId.GetValue()
+        messageFetchCardRequest.gardenId = long(gardenId)
+        messageFetchCardRequest.lastModifiedSince = checkParemeter[0]
+        bodyMessageString = messageFetchCardRequest.SerializeToString()
+
+        postMessage = pubAction.mainMessageRequest(["/fetch_card","","",bodyMessageString,checkParemeter[1],checkParemeter[2],""])
+        # postMessage = pubAction.mainMessageRequest(["/checkin","","",checkParemeter[0],checkParemeter[1],checkParemeter[2],""])
+        invoke = pubAction.mainMessageResponse(postMessage)
+        invoke.ParseFromString(postMessage.content)
+        fetchCardRes = wjy_pb2.FetchCardResponse()
+        fetchCardRes.ParseFromString(invoke.body)
+
+
+        return [fetchCardRes.fetchTime,fetchCardRes.card,fetchCardRes.hasMore]
+
+    def fetchCard(self,event):
+
+        messageIp = self.messageIp.GetValue()
+        url = "http://"+messageIp+"/http_invoke"
+        s = pubAction.SysConstants()[2]
+        headers =pubAction.SysConstants()[3]
+        s.headers.update(headers)
+        s.get(url)
+
+        checkParemeter = [0,url,s]
+        moreCheck = self.chackMoreAction(checkParemeter)
+        count = 0
+
+        while moreCheck[2]:
+            print moreCheck[2],"----",moreCheck[1][0].positionName
+            count = len(moreCheck[1])+count
+            checkParemeter = [moreCheck[0],url,s]
+            moreCheck = self.chackMoreAction(checkParemeter)
+            if moreCheck[2] == False:
+                count = len(moreCheck[1])+count
+                print moreCheck[2],"----",moreCheck[1][0].positionName
+                # break
+        print count,"---------------",len(moreCheck[1])
+
+#------------------------------
 
 class myApp(wx.App):
     def OnInit(self):
