@@ -213,7 +213,7 @@ class myFrame (wx.Frame):
             if moreCheck[2] == False:
                 count = len(moreCheck[1])+count
                 print moreCheck[2],"----",moreCheck[1][0].positionName
-                # break
+                # break-
         print count,"---------------",len(moreCheck[1])
 
 #------------------------------
