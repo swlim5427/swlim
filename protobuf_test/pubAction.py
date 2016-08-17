@@ -3,6 +3,7 @@
 
 import requests
 import Message_pb2
+import wjy_pb2
 import MySQLdb
 import datetime
 import time
@@ -78,14 +79,29 @@ def mySQLconnect(sql):
 #sqlite链接
 def sqliteConnect(sql):
     conn = sqlite3.connect('pbtest.db')
-    try:
-        cur = conn.execute(sql);
-        conn.commit()
+    if sql[1] == 2:
         conn.close()
-        return cur
-    except Exception as e:
-        # print e
-        return False
+    else:
+        try:
+            cur = conn.execute(sql[0]);
+            conn.commit()
+            if sql[1] == 1:
+                conn.close()
+                return cur
+            else:
+                return cur
+        except Exception as e:
+            return False
+#------------------------------
+
+#刷卡机建库sql
+def checkSql():
+    creatTableSql = "create table checktable (id int,gardenid double,gardenname text);"
+    insertCheckTableSql = "insert into checktable VALUES (1,\"\",\"\")"
+    creatFetchcardTableSql ="create table fetchcard (id double,userid double,parentuserid double,cardcode text,username text," \
+                            "parentname text,actiontype text,usertype text,positionname text,departmentname text,usernameunison text);"
+    sqlList=[creatTableSql,insertCheckTableSql,creatFetchcardTableSql]
+    return sqlList
 #------------------------------
 
 #当前系统时间
@@ -125,10 +141,35 @@ def systemType():
 
 #WX 弹框
 def dialog(self,dialog):
-    dlg = wx.MessageDialog(None,dialog,'messge',wx.YES_NO|wx.ICON_QUESTION)
+    dlg = wx.MessageDialog(None,dialog,'messge',wx.ICON_QUESTION)
     result = dlg.ShowModal()
-#        if (result == wx.ID_YES):
-#            self.OnQuit2("yes")
-#        elif (result == wx.ID_NO):
-#            self.OnQuit2("no")
+    # if (result == wx.ID_YES):
+    #     self.OnQuit2("yes")
+    # elif (result == wx.ID_NO):
+    #     self.OnQuit2("no")
     dlg.Destroy()
+#------------------------------
+
+#enum
+def parentType(parameter):
+    if parameter.user.ParentType == wjy_pb2.ParentType.Value("FATHER"):
+        ParentType = u"爸爸"
+        return ParentType
+    elif parameter.user.ParentType == wjy_pb2.ParentType.Value("MOTHER"):
+        ParentType = u"妈妈"
+        return ParentType
+    elif parameter.user.ParentType == wjy_pb2.ParentType.Value("FATHERSFATHER"):
+        ParentType = u"爷爷"
+        return ParentType
+    elif parameter.user.ParentType == wjy_pb2.ParentType.Value("FATHERSMOTHER"):
+        ParentType = u"奶奶"
+        return ParentType
+    elif parameter.user.ParentType == wjy_pb2.ParentType.Value("MOTHERSFATHER"):
+        ParentType = u"姥爷"
+        return ParentType
+    elif parameter.user.ParentType == wjy_pb2.ParentType.Value("MOTHERSMOTHER"):
+        ParentType = u"姥姥"
+        return ParentType
+    elif parameter.user.ParentType == wjy_pb2.ParentType.Value("OTHERPARENTTYPE"):
+        ParentType = u"亲属"
+        return ParentType
