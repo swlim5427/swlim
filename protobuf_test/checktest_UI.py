@@ -170,55 +170,59 @@ class myFrame (wx.Frame):
                     s = pubAction.SysConstants()[2]
                     headers =pubAction.SysConstants()[3]
                     s.headers.update(headers)
-                    s.get(url)
+                    try:
+                        s.get(url)
+                        self.buttonSendMessage.Disable()
+                        messageAttach = wjy_pb2.Attach()
+                        messageAttach.fileurl = "0998c950-93d5-4ad5-8590-518dec6d1f57"
+                        messageAttach.attachType = long("1")
 
-                    messageAttach = wjy_pb2.Attach()
-                    messageAttach.fileurl = "0998c950-93d5-4ad5-8590-518dec6d1f57"
-                    messageAttach.attachType = long("1")
+                        ##########Checkin
+                        messageCheckin = wjy_pb2.Checkin()
+                        messageCheckin.id = long("12313131321")
+                        messageCheckin.cardCode = str(messageCardCode)
+                        #10000004
+                        messageCheckin.attach.fileurl= messageAttach.fileurl
+                        messageCheckin.attach.attachType = messageAttach.attachType
+                        messageCheckin.userId = long(messageCustId)
+                        #2290987
+                        messageCheckin.checkinTime = long(nowTime)
+                        messageCheckin.gardenId = long(messageGardenId)
 
-                    ##########Checkin
-                    messageCheckin = wjy_pb2.Checkin()
-                    messageCheckin.id = long("12313131321")
-                    messageCheckin.cardCode = str(messageCardCode)
-                    #10000004
-                    messageCheckin.attach.fileurl= messageAttach.fileurl
-                    messageCheckin.attach.attachType = messageAttach.attachType
-                    messageCheckin.userId = long(messageCustId)
-                    #2290987
-                    messageCheckin.checkinTime = long(nowTime)
-                    messageCheckin.gardenId = long(messageGardenId)
+                        ##########CheckinRequest
+                        machineCheckin = wjy_pb2.CheckinRequest()
+                        machineCheckin.machineId = "test001test0001"
 
-                    ##########CheckinRequest
-                    machineCheckin = wjy_pb2.CheckinRequest()
-                    machineCheckin.machineId = "test001test0001"
+                        checkIn = machineCheckin.checkin.add()
+                        checkIn.id = messageCheckin.id
+                        checkIn.cardCode = messageCheckin.cardCode
+                        checkIn.attach.fileurl = messageCheckin.attach.fileurl
+                        checkIn.userId = messageCheckin.userId
+                        checkIn.attach.attachType = messageCheckin.attach.attachType
+                        checkIn.checkinTime = messageCheckin.checkinTime
+                        checkIn.gardenId = messageCheckin.gardenId
+                        #print machineCheckin
 
-                    checkIn = machineCheckin.checkin.add()
-                    checkIn.id = messageCheckin.id
-                    checkIn.cardCode = messageCheckin.cardCode
-                    checkIn.attach.fileurl = messageCheckin.attach.fileurl
-                    checkIn.userId = messageCheckin.userId
-                    checkIn.attach.attachType = messageCheckin.attach.attachType
-                    checkIn.checkinTime = messageCheckin.checkinTime
-                    checkIn.gardenId = messageCheckin.gardenId
-                    #print machineCheckin
+                        ##########MessageRequest
+                        bodyMessageString = machineCheckin.SerializeToString()
 
-                    ##########MessageRequest
-                    bodyMessageString = machineCheckin.SerializeToString()
+                        postMessage = pubAction.mainMessageRequest(["/checkin","","",bodyMessageString,url,s,""])
+                        invoke = pubAction.mainMessageResponse(postMessage)
 
-                    postMessage = pubAction.mainMessageRequest(["/checkin","","",bodyMessageString,url,s,""])
-                    invoke = pubAction.mainMessageResponse(postMessage)
-
-                    if postMessage.status_code == 200:
-                        self.messageResoult.SetValue(u"success")
-                        sSqlUname = "select username from fetchcard where userid = "+"\""+messageCustId+"\""
-                        sUserName = pubAction.sqliteConnect([sSqlUname,0])
-                        for userName in sUserName:
-                            if userName[0] != "":
-                                pubAction.dialog(self,u"用户ID："+str(messageCustId)+u"，用户名："+userName[0]+u",签到成功")
-                            else:
-                                pubAction.dialog(self,u"用户ID："+str(messageCustId)+u"，用户名："+userName[0]+u",签到失败")
-                    else:
-                        self.messageResoult.SetValue(u"error:"+str(postMessage.status_code))
+                        if postMessage.status_code == 200:
+                            self.messageResoult.SetValue(u"success")
+                            sSqlUname = "select username from fetchcard where userid = "+"\""+messageCustId+"\""
+                            sUserName = pubAction.sqliteConnect([sSqlUname,0])
+                            for userName in sUserName:
+                                if userName[0] != "":
+                                    pubAction.dialog(self,u"用户ID："+str(messageCustId)+u"，用户名："+userName[0]+u",签到成功")
+                                    self.buttonSendMessage.Enable()
+                                else:
+                                    pubAction.dialog(self,u"用户ID："+str(messageCustId)+u"，用户名："+userName[0]+u",签到失败")
+                        else:
+                            self.messageResoult.SetValue(u"error:"+str(postMessage.status_code))
+                    except Exception as e:
+                        pubAction.dialog(self,u"无法连接服务器")
         pubAction.sqliteConnect(["",2])
 
     def chackMoreAction(self,checkParemeter):
@@ -254,33 +258,34 @@ class myFrame (wx.Frame):
         s = pubAction.SysConstants()[2]
         headers =pubAction.SysConstants()[3]
         s.headers.update(headers)
-        s.get(url)
+        try:
+            s.get(url)
+            self.buttonFetchCard.Disable()
+            self.buttonFetchCard
+            getGardenName = self.registerCheckinMachine(gardenId)[0]
+            wx.StaticText(self.panelRight,-1,getGardenName,(382,218))
+            usql = "update checktable SET gardenid = "+"\""+gardenId+"\",gardenname ="+"\""+getGardenName+"\""
 
-        getGardenName = self.registerCheckinMachine(gardenId)[0]
+            pubAction.sqliteConnect([usql,1])
 
-
-        wx.StaticText(self.panelRight,-1,getGardenName,(382,218))
-        usql = "update checktable SET gardenid = "+"\""+gardenId+"\",gardenname ="+"\""+getGardenName+"\""
-
-        pubAction.sqliteConnect([usql,1])
-
-        checkParemeter = [0,url,s]
-        moreCheck = self.chackMoreAction(checkParemeter)
-        count = 0
-        dsql = "delete from fetchcard"
-        pubAction.sqliteConnect([dsql,1])
-
-        while moreCheck[2]:
-            self.exSql(moreCheck,0)
-            count = len(moreCheck[1])+count
-            checkParemeter = [moreCheck[0],url,s]
+            checkParemeter = [0,url,s]
             moreCheck = self.chackMoreAction(checkParemeter)
+            count = 0
+            dsql = "delete from fetchcard"
+            pubAction.sqliteConnect([dsql,1])
 
-        else:
-            self.exSql(moreCheck,1)
-            count = len(moreCheck[1])+count
-            pubAction.dialog(self,u"幼儿园："+getGardenName+u"，同步完成，总计"+str(count)+u"个卡号")
+            while moreCheck[2]:
+                self.exSql(moreCheck,0)
+                count = len(moreCheck[1])+count
+                checkParemeter = [moreCheck[0],url,s]
+                moreCheck = self.chackMoreAction(checkParemeter)
 
+            else:
+                self.exSql(moreCheck,1)
+                count = len(moreCheck[1])+count
+                pubAction.dialog(self,u"幼儿园："+getGardenName+u"，同步完成，总计"+str(count)+u"个卡号")
+        except Exception as e:
+            pubAction.dialog(self,u"无法连接服务器")
     def exSql(self,moreCheck,c):
 
         for i in range(0,len(moreCheck[1])):
